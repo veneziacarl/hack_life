@@ -1,6 +1,6 @@
 Devise.setup do |config|
   # ==> Mailer Configuration
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'change-me-at-config-initializers-devise@example.com'
 
   # ==> ORM configuration
   require 'devise/orm/active_record'
