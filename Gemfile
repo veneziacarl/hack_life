@@ -46,6 +46,7 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
+  gem 'orderly'
 end
 
 group :development do
