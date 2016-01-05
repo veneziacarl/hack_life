@@ -1,0 +1,14 @@
+<%= form_for(@review) do |f| %>
+
+  <div class="rating">
+    <%= f.label :rating %>
+    <%= f.collection_radio_buttons(:rating, @rating_list, :to_i, :to_i) %>
+  </div>
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+
+  <div class="actions">
+    <%= f.submit 'Add Review', class: 'button tiny'%>
+  </div>
+
+<% end %>
