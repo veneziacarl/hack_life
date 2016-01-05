@@ -34,7 +34,7 @@ feature 'user signs in', %{
     click_button 'Log In'
 
     expect(page).to have_content('Invalid email or password')
-    expect(page).to_not have_content('Welcome Back!')
+    expect(page).to_not have_content('Welcome back!')
     expect(page).to_not have_content('Sign Out')
   end
 
