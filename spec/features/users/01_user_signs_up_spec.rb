@@ -10,7 +10,7 @@ feature 'user signs up', %{
   # [ ] I must specify a valid email address
   # [ ] I must specify a password and confirm that password
   # [ ] If I do not give valid information, I get an error message
-  # [ ] If I specify valid information, I register my account and am authenticated
+  # [ ] If I specify valid information, register my account and authenticate
 
   scenario 'user specifies valid and required information' do
     visit root_path
