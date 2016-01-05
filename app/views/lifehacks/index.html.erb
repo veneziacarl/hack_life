@@ -1,0 +1,28 @@
+
+<body>
+  <div class="lifehacklist">
+    <div class="row">
+<!-- Figure out to nest this "fixed elemnt properly" -->
+      <div class="large-8 columns  clearfix">
+        <% @lifehacks.each do |lifehack| %>
+        <div class="panel right large-12 columns">
+          <h5><%= "#{lifehack.title}"%></h5>
+          <table>
+            <tbody>
+              <tr>
+                <td><%= "#{lifehack.created_at.strftime("%m/%d/%Y")} #{lifehack.created_at.strftime("%I:%M%p")}"%></td>
+                <td>Submitted By:</td>
+                <td>Average Rating:</td>
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
+
+</body>

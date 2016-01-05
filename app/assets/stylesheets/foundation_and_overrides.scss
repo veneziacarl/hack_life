@@ -95,7 +95,7 @@ $include-html-global-classes: $include-html-classes;
 // $font-weight-normal: normal;
 // $font-weight-bold: bold;
 
-// $white       : #FFFFFF;
+$white       : #FFFFFF;
 // $ghost       : #FAFAFA;
 // $snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
@@ -116,7 +116,7 @@ $include-html-global-classes: $include-html-classes;
 // $black       : #000000;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -332,16 +332,16 @@ $include-html-global-classes: $include-html-classes;
 
 // $include-html-accordion-classes: $include-html-classes;
 
-// $accordion-navigation-padding: rem-calc(16);
-// $accordion-navigation-bg-color: $silver;
+$accordion-navigation-padding: rem-calc(0);
+$accordion-navigation-bg-color: $white;
 // $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
 // $accordion-navigation-active-font-color: $jet;
 // $accordion-navigation-font-color: $jet;
-// $accordion-navigation-font-size: rem-calc(16);
+$accordion-navigation-font-size: rem-calc(14);
 // $accordion-navigation-font-family: $body-font-family;
 
-// $accordion-content-padding: ($column-gutter/2);
+$accordion-content-padding: rem-calc(0);
 // $accordion-content-active-bg-color: $white;
 
 // 02. Alert Boxes
@@ -999,7 +999,7 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to set default inner padding and bottom margin
 // $panel-margin-bottom: rem-calc(20);
-// $panel-padding: rem-calc(20);
+$panel-padding: rem-calc(10);
 
 // We use these to set default font colors
 // $panel-font-color: $oil;
@@ -1165,12 +1165,12 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-nav-classes: $include-html-classes;
 
 // We use this to control padding.
-// $side-nav-padding: rem-calc(14 0);
+$side-nav-padding: rem-calc(100em 0 0 0);
 
 // We use these to control list styles.
 // $side-nav-list-type: none;
 // $side-nav-list-position: outside;
-// $side-nav-list-margin: rem-calc(0 0 7 0);
+$side-nav-list-margin: rem-calc(0 0 0 0);
 
 // We use these to control link styles.
 // $side-nav-link-color: $primary-color;
@@ -1178,7 +1178,7 @@ $include-html-global-classes: $include-html-classes;
 // $side-nav-link-color-hover: scale-color($side-nav-link-color, $lightness: 30%);
 // $side-nav-link-bg-hover: hsla(0, 0, 0, .025);
 // $side-nav-link-margin: 0;
-// $side-nav-link-padding: rem-calc(7 14);
+$side-nav-link-padding: rem-calc(4 40 7 14);
 // $side-nav-font-size: rem-calc(14);
 // $side-nav-font-weight: $font-weight-normal;
 // $side-nav-font-weight-active: $side-nav-font-weight;
@@ -1295,12 +1295,12 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
-// $table-bg: $white;
+$table-bg: scale-color($white, $lightness: -5%);
 // $table-even-row-bg: $snow;
 
 // These control the table cell border style
 // $table-border-style: solid;
-// $table-border-size: 1px;
+$table-border-size: 0px;
 // $table-border-color: $gainsboro;
 
 // These control the table head styles
@@ -1324,8 +1324,8 @@ $include-html-global-classes: $include-html-classes;
 // $table-caption-font-weight: bold;
 
 // These control the row padding and font styles
-// $table-row-padding: rem-calc(9 10);
-// $table-row-font-size: rem-calc(14);
+$table-row-padding: rem-calc(0 10 0 0);
+$table-row-font-size: rem-calc(10);
 // $table-row-font-color: $jet;
 // $table-line-height: rem-calc(18);
 
@@ -1408,7 +1408,7 @@ $include-html-global-classes: $include-html-classes;
 
 // Height and margin
 // $topbar-height: rem-calc(45);
-// $topbar-margin-bottom: 0;
+$topbar-margin-bottom: rem-calc(20);
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
