@@ -14,6 +14,25 @@
 
   <body>
 
+    <nav>
+      <ul>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Sign Out', '#' %>
+        <% else %>
+          <li><%= link_to 'Sign Up', new_user_registration_path %>
+        <% end %>
+      </ul>
+    </nav>
+
+    <div class="row">
+      <% flash.each do |type, message| %>
+        <div class="flash flash-<%= type %>">
+          <%= message %>
+        </div>
+      <% end %>
+    </div>
+    
+
     <%= yield %>
 
   </body>
