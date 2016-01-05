@@ -44,6 +44,7 @@ group :development, :test do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'valid_attribute'
+  gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
 end
 
