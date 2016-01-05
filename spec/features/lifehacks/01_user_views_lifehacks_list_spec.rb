@@ -19,7 +19,10 @@ feature "user sees list of lifehacks" do
 
     visit lifehacks_path
     expect(page).to have_content(first_lifehack.title)
-    expect(page).to have_content(first_lifehack.created_at)
+
+    expect(page).to have_content("#{first_lifehack.created_at.strftime("%m/%d/%Y")} #{first_lifehack.created_at.strftime("%I:%M%p")}")
     expect("#{second_lifehack.title}").to appear_before("#{first_lifehack.title}")
+    expect(page).to have_content "Submitted By:"
+    expect(page).to have_content "Average Rating:"
   end
 end
