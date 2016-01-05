@@ -11,7 +11,6 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-
     if @review.save
       redirect_to reviews_path, notice: 'Review made!'
     else
@@ -22,7 +21,7 @@ class ReviewsController < ApplicationController
   end
 
   private
-  
+
   def review_params
     params.require(:review).permit(:rating, :comment)
   end
