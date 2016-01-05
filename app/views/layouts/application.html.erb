@@ -13,6 +13,7 @@
   </head>
 
   <body>
+
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
@@ -21,6 +22,23 @@
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
+
+      <ul>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Sign Out', '#' %>
+        <% else %>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+
+    <div class="row">
+      <% flash.each do |type, message| %>
+        <div class="flash flash-<%= type %>">
+          <%= message %>
+        </div>
+      <% end %>
+    </div>
 
       <section class="top-bar-section">
         <!-- Right Nav Section -->
