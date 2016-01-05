@@ -13,14 +13,6 @@
   </head>
 
   <body>
-    <div class="row">
-      <% flash.each do |type, message| %>
-        <div class="flash flash-<%= type %>">
-          <%= message %>
-        </div>
-      <% end %>
-    </div>
-
     <nav>
       <ul>
         <% if user_signed_in? %>
@@ -38,7 +30,7 @@
         </div>
       <% end %>
     </div>
-    
+
 
     <%= yield %>
 
