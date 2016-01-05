@@ -14,15 +14,15 @@ require 'orderly'
 feature "user sees list of lifehacks" do
   scenario "see all the lifehacks" do
 
-    one_lifehack = FactoryGirl.create(:lifehack)
-    sec_lifehack = FactoryGirl.create(:lifehack)
+    lifehack = FactoryGirl.create(:lifehack)
+    lifehack2 = FactoryGirl.create(:lifehack)
 
     visit lifehacks_path
-    expect(page).to have_content(one_lifehack.title)
+    expect(page).to have_content(lifehack.title)
 
-    expect(page).to have_content("#{one_lifehack.created_at.strftime('%m/%d/%Y')}
-    #{one_lifehack.created_at.strftime('%I:%M%p')}")
-    expect("#{sec_lifehack.title}").to appear_before("#{one_lifehack.title}")
+    expect(page).to have_content("#{lifehack.created_at.strftime('%m/%d/%Y')}
+    #{lifehack.created_at.strftime('%I:%M%p')}")
+    expect("#{lifehack2.title}").to appear_before("#{lifehack.title}")
     expect(page).to have_content "Submitted By:"
     expect(page).to have_content "Average Rating:"
   end

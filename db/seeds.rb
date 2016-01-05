@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-lifehacks = Lifehack.create(
-  [{title: 'How to tie a tie',
-    description: 'tie a knot'},
-    {title: 'How to tie a tie1'}]
+Lifehack.create(
+  [{ title: 'How to tie a tie',
+    description: 'tie a knot' },
+    { title: 'How to tie a tie1' }]
 )
