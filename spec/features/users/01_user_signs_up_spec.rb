@@ -7,10 +7,10 @@ feature 'user signs up', %{
 } do
 
   # ACCEPTANCE CRITERIA
-  # [ ] I must specify a valid email address
-  # [ ] I must specify a password and confirm that password
-  # [ ] If I do not give valid information, I get an error message
-  # [ ] If I specify valid information, register my account and authenticate
+  # [x] I must specify a valid email address
+  # [x] I must specify a password and confirm that password
+  # [x] If I do not give valid information, I get an error message
+  # [x] If I specify valid information, register my account and authenticate
 
   scenario 'user specifies valid and required information' do
     visit root_path
