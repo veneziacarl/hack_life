@@ -12,14 +12,14 @@ require 'orderly'
 # [ ] I must be able to sort by category
 
 feature "user sees list of lifehacks" do
+
+  let!(:lifehack) { FactoryGirl.create(:lifehack) }
+  let!(:lifehack2) { FactoryGirl.create(:lifehack) }
+
   scenario "see all the lifehacks" do
 
-    lifehack = FactoryGirl.create(:lifehack)
-    lifehack2 = FactoryGirl.create(:lifehack)
-
-    visit lifehacks_path
+    visit root_path
     expect(page).to have_content(lifehack.title)
-
     expect(page).to have_content("#{lifehack.created_at.strftime('%m/%d/%Y')}
     #{lifehack.created_at.strftime('%I:%M%p')}")
     expect("#{lifehack2.title}").to appear_before("#{lifehack.title}")
