@@ -7,13 +7,15 @@ feature 'user adds review', %{
 } do
 
   # Acceptance Criteria:
-  # [ ] I can add a new review for a lifehack on the show page
-  # [ ] On successful submission, the review appears on the lifehack show page
-  # [ ] If I do not fill out the required fields, I should see errors
-  # [ ] On error, the review should not appear on the show page
+  # [x] I can add a new review for a lifehack on the show page
+  # [x] On successful submission, the review appears on the lifehack show page
+  # [x] If I do not fill out the required fields, I should see errors
+  # [x] On error, the review should not appear on the show page
+
+  let (:lifehack) { FactoryGirl.create(:lifehack) }
 
   scenario 'user specifies rating and comment' do
-    visit root_path
+    visit lifehack_path(lifehack)
     click_link 'Add Review'
 
     within('.rating') { choose '5' }
@@ -26,7 +28,7 @@ feature 'user adds review', %{
   end
 
   scenario 'user specifies rating' do
-    visit root_path
+    visit lifehack_path(lifehack)
     click_link 'Add Review'
 
     within('.rating') { choose '5' }
@@ -37,14 +39,14 @@ feature 'user adds review', %{
   end
 
   scenario 'user does not specify rating' do
-    visit root_path
+    visit lifehack_path(lifehack)
     click_link 'Add Review'
 
     fill_in 'Comment', with: 'testcomment'
     click_button 'Add Review'
     expect(page).to have_content("Review rating can't be blank!")
 
-    visit reviews_path
+    visit lifehack_path(lifehack)
     expect(page).to_not have_content('Comment: testcomment')
   end
 
