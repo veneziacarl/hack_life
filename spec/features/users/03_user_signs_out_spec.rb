@@ -1,12 +1,10 @@
 require 'rails_helper'
-require 'support/user_helper'
 
 feature 'user signs in', %{
   As a user
   I want to sign out
   So that I can securely leave the site
 } do
-  include UserHelper
 
   # Acceptance Criteria:
   # - [x] if I am logged in, I can log out

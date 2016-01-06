@@ -1,12 +1,10 @@
 require 'rails_helper'
-require 'support/user_helper'
 
 feature 'user signs in', %{
   As a user
   I want to sign in
   So that I can participate in the website
 } do
-  include UserHelper
 
   # Acceptance Criteria:
   # - [x] if I specify a valid, previous registered email and password,
