@@ -7,4 +7,10 @@ FactoryGirl.define do
     sequence(:email) { |n| "user#{n}@launch.com" }
     password "SuperPWthatislong"
   end
+
+  factory :lifehack do
+    sequence(:title) { |n| "How to tie a tie#{n}" }
+    sequence(:description) { |n| "Knot it #{n}" }
+    association :creator, factory: :user
+  end
 end
