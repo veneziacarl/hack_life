@@ -6,17 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(
-  [{ first_name: 'Jon',
-    last_name: 'Knot',
-    email: 'jon@gmail.com',
-    password: 'whattheheck?' }]
+User.create([{
+  first_name: 'Jon',
+  last_name: 'Knot',
+  email: 'jon@gmail.com',
+  password: 'whattheheck?' }]
 )
-
-  Lifehack.create(
-    [{ title: 'How to tie a tie',
-      description: 'tie a knot',
-      creator_id: "#{User.first.id}"},{
-      title: 'How to tie a tie1',
-      creator_id: "#{User.first.id}" }]
-  )
+Lifehack.create([{
+  title: 'How to tie a tie',
+  description: 'tie a knot',
+  creator_id: "#{User.first.id}" }, {
+  title: 'How to tie a tie1',
+  creator_id: "#{User.first.id}" }]
+)
