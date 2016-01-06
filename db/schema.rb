@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(version: 20160106184256) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "creator_id",  null: false
   end
+
+  add_index "lifehacks", ["creator_id"], name: "index_lifehacks_on_creator_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating",      null: false
