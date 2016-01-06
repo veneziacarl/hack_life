@@ -13,7 +13,6 @@ class ReviewsController < ApplicationController
     @lifehack = Lifehack.find(params[:lifehack_id])
     @review = Review.new(review_params)
     @review.lifehack = @lifehack
-    
     if @review.save
       redirect_to lifehack_path(@lifehack), notice: 'Review made!'
     else
