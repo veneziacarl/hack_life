@@ -4,4 +4,13 @@
   User:
   Created At: <%= review.created_at %>
   Updated At: <%= review.updated_at %>
+  Score: <%= review.sum_score %>
+  <% if user_signed_in? %>
+    <div class="vote_buttons">
+      <%= button_to '+1', review_votes_path(review),
+        params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 } %>
+      <%= button_to '-1', review_votes_path(review),
+        params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 } %>
+    </div>
+  <% end %>
 </div>
