@@ -7,10 +7,10 @@ feature 'user signs in', %{
 } do
 
   # Acceptance Criteria:
-  # - [ ] if I specify a valid, previous registered email and password,
+  # - [x] if I specify a valid, previous registered email and password,
   #   I am authenticated and I gain access to the system
-  # - [ ] if I specify an invalid email and password, I remain unauthenticated
-  # - [ ] if I am already signed in, I can't sign in again
+  # - [x] if I specify an invalid email and password, I remain unauthenticated
+  # - [x] if I am already signed in, I can't sign in again
 
   let (:user) { FactoryGirl.create(:user) }
 
@@ -50,10 +50,7 @@ feature 'user signs in', %{
   end
 
   scenario 'an already authenticated user cannot re-sign in' do
-    visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log In'
+    user_sign_in(user)
 
     expect(page).to have_content('Sign Out')
     expect(page).to_not have_content('Sign In')
