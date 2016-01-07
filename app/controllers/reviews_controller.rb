@@ -12,7 +12,9 @@ class ReviewsController < ApplicationController
   def create
     @lifehack = Lifehack.find(params[:lifehack_id])
     @review = Review.new(review_params)
+    @user = current_user
     @review.lifehack = @lifehack
+    @review.creator = @user
     if @review.save
       redirect_to lifehack_path(@lifehack), notice: 'Review made!'
     else
@@ -25,6 +27,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :comment)
+    params.require(:review).permit(:rating, :comment, :creator_id)
   end
 end

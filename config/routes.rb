@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :lifehacks, only: [:index]
 
   resources :lifehacks, only: [:show] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :index]
   end
 
   resources :reviews, only: [:show] do

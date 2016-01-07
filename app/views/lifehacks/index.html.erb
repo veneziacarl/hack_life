@@ -6,12 +6,12 @@
       <div class="large-8 columns  clearfix">
         <% @lifehacks.each do |lifehack| %>
         <div class="panel right large-12 columns">
-          <h5><%= "#{lifehack.title}"%></h5>
+          <h5><%= link_to lifehack.title, lifehack_path(lifehack) %></h5>
           <table>
             <tbody>
               <tr>
                 <td><%= "#{lifehack.created_at.strftime("%m/%d/%Y")} #{lifehack.created_at.strftime("%I:%M%p")}"%></td>
-                <td>Submitted By:</td>
+                <td>Submitted By: <%= lifehack.creator.first_name %> </td>
                 <td>Average Rating:</td>
               </tr>
             </tbody>

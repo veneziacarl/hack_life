@@ -7,9 +7,9 @@ feature 'user adds vote', %{
 } do
 
   # Acceptance Criteria:
-  # [ ] I can upvote an existing lifehack review and see the score change
-  # [ ] I can downvote an existing lifehack review and see the score change
-  # [ ] If `review 1` has a higher score than `review 2`, I should see that
+  # [x] I can upvote an existing lifehack review and see the score change
+  # [x] I can downvote an existing lifehack review and see the score change
+  # [x] If `review 1` has a higher score than `review 2`, I should see that
   # review higher in the list
   # [x] If I am not logged in, I cannot vote on a review
 
