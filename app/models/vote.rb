@@ -1,8 +1,7 @@
 class Vote < ActiveRecord::Base
+  SCORE_OPTIONS = [1, 0, -1]
   belongs_to :user
   belongs_to :review
-
-  SCORE_OPTIONS = [1, 0, -1]
 
   validates :user, presence: true
   validates :review, presence: true
