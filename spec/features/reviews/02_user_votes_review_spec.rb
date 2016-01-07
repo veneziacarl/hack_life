@@ -13,9 +13,9 @@ feature 'user adds vote', %{
   # review higher in the list
   # [x] If I am not logged in, I cannot vote on a review
 
-  let (:samelifehack) { FactoryGirl.create(:lifehack) }
+  let (:samelh) { FactoryGirl.create(:lifehack) }
   let (:review) { FactoryGirl.create(:review) }
-  let (:review_list) { FactoryGirl.create_list(:review, 2, lifehack: samelifehack) }
+  let (:review_list) { FactoryGirl.create_list(:review, 2, lifehack: samelh) }
   let (:review_different_lifehack) { FactoryGirl.create_list(:review, 2) }
   let (:user) { FactoryGirl.create(:user) }
   let (:user2) { FactoryGirl.create(:user) }
