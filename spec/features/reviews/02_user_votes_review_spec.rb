@@ -14,9 +14,9 @@ feature 'user adds vote', %{
   # [x] If I am not logged in, I cannot vote on a review
 
   let (:samelifehack) { FactoryGirl.create(:lifehack) }
-  let (:review) { FactoryGirl.create(:review, lifehack: samelifehack) }
-  let (:review2) { FactoryGirl.create(:review, lifehack: samelifehack) }
-  let (:review3) { FactoryGirl.create(:review) }
+  let (:review) { FactoryGirl.create(:review) }
+  let (:review_list) { FactoryGirl.create_list(:review, 2, lifehack: samelifehack) }
+  let (:review_different_lifehack) { FactoryGirl.create_list(:review, 2) }
   let (:user) { FactoryGirl.create(:user) }
   let (:user2) { FactoryGirl.create(:user) }
 
@@ -108,31 +108,83 @@ feature 'user adds vote', %{
     end
   end
 
-  scenario 'user can vote for multiple reviews on the same lifehack' do
-    review2
+  scenario 'user can up vote for multiple reviews on the same lifehack' do
     user_sign_in(user)
-    visit lifehack_path(review.lifehack)
-    within(".review-#{review.id}") do
-      click_button '+1'
+    visit lifehack_path(review_list.first.lifehack)
+
+    review_list.each do |review|
+      within(".review-#{review.id}") do
+        click_button '+1'
+      end
+
+      expect(page).to have_content('Vote cast!')
+      within(".review-#{review.id}") do
+        expect(page).to have_content("Score: 1")
+      end
     end
 
-    expect(page).to have_content('Vote cast!')
-    within(".review-#{review.id}") do
-      expect(page).to have_content("Score: 1")
-    end
-
-    within(".review-#{review2.id}") do
-      click_button '+1'
-    end
-
-    expect(page).to have_content('Vote cast!')
-    within(".review-#{review.id}") do
-      expect(page).to have_content("Score: 1")
-    end
-    within(".review-#{review2.id}") do
+    within(".review-#{review_list.first.id}") do
       expect(page).to have_content("Score: 1")
     end
   end
 
-  scenario 'dry out code for last test'
+  scenario 'user can down vote for multiple reviews on the same lifehack' do
+    user_sign_in(user)
+    visit lifehack_path(review_list.first.lifehack)
+
+    review_list.each do |review|
+      within(".review-#{review.id}") do
+        click_button '-1'
+      end
+
+      expect(page).to have_content('Vote cast!')
+      within(".review-#{review.id}") do
+        expect(page).to have_content("Score: -1")
+      end
+    end
+
+    within(".review-#{review_list.first.id}") do
+      expect(page).to have_content("Score: -1")
+    end
+  end
+
+  scenario 'user cannot vote for same review after voting on another review' do
+    user_sign_in(user)
+    visit lifehack_path(review_list.first.lifehack)
+
+    review_list.each do |review|
+      within(".review-#{review.id}") do
+        click_button '-1'
+      end
+
+      expect(page).to have_content('Vote cast!')
+      within(".review-#{review.id}") do
+        expect(page).to have_content("Score: -1")
+      end
+    end
+
+    within(".review-#{review_list.first.id}") do
+      click_button '-1'
+
+      expect(page).to have_content("Score: -1")
+    end
+    expect(page).to have_content('You have already downvoted this review!')
+  end
+
+  scenario 'user can up vote for reviews on different lifehacks' do
+    user_sign_in(user)
+
+    review_different_lifehack.each do |review|
+      visit lifehack_path(review.lifehack)
+
+      within(".review-#{review.id}") do
+        click_button '+1'
+      end
+
+      expect(page).to have_content('Vote cast!')
+      within(".review-#{review.id}") do
+        expect(page).to have_content("Score: 1")
+      end
+    end
+  end
 end
