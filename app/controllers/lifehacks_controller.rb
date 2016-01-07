@@ -24,7 +24,7 @@ class LifehacksController < ApplicationController
     @lifehack.creator = @user
     if @lifehack.save
       redirect_to lifehack_path(@lifehack),
-                  notice: 'Lifehack Created Successfully!'
+        notice: 'Lifehack Created Successfully!'
     else
       flash.now[:error] = "error in submission"
       render :new
