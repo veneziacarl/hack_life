@@ -47,6 +47,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
   gem 'orderly'
+  gem 'poltergeist'
 end
 
 group :development do
