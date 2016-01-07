@@ -2,6 +2,6 @@
   Rating: <%= review.rating %>
   Comment: <%= review.comment %>
   User:
-  Created At: <%= review.created_at %>
-  Updated At: <%= review.updated_at %>
+  Created At: <%= "#{review.created_at.strftime("%m/%d/%Y")} #{review.created_at.strftime("%I:%M%p")}" %>
+  Updated At: <%= "#{review.updated_at.strftime("%m/%d/%Y")} #{review.updated_at.strftime("%I:%M%p")}" %>
 </div>
