@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: [:show] do
-    resources :votes, only: [:create]
+    resources :votes, only: [:create, :update]
   end
-  
+
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.

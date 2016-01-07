@@ -5,8 +5,30 @@ class VotesController < ApplicationController
     @vote.user = current_user
     if @vote.save
       redirect_to lifehack_path(@review.lifehack), notice: 'Vote cast!'
+    # else
+    #   if @vote.score == 1
+    #     flash[:error] = "You have already upvoted this review!"
+    #   else
+    #     flash[:error] = "You have already downvoted this review!"
+    #   end
+    #   redirect_to lifehack_path(@review.lifehack)
+    end
+  end
+
+  def update
+    @vote = Vote.find(params[:id])
+    @review = Review.find(params[:review_id])
+    
+    if @vote.score == params["vote"]["score"].to_i
+      if @vote.score == 1
+        flash[:error] = "You have already upvoted this review!"
+      elsif @vote.score == -1
+        flash[:error] = "You have already downvoted this review!"
+      end
+      redirect_to lifehack_path(@review.lifehack)
     else
-      flash.now[:error] = "Could not cast vote."
+      @vote.update(vote_params)
+      redirect_to lifehack_path(@review.lifehack), notice: "Vote updated!"
     end
   end
 

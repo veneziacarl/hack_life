@@ -7,4 +7,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
+
+  def has_vote?(review)
+    votes.any? { |vote| vote.review_id == review.id }
+  end
+
+  def find_vote_for_review(review)
+    votes.find { |vote| vote.review_id == review.id }
+  end
 end
