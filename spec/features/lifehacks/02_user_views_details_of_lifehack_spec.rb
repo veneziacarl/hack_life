@@ -3,10 +3,12 @@ require 'spec_helper'
 require 'orderly'
 
 feature "user sees the details of a lifehack" do
+  let (:user) { FactoryGirl.create(:user) }
   let!(:lifehack) { FactoryGirl.create(:lifehack) }
   let!(:lifehack2) { FactoryGirl.create(:lifehack) }
 
   scenario "sees the details" do
+    user_sign_in(user)
     visit lifehacks_path
     click_on(lifehack.title)
 
@@ -17,6 +19,7 @@ feature "user sees the details of a lifehack" do
   end
 
   scenario "navigates back to index page" do
+    user_sign_in(user)
     visit lifehack_path(lifehack)
     click_link("Home")
 

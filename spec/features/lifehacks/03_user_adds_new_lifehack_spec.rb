@@ -64,7 +64,7 @@ feature 'user adds lifehack', %{
   scenario 'not logged in user cannot create lifehack' do
     visit lifehacks_path
     click_link 'Add Lifehack'
-    expect(page).to have_content("You must be signed in to add a lifehack!")
-    expect(current_path).to eq(lifehacks_path)
+    expect(page).to have_content("You need to sign in or sign up before continuing.")
+    expect(current_path).to eq('/users/sign_in')
   end
 end

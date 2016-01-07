@@ -1,4 +1,5 @@
 class LifehacksController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @lifehacks = Lifehack.order(created_at: :desc)
   end
@@ -33,6 +34,6 @@ class LifehacksController < ApplicationController
   private
 
   def lifehack_params
-    params.require(:lifehack).permit(:title, :description, :creator_id)
+    params.require(:lifehack).permit(:title, :description)
   end
 end
