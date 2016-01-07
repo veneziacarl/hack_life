@@ -4,11 +4,10 @@ class Lifehack < ActiveRecord::Base
   validates :title, presence: true
 
   before_validation :strip_whitespace
-
+  
   private
 
   def strip_whitespace
-    title = self.title
     title = title.strip unless title.nil?
   end
 end

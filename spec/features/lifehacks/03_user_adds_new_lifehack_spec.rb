@@ -54,7 +54,7 @@ feature 'user adds lifehack', %{
 
     expect(page).to have_content('error in submission')
     expect(find_field('Description').value).to eq(
-    'fold it over and cut 3 times for 6 pieces'
+      'fold it over and cut 3 times for 6 pieces'
     )
 
     visit lifehacks_path
