@@ -32,8 +32,10 @@ ActiveRecord::Schema.define(version: 20160107175046) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "lifehack_id", null: false
+    t.integer  "creator_id",  null: false
   end
 
+  add_index "reviews", ["creator_id"], name: "index_reviews_on_creator_id", using: :btree
   add_index "reviews", ["lifehack_id"], name: "index_reviews_on_lifehack_id", using: :btree
 
   create_table "users", force: :cascade do |t|

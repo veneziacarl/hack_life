@@ -1,7 +1,8 @@
 class Review < ActiveRecord::Base
+  RATING_LIST = [1, 2, 3, 4, 5]
   belongs_to :lifehack
   has_many :votes
-  RATING_LIST = [1, 2, 3, 4, 5]
+  belongs_to :creator, class_name: 'User'
 
   validates :rating,
     presence: true,

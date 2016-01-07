@@ -7,6 +7,7 @@
   <%= f.label :comment %>
   <%= f.text_field :comment %>
 
+  <%= f.hidden_field :creator, value: current_user %>
   <div class="actions">
     <%= f.submit 'Add Review', class: 'button tiny'%>
   </div>
