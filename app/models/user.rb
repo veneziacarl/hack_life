@@ -13,6 +13,6 @@ class User < ActiveRecord::Base
   end
 
   def find_vote_for_review(review)
-    votes.find { |vote| vote.review_id == review.id }
+    votes.detect { |vote| vote.review_id == review.id }
   end
 end

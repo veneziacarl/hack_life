@@ -8,6 +8,6 @@ class Vote < ActiveRecord::Base
   validates :review, presence: true
   validates :score,
     presence: true,
-    numericality: { only_integer: true}, inclusion: { in: SCORE_OPTIONS }
-  validates_uniqueness_of :user, scope: :review
+    numericality: { only_integer: true }, inclusion: { in: SCORE_OPTIONS }
+  validates :user, uniqueness: { scope: :review }
 end
