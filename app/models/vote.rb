@@ -1,6 +1,5 @@
 class Vote < ActiveRecord::Base
   SCORE_OPTIONS = [1, 0, -1]
-
   belongs_to :user
   belongs_to :review
 
