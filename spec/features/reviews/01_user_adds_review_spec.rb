@@ -56,4 +56,5 @@ feature 'user adds review', %{
 
   scenario 'user sees new review form on show page'
   scenario 'user sees new review on successful submission'
+  scenario 'user is not logged in and cannot post review'
 end

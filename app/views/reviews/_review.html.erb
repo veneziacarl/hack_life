@@ -1,7 +1,25 @@
-<div class="review">
+<div class="review review-<%= review.id %>">
   Rating: <%= review.rating %>
   Comment: <%= review.comment %>
   User:
   Created At: <%= "#{review.created_at.strftime("%m/%d/%Y")} #{review.created_at.strftime("%I:%M%p")}" %>
   Updated At: <%= "#{review.updated_at.strftime("%m/%d/%Y")} #{review.updated_at.strftime("%I:%M%p")}" %>
+  Score: <%= review.sum_score %>
+  <% if user_signed_in? %>
+    <% if current_user.has_vote?(review) %>
+      <div class="vote_buttons">
+        <%= button_to '+1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
+          params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 } %>
+        <%= button_to '-1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
+          params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 } %>
+      </div>
+    <% else %>
+      <div class="vote_buttons">
+        <%= button_to '+1', review_votes_path(review),
+          params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 } %>
+        <%= button_to '-1', review_votes_path(review),
+          params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 } %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

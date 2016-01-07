@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   resources :lifehacks, only: [:show] do
     resources :reviews, only: [:new, :create, :index]
   end
+
+  resources :reviews, only: [:show] do
+    resources :votes, only: [:create, :update]
+  end
+
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
