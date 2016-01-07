@@ -22,7 +22,8 @@ class LifehacksController < ApplicationController
     @user = current_user
     @lifehack.creator = @user
     if @lifehack.save
-      redirect_to lifehack_path(@lifehack), notice: 'Lifehack Created Successfully!'
+      redirect_to lifehack_path(@lifehack),
+      notice: 'Lifehack Created Successfully!'
     else
       flash.now[:error] = "error in submission"
       render :new
@@ -34,5 +35,4 @@ class LifehacksController < ApplicationController
   def lifehack_params
     params.require(:lifehack).permit(:title, :description, :creator_id)
   end
-
 end

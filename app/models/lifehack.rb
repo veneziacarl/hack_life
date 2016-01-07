@@ -6,7 +6,9 @@ class Lifehack < ActiveRecord::Base
   before_validation :strip_whitespace
 
   private
+
   def strip_whitespace
-    self.title = self.title.strip unless self.title.nil?
+    title = self.title
+    title = title.strip unless title.nil?
   end
 end
