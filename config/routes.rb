@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
   root 'lifehacks#index'
-  resources :lifehacks, only: [:index]
+  resources :lifehacks, only: [:index, :new, :create]
 
   resources :lifehacks, only: [:show] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :index]
   end
+
+  resources :reviews, only: [:show] do
+    resources :votes, only: [:create, :update]
+  end
+
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.

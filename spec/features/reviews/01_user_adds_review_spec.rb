@@ -12,9 +12,11 @@ feature 'user adds review', %{
   # [x] If I do not fill out the required fields, I should see errors
   # [x] On error, the review should not appear on the show page
 
+  let (:user) { FactoryGirl.create(:user) }
   let (:lifehack) { FactoryGirl.create(:lifehack) }
 
   scenario 'user specifies rating and comment' do
+    user_sign_in(user)
     visit lifehack_path(lifehack)
     click_link 'Add Review'
 
@@ -28,6 +30,7 @@ feature 'user adds review', %{
   end
 
   scenario 'user specifies rating' do
+    user_sign_in(user)
     visit lifehack_path(lifehack)
     click_link 'Add Review'
 
@@ -39,6 +42,7 @@ feature 'user adds review', %{
   end
 
   scenario 'user does not specify rating' do
+    user_sign_in(user)
     visit lifehack_path(lifehack)
     click_link 'Add Review'
 
@@ -52,4 +56,5 @@ feature 'user adds review', %{
 
   scenario 'user sees new review form on show page'
   scenario 'user sees new review on successful submission'
+  scenario 'user is not logged in and cannot post review'
 end
