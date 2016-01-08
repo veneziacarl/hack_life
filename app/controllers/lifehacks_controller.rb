@@ -31,6 +31,10 @@ class LifehacksController < ApplicationController
     end
   end
 
+  def search
+    @lifehacks = Lifehack.where("title ILIKE ?", "%#{params[:search]}%")
+  end
+
   private
 
   def lifehack_params

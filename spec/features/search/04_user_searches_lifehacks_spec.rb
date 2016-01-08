@@ -7,7 +7,7 @@ feature 'user searches lifehack', %{
 } do
 
   # Acceptance Criteria:
-  # [ ] I should see a search bar in the top bar of the site
+  # [x] I should see a search bar in the top bar of the site
   # [ ] I should be able to enter a word in to the seach bar and be brought
   #     to a results page where I can see all lifehacks containing my search
   #     term in the title
@@ -22,6 +22,7 @@ feature 'user searches lifehack', %{
 
   let(:lifehack) { FactoryGirl.create(:lifehack) }
   let(:lifehack2) { FactoryGirl.create(:lifehack) }
+  let(:user) { FactoryGirl.create(:user) }
 
     scenario 'user sees search bar' do
       visit lifehacks_path
@@ -30,8 +31,11 @@ feature 'user searches lifehack', %{
     end
 
     scenario 'user searches' do
+      user_sign_in(user)
+      # Lifehack.create(title: 'how to', description: 'descriptionhere', creator: user)
+      lifehack
       visit lifehacks_path
-      fill_in 'Search', with: 'how to'
+      fill_in 'search', with: 'how to'
       click_button 'Search'
 
       expect(page).to have_content('1 result found')

@@ -28,8 +28,8 @@
 
         <ul class="right" id="search-bar">
           <li>
-          <%= form_tag("/search", method: "get") do %>
-          <%= text_field_tag(:q) %>
+          <%= form_tag(search_lifehacks_path, method: "get") do %>
+          <%= text_field_tag(:search) %>
           <div>
             <%= submit_tag("Search") %>
           </div>
