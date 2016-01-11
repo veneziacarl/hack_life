@@ -7,14 +7,19 @@ feature 'admin deletes item', %{
 } do
 
   # Acceptance Criteria:
-
+  # [x] admin can delete lifehack
+  # [x] admin can delete review
+  # [x] member cannot delete lifehack where they are not the creator
+  # [x] member cannot delete review where they are not the creator
 
   let(:lifehack) { FactoryGirl.create(:lifehack) }
   let(:lifehack2) { FactoryGirl.create(:lifehack) }
   let(:user) { FactoryGirl.create(:user, role: "member") }
   let(:member) { FactoryGirl.create(:user, role: "member") }
   let(:admin) { FactoryGirl.create(:user, role: "admin") }
-  let(:review) { FactoryGirl.create(:review, creator: user, lifehack: lifehack ) }
+  let(:review) { FactoryGirl.create(
+    :review, creator: user, lifehack: lifehack
+  )}
 
   scenario "admin deletes lifehack" do
     user_sign_in(admin)
@@ -45,7 +50,7 @@ feature 'admin deletes item', %{
       click_button 'Delete Review'
     end
 
-    expect(page).to have_content("Admin deleted review: #{review.id}" )
+    expect(page).to have_content("Admin deleted review: #{review.id}")
     expect(page).to have_css('.lifehack-admin-panel')
     expect(page).to have_content(lifehack.title)
     expect(page).to_not have_content(review.rating)
