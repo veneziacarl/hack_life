@@ -35,7 +35,12 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <% if user_signed_in? %>
-            <img src="<%= current_user.profile_photo %>">
+            <li>
+              <%= link_to('Admin Access'), users_path %>
+            </li>
+            <li>
+              <%= link_to('Profile Photo Here', edit_user_registration_path) %>
+            </li>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li class="active"><%= link_to 'Sign In', new_user_session_path %></li>
