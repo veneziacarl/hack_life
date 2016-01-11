@@ -4,6 +4,7 @@ class VotesController < ApplicationController
     @vote = Vote.new(vote_params)
     @vote.user = current_user
     if @vote.save
+      VoteMailer.new_vote(@vote).deliver_later
       redirect_to lifehack_path(@review.lifehack), notice: 'Vote cast!'
     end
   end
