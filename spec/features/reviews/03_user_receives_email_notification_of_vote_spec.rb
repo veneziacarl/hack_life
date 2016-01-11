@@ -24,8 +24,8 @@ feature 'user gets email when someone votes on their review', %{
 
     expect(page).to have_content('Vote cast!')
     within('.review') do
-    expect(page).to have_content("Score: 1")
-    expect(ActionMailer::Base.deliveries.count).to eq(1)
+      expect(page).to have_content("Score: 1")
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
   end
 
@@ -37,8 +37,8 @@ feature 'user gets email when someone votes on their review', %{
 
     expect(page).to have_content('Vote cast!')
     within('.review') do
-    expect(page).to have_content("Score: -1")
-    expect(ActionMailer::Base.deliveries.count).to eq(1)
+      expect(page).to have_content("Score: -1")
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
   end
 end
