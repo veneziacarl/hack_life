@@ -11,7 +11,6 @@ feature 'user adds review', %{
   # [x] On successful submission, the review appears on the lifehack show page
   # [x] If I do not fill out the required fields, I should see errors
   # [x] On error, the review should not appear on the show page
-  # [] Upon successful creation of a review and email is sent to the lifehack creator
 
   let (:user) { FactoryGirl.create(:user) }
   let (:lifehack) { FactoryGirl.create(:lifehack) }
