@@ -23,16 +23,20 @@
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
 
-    <div class="row">
-      <% flash.each do |type, message| %>
-        <div class="flash flash-<%= type %>">
-          <%= message %>
-        </div>
-      <% end %>
-    </div>
-
       <section class="top-bar-section">
         <!-- Right Nav Section -->
+
+        <ul class="right" id="search-bar">
+          <li>
+            <%= form_tag(search_lifehacks_path, method: "get") do %>
+            <%= text_field_tag(:search) %>
+            <div>
+              <%= submit_tag("Search") %>
+            </div>
+            <% end %>
+          </li>
+        </ul>
+
         <ul class="right">
           <% if user_signed_in? %>
             <img src="<%= current_user.profile_photo %>">
@@ -44,7 +48,13 @@
         </ul>
       </section>
     </nav>
-
+    <div class="row">
+      <% flash.each do |type, message| %>
+        <div class="flash flash-<%= type %>">
+          <%= message %>
+        </div>
+      <% end %>
+    </div>
     <div class="row">
       <%= yield %>
     </div>

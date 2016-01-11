@@ -9,6 +9,11 @@
 
 <% if user_signed_in? %>
   <%= link_to 'Add Review', new_lifehack_review_path(@lifehack) %>
+  <% if current_user.admin? %>
+    <div class="lifehack-admin-panel">
+      <%= button_to "Delete Lifehack", lifehack_path, method: :delete %>
+    </div>
+  <% end %>
 <% else %>
   You must sign in to add a review
 <% end %>
