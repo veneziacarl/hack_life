@@ -39,10 +39,16 @@
 
         <ul class="right">
           <% if user_signed_in? %>
+            <div class="profile-photo">
+              <img src="<%= current_user.profile_photo %>">
+            </div>
             <li>
-              <%= link_to 'Admin Access', users_path %>
+              <% if current_user.admin? %>
+                <%= link_to 'Admin Access', users_path %>
+              <% end %>
             </li>
             <li>
+              Logged In As: <%= current_user.first_name %>
               <%= link_to('Profile Photo Here', edit_user_registration_path) %>
             </li>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>

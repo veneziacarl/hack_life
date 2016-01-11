@@ -15,6 +15,9 @@ feature "profile photo" do
     click_button "Sign Up"
 
     expect(page).to have_content("Welcome to the club!")
-    expect(page).to have_css("img[src*='photo.png']")
+    save_and_open_page
+    within('.profile-photo') do
+      expect(page).to have_css('img')
+    end
   end
 end
