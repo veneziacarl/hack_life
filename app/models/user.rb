@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
   def find_vote_for_review(review)
     votes.detect { |vote| vote.review_id == review.id }
   end
+
+  def admin?
+    role == "admin"
+  end
 end

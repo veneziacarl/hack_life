@@ -24,6 +24,13 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @lifehack = Lifehack.find(params[:lifehack_id])
+    @review = Review.destroy(params[:id])
+    redirect_to lifehack_path(@lifehack),
+      notice: "Admin deleted review: #{@review.id}"
+  end
+
   private
 
   def review_params
