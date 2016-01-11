@@ -1,0 +1,29 @@
+<%= @lifehacks.length %> result(s) found
+
+<%= link_to 'Back to Index', lifehacks_path %>
+
+<hr />
+Advanced Search:
+<ul class="advanced-search">
+  <li class='title'>
+    <%= form_tag(search_lifehacks_path, method: "get") do %>
+      <%= text_field_tag :title, nil, placeholder: 'title' %>
+    <% end %>
+  </li>
+  <li class='author'>
+    <%= form_tag(search_lifehacks_path, method: "get") do %>
+    <%= text_field_tag :author, nil, placeholder: 'author' %>
+    <% end %>
+  </li>
+  <li class='description'>
+    <%= form_tag(search_lifehacks_path, method: "get") do %>
+    <%= text_field_tag :description, nil, placeholder: 'description' %>
+    <% end %>
+  </li>
+  <li>
+    <%= submit_tag("Advanced Search") %>
+  </li>
+</ul>
+<hr />
+
+<%= render @lifehacks %>
