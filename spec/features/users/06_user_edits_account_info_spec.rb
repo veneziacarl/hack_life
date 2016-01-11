@@ -1,19 +1,21 @@
 require "rails_helper"
 
-  # Acceptance Criteria:
-  # [x] user can see current account details page
-  # [x] user can navigate to edit account page
-  # [x] user can update name
-  # [x] user can update email
-  # [ ] user can update profile picture
-  # [x] user can update password
-  # [x] user must enter current password for update to persist
+# Acceptance Criteria:
+# [x] user can see current account details page
+# [x] user can navigate to edit account page
+# [x] user can update name
+# [x] user can update email
+# [ ] user can update profile picture
+# [x] user can update password
+# [x] user must enter current password for update to persist
 
 feature "edit account details" do
 
   let (:user) { FactoryGirl.create(:user) }
   let! (:lifehack) { FactoryGirl.create(:lifehack, creator: user) }
-  let! (:review) { FactoryGirl.create(:review, creator: user, lifehack: lifehack) }
+  let! (:review) do
+    FactoryGirl.create(:review, creator: user, lifehack: lifehack)
+  end
 
   scenario "user sees current account details" do
     user_sign_in(user)
