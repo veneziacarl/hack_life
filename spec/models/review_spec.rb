@@ -13,4 +13,10 @@ RSpec.describe User, type: :model do
     review = FactoryGirl.create(:review)
     expect(review.sum_score).to eq(0)
   end
+
+  it 'sends a notification email' do
+    ActionMailer::Base.deliveries.clear
+    FactoryGirl.build(:review)
+    expect(ActionMailer::Base.deliveries.size).to eq(1)
+  end
 end

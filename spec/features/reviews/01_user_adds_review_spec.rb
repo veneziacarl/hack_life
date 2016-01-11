@@ -11,11 +11,15 @@ feature 'user adds review', %{
   # [x] On successful submission, the review appears on the lifehack show page
   # [x] If I do not fill out the required fields, I should see errors
   # [x] On error, the review should not appear on the show page
+  # [] Upon successful creation of a review and email is sent to the lifehack creator
 
   let (:user) { FactoryGirl.create(:user) }
   let (:lifehack) { FactoryGirl.create(:lifehack) }
 
   scenario 'user specifies rating and comment' do
+
+    ActionMailer::Base.deliveries.clear
+
     user_sign_in(user)
     visit lifehack_path(lifehack)
     click_link 'Add Review'
@@ -27,9 +31,13 @@ feature 'user adds review', %{
     expect(page).to have_content('Review made!')
     expect(page).to have_content('Rating: 5')
     expect(page).to have_content('Comment: testcomment')
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
   scenario 'user specifies rating' do
+
+    ActionMailer::Base.deliveries.clear
+
     user_sign_in(user)
     visit lifehack_path(lifehack)
     click_link 'Add Review'
@@ -39,9 +47,13 @@ feature 'user adds review', %{
 
     expect(page).to have_content('Review made!')
     expect(page).to have_content('Rating: 5')
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
   scenario 'user does not specify rating' do
+
+    ActionMailer::Base.deliveries.clear
+
     user_sign_in(user)
     visit lifehack_path(lifehack)
     click_link 'Add Review'
@@ -52,6 +64,8 @@ feature 'user adds review', %{
 
     visit lifehack_path(lifehack)
     expect(page).to_not have_content('Comment: testcomment')
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
+
   end
 
   scenario 'user sees new review form on show page'
