@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'lifehacks#index'
-  resources :lifehacks, only: [:index, :new, :create]
+  resources :lifehacks, only: [:index, :new, :create, :destroy]
 
   resources :lifehacks do
     collection do
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :lifehacks, only: [:show] do
-    resources :reviews, only: [:new, :create, :index]
+    resources :reviews, only: [:new, :create, :index, :destroy]
   end
 
   resources :reviews, only: [:show] do

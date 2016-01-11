@@ -20,8 +20,8 @@ feature 'user searches lifehack', %{
   #     to the search page and told that there are no results. I should be
   #     presented with a link to return to the main page
 
-  let(:lifehack) { FactoryGirl.create(:lifehack) }
-  let(:lifehack2) { FactoryGirl.create(:lifehack) }
+  let! (:lifehack) { FactoryGirl.create(:lifehack) }
+  let (:lifehack2) { FactoryGirl.create(:lifehack) }
   let(:user) { FactoryGirl.create(:user) }
 
   scenario 'user sees search bar' do
@@ -32,7 +32,6 @@ feature 'user searches lifehack', %{
 
   scenario 'user searches and finds one item' do
     user_sign_in(user)
-    lifehack
     visit lifehacks_path
     fill_in 'search', with: 'how to'
     click_button 'Search'
@@ -43,7 +42,6 @@ feature 'user searches lifehack', %{
 
   scenario 'user searches and finds multiple items' do
     user_sign_in(user)
-    lifehack
     lifehack2
     visit lifehacks_path
     fill_in 'search', with: 'how to'
