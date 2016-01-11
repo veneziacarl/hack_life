@@ -23,5 +23,10 @@
           params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
       </div>
     <% end %>
+      <% if current_user.admin? %>
+        <div class="review-admin-panel">
+          <%= button_to "Delete Review", lifehack_review_path(@lifehack, review), method: :delete %>
+        </div>
+      <% end %>
   <% end %>
 </div>

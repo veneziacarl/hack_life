@@ -4,8 +4,7 @@ require 'orderly'
 
 feature "user sees the details of a lifehack" do
   let (:user) { FactoryGirl.create(:user) }
-  let!(:lifehack) { FactoryGirl.create(:lifehack) }
-  let!(:lifehack2) { FactoryGirl.create(:lifehack) }
+  let! (:lifehack) { FactoryGirl.create(:lifehack) }
 
   scenario "sees the details" do
     user_sign_in(user)
@@ -25,6 +24,5 @@ feature "user sees the details of a lifehack" do
 
     expect(current_path).to eq(lifehacks_path)
     expect(page).to have_content("#{lifehack.title}")
-    expect(page).to have_content("#{lifehack2.title}")
   end
 end

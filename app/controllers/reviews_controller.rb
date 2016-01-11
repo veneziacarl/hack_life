@@ -16,12 +16,20 @@ class ReviewsController < ApplicationController
     @review.lifehack = @lifehack
     @review.creator = @user
     if @review.save
+      ReviewMailer.new_review(@review).deliver_later
       redirect_to lifehack_path(@lifehack), notice: 'Review made!'
     else
       @rating_list = Review::RATING_LIST
       flash.now[:error] = "Review rating can't be blank!"
       render :new
     end
+  end
+
+  def destroy
+    @lifehack = Lifehack.find(params[:lifehack_id])
+    @review = Review.destroy(params[:id])
+    redirect_to lifehack_path(@lifehack),
+      notice: "Admin deleted review: #{@review.id}"
   end
 
   private
