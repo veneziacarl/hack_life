@@ -1,22 +1,16 @@
-require 'rails_helper'
-
-feature 'user adds review', %{
+feature 'user gets email when someone reviews their lifehack', %{
   As a User
-  I want to comment on a lifehack
-  So I can share my opinion
+  I want to get an email notification when someone reviews my lifehack
+  So I can see what community members think of my lifehack
 } do
 
   # Acceptance Criteria:
-  # [x] I can add a new review for a lifehack on the show page
-  # [x] On successful submission, the review appears on the lifehack show page
-  # [x] If I do not fill out the required fields, I should see errors
-  # [x] On error, the review should not appear on the show page
-  # [] Upon successful creation of a review and email is sent to the lifehack creator
+  # [x] I get an email when someone reviews my lifehack.
 
   let (:user) { FactoryGirl.create(:user) }
   let (:lifehack) { FactoryGirl.create(:lifehack) }
 
-  scenario 'user specifies rating and comment' do
+  scenario 'user recieves email notification of rating and comment on lifehack' do
 
     user_sign_in(user)
     visit lifehack_path(lifehack)
@@ -29,9 +23,10 @@ feature 'user adds review', %{
     expect(page).to have_content('Review made!')
     expect(page).to have_content('Rating: 5')
     expect(page).to have_content('Comment: testcomment')
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
-  scenario 'user specifies rating' do
+  scenario 'user receives email notification of rated lifehack' do
 
     user_sign_in(user)
     visit lifehack_path(lifehack)
@@ -42,9 +37,10 @@ feature 'user adds review', %{
 
     expect(page).to have_content('Review made!')
     expect(page).to have_content('Rating: 5')
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
-  scenario 'user does not specify rating' do
+  scenario 'user recieves email notification of comment on lifehack' do
 
     user_sign_in(user)
     visit lifehack_path(lifehack)
@@ -56,9 +52,6 @@ feature 'user adds review', %{
 
     visit lifehack_path(lifehack)
     expect(page).to_not have_content('Comment: testcomment')
+    expect(ActionMailer::Base.deliveries.count).to eq(0)
   end
-
-  scenario 'user sees new review form on show page'
-  scenario 'user sees new review on successful submission'
-  scenario 'user is not logged in and cannot post review'
 end
