@@ -109,16 +109,16 @@ feature "user adds vote to review via ajax", %{
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
     expect_no_page_reload do
-    click_button '+1'
+      click_button '+1'
 
-    within('.review') do
-      expect(page).to have_content("Score: 1")
-    end
-    click_button '-1'
+      within('.review') do
+        expect(page).to have_content("Score: 1")
+      end
+      click_button '-1'
 
-    within('.review') do
-      expect(page).to have_content("Score: -1")
-    end
+      within('.review') do
+        expect(page).to have_content("Score: -1")
+      end
     end
   end
 
