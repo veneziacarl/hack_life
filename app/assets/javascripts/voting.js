@@ -35,7 +35,11 @@ var makeAjaxRequestPost = function(buttonElement, reviewId, voteScore) {
     buttons = $(buttonElement).closest('.vote_buttons_create');
     $(buttons).removeClass('vote_buttons_create');
     $(buttons).addClass('vote_buttons_update');
-    $(buttonElement).closest('.review').find('.score').text("Score: " + data["review"]["sum_score"]);
+    var voteButtons = $(buttons).children();
+    for (var i = 0; i < voteButtons.length; i++) {
+      $(voteButtons[i]).attr('action', '/reviews/' + reviewId + '/vote/' + data["vote"]["id"])
+    }
+    $(buttonElement).closest('.review').find('.score').text("Score: " + data["data"]["review"]["sum_score"]);
   });
 };
 
@@ -49,12 +53,9 @@ var makeAjaxRequestUpdate = function(buttonElement, reviewId, voteId, voteScore)
   request.success(function(data) {
     $(buttonElement).closest('.review').find('.score').text("Score: " + data["review"]["sum_score"]);
     $('.flash-ajax p').remove();
-    // debugger;
   });
 
   request.error(function(data) {
     $('.flash-ajax').html('<p>' + data["responseJSON"]["error"] + '</p>');
-    // $('.flash-ajax').text(data["responseJSON"]["error"]);
-    // $(data["responseJSON"]["error"]).appendTo('.flash-ajax');
   });
 };
