@@ -18,17 +18,17 @@ feature "user adds vote to review via ajax", %{
   scenario 'user upvotes review' do
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
-    save_and_open_page
     within('.review') do
       expect(page).to have_content("Score: 0")
     end
-    click_button '+1'
 
-    # expect_no_page_reload do
+    expect_no_page_reload do
+      click_button '+1'
+
       within('.review') do
         expect(page).to have_content("Score: 1")
       end
-    # end
+    end
   end
 
   scenario 'multiple users upvote the same review'
