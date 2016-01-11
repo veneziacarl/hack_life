@@ -37,13 +37,15 @@
         </ul>
       </section>
     </nav>
-    
+
     <div class="row">
       <% flash.each do |type, message| %>
-      <div class="flash flash-<%= type %>">
-        <%= message %>
-      </div>
+        <div class="flash flash-<%= type %>">
+          <%= message %>
+        </div>
       <% end %>
+      <div class="flash flash-ajax">
+      </div>
     </div>
 
     <div class="row">
