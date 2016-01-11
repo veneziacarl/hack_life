@@ -31,6 +31,12 @@ class LifehacksController < ApplicationController
     end
   end
 
+  def destroy
+    @lifehack = Lifehack.destroy(params[:id])
+    redirect_to lifehacks_path,
+      notice: "Admin successfully deleted lifehack: #{@lifehack.title}"
+  end
+
   private
 
   def lifehack_params
