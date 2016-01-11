@@ -14,10 +14,10 @@ class Api::V1::VotesController < Api::V1::BaseController
     if vote.score == vote_params["score"].to_i
       if vote.score == 1
         render json: { error: "You have already upvoted this review!" },
-          status: 422
+                        status: 422
       elsif vote.score == -1
         render json: { error: "You have already downvoted this review!" },
-          status: 422
+                        status: 422
       end
     else
       vote.update(vote_params)
