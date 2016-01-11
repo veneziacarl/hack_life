@@ -17,9 +17,9 @@ feature 'admin deletes item', %{
   let(:user) { FactoryGirl.create(:user, role: "member") }
   let(:member) { FactoryGirl.create(:user, role: "member") }
   let(:admin) { FactoryGirl.create(:user, role: "admin") }
-  let(:review) { FactoryGirl.create(
-    :review, creator: user, lifehack: lifehack
-  )}
+  let(:review) do
+    FactoryGirl.create(:review, creator: user, lifehack: lifehack)
+  end
 
   scenario "admin deletes lifehack" do
     user_sign_in(admin)
