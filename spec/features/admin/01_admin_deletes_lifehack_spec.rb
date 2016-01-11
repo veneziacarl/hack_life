@@ -35,6 +35,7 @@ feature 'admin deletes item', %{
     expect(page).to have_content(
       "Admin successfully deleted lifehack: #{lifehack.title}"
     )
+
     within(".lifehacklist") do
       expect(page).to_not have_content(lifehack.title)
     end
