@@ -4,7 +4,7 @@ feature "user adds vote to review via ajax", %{
   As a User
   I want to vote on a review
   Without having the page refresh
-}, js: true do
+} do
 
   # Acceptance Criteria:
   # [] When I click on the vote button page should not refresh
@@ -19,7 +19,7 @@ feature "user adds vote to review via ajax", %{
   let (:review_list) { FactoryGirl.create_list(:review, 2, lifehack: samelh) }
   let (:review_different_lifehack) { FactoryGirl.create_list(:review, 2) }
 
-  scenario 'user upvotes review' do
+  scenario 'user upvotes review', js: true do
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
     within('.review') do
@@ -35,7 +35,7 @@ feature "user adds vote to review via ajax", %{
     end
   end
 
-  scenario 'multiple users upvote the same review' do
+  scenario 'multiple users upvote the same review', js: true do
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
     click_button '+1'
@@ -54,7 +54,7 @@ feature "user adds vote to review via ajax", %{
     end
   end
 
-  scenario 'user downvotes review' do
+  scenario 'user downvotes review', js: true do
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
 
@@ -67,7 +67,7 @@ feature "user adds vote to review via ajax", %{
     end
   end
 
-  scenario 'user can only make 1 up vote on a single review' do
+  scenario 'user can only make 1 up vote on a single review', js: true do
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
 
@@ -86,7 +86,7 @@ feature "user adds vote to review via ajax", %{
     end
   end
 
-  scenario 'user can only make 1 down vote on a single review' do
+  scenario 'user can only make 1 down vote on a single review', js: true do
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
 
@@ -105,7 +105,7 @@ feature "user adds vote to review via ajax", %{
     end
   end
 
-  scenario 'user can change vote on already voted review' do
+  scenario 'user can change vote on already voted review', js: true do
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
     expect_no_page_reload do
@@ -122,7 +122,7 @@ feature "user adds vote to review via ajax", %{
     end
   end
 
-  scenario 'user can up vote for multiple reviews on the same lifehack' do
+  scenario 'user can up vote for multiple reviews on the same lifehack', js: true do
     user_sign_in(user)
     visit lifehack_path(review_list.first.lifehack)
 
@@ -143,7 +143,7 @@ feature "user adds vote to review via ajax", %{
     end
   end
 
-  scenario 'user can down vote for multiple reviews on the same lifehack' do
+  scenario 'user can down vote for multiple reviews on the same lifehack', js: true do
     user_sign_in(user)
     visit lifehack_path(review_list.first.lifehack)
 
@@ -164,7 +164,7 @@ feature "user adds vote to review via ajax", %{
     end
   end
 
-  scenario 'user cannot vote for same review after voting on another review' do
+  scenario 'user cannot vote for same review after voting on another review', js: true do
     user_sign_in(user)
     visit lifehack_path(review_list.first.lifehack)
 
@@ -188,7 +188,7 @@ feature "user adds vote to review via ajax", %{
     end
   end
 
-  scenario 'user can up vote for reviews on different lifehacks' do
+  scenario 'user can up vote for reviews on different lifehacks', js: true do
     user_sign_in(user)
 
     review_different_lifehack.each do |review|
