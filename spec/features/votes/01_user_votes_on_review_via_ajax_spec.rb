@@ -78,7 +78,6 @@ feature "user adds vote to review via ajax", %{
       end
 
       click_button '+1'
-      sleep(5)
 
       expect(page).to have_content('You have already upvoted this review!')
       within('.review') do
@@ -98,7 +97,6 @@ feature "user adds vote to review via ajax", %{
       end
 
       click_button '-1'
-      sleep(5)
 
       expect(page).to have_content('You have already downvoted this review!')
       within('.review') do
@@ -117,7 +115,6 @@ feature "user adds vote to review via ajax", %{
         expect(page).to have_content("Score: 1")
       end
       click_button '-1'
-      sleep(5)
 
       within('.review') do
         expect(page).to have_content("Score: -1")
@@ -184,7 +181,6 @@ feature "user adds vote to review via ajax", %{
 
       within(".review-#{review_list.first.id}") do
         click_button '-1'
-        sleep(5)
 
         expect(page).to have_content("Score: -1")
       end
