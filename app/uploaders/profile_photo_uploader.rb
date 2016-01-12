@@ -1,10 +1,16 @@
 # encoding: utf-8
 
 class ProfilePhotoUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+
   if Rails.env.test?
     storage :file
   else
     storage :fog
+  end
+
+  version :thumbnail do
+    process resize_to_fill: [100, 100]
   end
 
   def store_dir

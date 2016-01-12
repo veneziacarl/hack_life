@@ -11,7 +11,7 @@ feature "profile photo" do
     fill_in "Password", with: "boomstick!3vilisd3ad"
     fill_in "Password Confirmation", with: "boomstick!3vilisd3ad"
     attach_file 'user[profile_photo]',
-      "#{Rails.root}/spec/support/images/photo.png"
+      "#{Rails.root}/spec/support/images/panda.jpg"
     click_button "Sign Up"
 
     expect(page).to have_content("Welcome to the club!")
