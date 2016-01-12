@@ -43,7 +43,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'launchy'
+  gem 'launchy', require: false
   gem 'factory_girl_rails'
   gem 'valid_attribute'
   gem 'database_cleaner'

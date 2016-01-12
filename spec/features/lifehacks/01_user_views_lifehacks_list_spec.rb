@@ -12,6 +12,7 @@ feature "user sees list of lifehacks" do
   let!(:lifehack) { FactoryGirl.create(:lifehack) }
   let!(:lifehack2) { FactoryGirl.create(:lifehack) }
 
+
   scenario "see all the lifehacks" do
     visit root_path
 
