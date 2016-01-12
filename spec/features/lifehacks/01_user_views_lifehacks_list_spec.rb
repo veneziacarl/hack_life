@@ -20,5 +20,6 @@ feature "user sees list of lifehacks" do
     #{lifehack.created_at.strftime('%I:%M%p')}")
     expect("#{lifehack2.title}").to appear_before("#{lifehack.title}")
     expect(page).to have_content "Submitted By: #{lifehack.creator.first_name}"
+    expect(page).to have_content "Description: #{lifehack.short_description} ..."
   end
 end

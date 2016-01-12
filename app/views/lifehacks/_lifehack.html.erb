@@ -10,6 +10,7 @@
             <td><%= "#{lifehack.created_at.strftime("%m/%d/%Y")} #{lifehack.created_at.strftime("%I:%M%p")}"%></td>
             <td>Submitted By: <%= lifehack.creator.first_name %> </td>
             <td>Average Rating:</td>
+            <td>Description: <%= lifehack.short_description %> ... </td>
           </tr>
         </tbody>
 

@@ -32,11 +32,28 @@ class LifehacksController < ApplicationController
   end
 
   def search
-    if params[:search].nil?
-      @lifehacks = []
-    else
-      @lifehacks = Lifehack.where("title ILIKE ?", "%#{params[:search]}%")
+    lifehacks = []
+    if search_params[:all] && search_params[:all] != ""
+      lifehacks << Lifehack.where("title ILIKE ? OR description ILIKE ?", "%#{search_params[:all]}%", "%#{search_params[:all]}%")
     end
+    if search_params[:title] && search_params[:title] != ""
+      lifehacks << Lifehack.where("title ILIKE ?", "%#{search_params[:title]}%")
+    end
+    if search_params[:description] && search_params[:description] != ""
+      lifehacks << Lifehack.where("description ILIKE ?", "%#{search_params[:description]}%")
+    end
+    if search_params[:user] && search_params[:user] != ""
+      userDetails = search_params[:user]
+      sqlQuery = "first_name ILIKE ? OR last_name ILIKE ?"
+      if userDetails.include?(" ")
+        userDetails = userDetails.split(" ")
+        user = User.where(sqlQuery, "%#{userDetails[0]}%", "%#{userDetails[1]}%")
+      else
+        user = User.where(sqlQuery, "%#{userDetails}%", "%#{userDetails}%")
+      end
+      lifehacks << Lifehack.where(creator: user)
+    end
+    @lifehacks = lifehacks.flatten.uniq
   end
 
   def destroy
@@ -49,5 +66,12 @@ class LifehacksController < ApplicationController
 
   def lifehack_params
     params.require(:lifehack).permit(:title, :description)
+  end
+
+  def search_params
+    params.require(:search).permit(:title, :description, :user, :all)
+  end
+
+  def check_for_multiple_params
   end
 end
