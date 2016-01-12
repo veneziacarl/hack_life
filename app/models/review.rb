@@ -8,7 +8,7 @@ class Review < ActiveRecord::Base
     presence: true,
     numericality: { only_integer: true }, inclusion: { in: RATING_LIST }
 
-  def sumScore
+  def sum_score
     score = votes.map { |vote| vote.score }.reduce(:+)
     score || 0
   end
