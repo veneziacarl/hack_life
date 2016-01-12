@@ -13,13 +13,21 @@ class ApplicationController < ActionController::Base
     ]
 
     if params[:action] == 'update'
-      devise_parameter_sanitizer.for(:account_update) do |u|
-        u.permit(registration_params << :current_password)
-      end
+      update_params(registration_params)
     elsif params[:action] == 'create'
-      devise_parameter_sanitizer.for(:sign_up) do |u|
-        u.permit(registration_params)
-      end
+      create_params(registration_params)
+    end
+  end
+
+  def update_params(registration_params)
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(registration_params << :current_password)
+    end
+  end
+
+  def create_params(registration_params)
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(registration_params)
     end
   end
 end
