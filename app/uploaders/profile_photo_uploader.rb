@@ -12,6 +12,7 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    ActionController::Base.helpers.asset_path("default/" + [version_name, "default_profile.png"].compact.join('_'))
+    ActionController::Base.helpers.asset_path(
+      "default/" + [version_name, "default_profile.png"].compact.join('_'))
   end
 end
