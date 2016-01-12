@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'foundation-rails'
 
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'fog'
