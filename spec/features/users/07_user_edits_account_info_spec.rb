@@ -17,25 +17,27 @@ feature "edit account details" do
     FactoryGirl.create(:review, creator: user, lifehack: lifehack)
   end
 
-  scenario "user sees current account details" do
+  before (:each) do
     user_sign_in(user)
+  end
+
+  scenario "user sees current account details" do
     click_link "Logged In As: #{user.first_name}"
 
     expect(page).to have_content("User Details")
     expect(page).to have_content("Name: #{user.full_name}")
     expect(page).to have_content("Email: #{user.email}")
-    expect(page).to have_content(lifehack.title)
     expect(page).to have_content(review.lifehack.title)
   end
 
   scenario 'user navigates to edit account page' do
-    user_sign_in(user)
     click_link "Logged In As: #{user.first_name}"
     click_link "Update Account Information"
+
+    expect(page).to have_content('Edit User')
   end
 
   scenario "user must enter current password for profile update" do
-    user_sign_in(user)
     visit edit_user_registration_path
     fill_in 'First name', with: 'bob'
     fill_in 'Current password', with: "notcorrectPW"
@@ -48,7 +50,6 @@ feature "edit account details" do
   end
 
   scenario "user updates name" do
-    user_sign_in(user)
     visit edit_user_registration_path
     fill_in 'First name', with: 'bob'
     fill_in 'Last name', with: 'smith'
@@ -60,7 +61,6 @@ feature "edit account details" do
   end
 
   scenario "user updates email" do
-    user_sign_in(user)
     visit edit_user_registration_path
     fill_in 'Email', with: "test@email.com"
     fill_in 'Current password', with: user.password
@@ -71,7 +71,6 @@ feature "edit account details" do
   end
 
   scenario "user updates password" do
-    user_sign_in(user)
     visit edit_user_registration_path
     fill_in 'Password', with: "newpassword"
     fill_in 'Password confirmation', with: "newpassword"
@@ -87,7 +86,6 @@ feature "edit account details" do
   end
 
   scenario "user updates profile picture" do
-    user_sign_in(user)
     visit edit_user_registration_path
     attach_file 'user[profile_photo]',
       "#{Rails.root}/spec/support/images/NAF-logo.png"
