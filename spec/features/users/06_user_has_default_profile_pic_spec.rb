@@ -13,6 +13,6 @@ feature "profile photo default" do
     click_button "Sign Up"
 
     expect(page).to have_content("Welcome to the club!")
-    expect(page).to have_css("img[src*='default.png']")
+    expect(page).to have_css("img[src*='default_profile']")
   end
 end
