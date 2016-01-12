@@ -15,7 +15,7 @@ feature 'user views reviews for a lifehack', %{
   let!(:reviews) { FactoryGirl.create_list(:review, 4, lifehack: lifehack) }
   let(:user) { FactoryGirl.create(:user) }
 
-  scenario 'user visits lifehack details and sees latest three reviews for that lifehack' do
+  scenario 'user sees lifehack details and latest 3 reviews for lifehack' do
 
     old_review = reviews.shift
 
