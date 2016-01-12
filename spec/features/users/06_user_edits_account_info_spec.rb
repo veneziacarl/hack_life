@@ -5,7 +5,7 @@ require "rails_helper"
 # [x] user can navigate to edit account page
 # [x] user can update name
 # [x] user can update email
-# [ ] user can update profile picture
+# [x] user can update profile picture
 # [x] user can update password
 # [x] user must enter current password for update to persist
 

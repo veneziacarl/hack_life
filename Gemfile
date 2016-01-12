@@ -32,9 +32,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'foundation-rails'
 
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'devise'
 gem 'carrierwave'
+gem 'fog'
+gem 'active_model_serializers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,6 +50,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
   gem 'orderly'
+  gem 'poltergeist'
 end
 
 group :development do
@@ -57,4 +60,8 @@ end
 
 group :test do
   gem 'coveralls', require: false
+end
+
+group :production do
+  gem 'rails_12factor'
 end
