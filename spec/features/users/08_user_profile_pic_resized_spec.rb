@@ -15,7 +15,6 @@ feature "profile photo resizing" do
     click_button "Sign Up"
 
     expect(page).to have_content("Welcome to the club!")
-
     img_height = page.evaluate_script("$('nav ul.right img')[0].clientHeight")
     img_width = page.evaluate_script("$('nav ul.right img')[0].clientWidth")
 
