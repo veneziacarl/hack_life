@@ -7,6 +7,15 @@
   font-size: rem-calc(14);
 }
 
-.advanced-search li {
-  list-style: none;
+#search-bar {
+ padding: 2px 5px 2px 5px;
+ width:150px;
+}
+
+#search-button {
+ padding: 0px 0px 0px 0px;
+}
+
+.right #sign {
+color: white
 }
