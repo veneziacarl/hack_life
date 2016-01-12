@@ -11,6 +11,6 @@ RSpec.describe User, type: :model do
 
   it 'calculates a score of 0 if no votes' do
     review = FactoryGirl.create(:review)
-    expect(review.sum_score)to eq(0)
+    expect(review.sum_score).to eq(0)
   end
 end
