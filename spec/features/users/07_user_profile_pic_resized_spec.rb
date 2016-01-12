@@ -16,8 +16,8 @@ feature "profile photo resizing" do
 
     expect(page).to have_content("Welcome to the club!")
 
-    img_height = page.evaluate_script("$('nav ul .right img')[0].clientHeight")
-    img_width = page.evaluate_script("$('nav ul .right img')[0].clientWidth")
+    img_height = page.evaluate_script("$('nav ul.right img')[0].clientHeight")
+    img_width = page.evaluate_script("$('nav ul.right img')[0].clientWidth")
 
     expect(img_height).to eq(100)
     expect(img_width).to eq(100)
