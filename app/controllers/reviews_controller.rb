@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
-  def index
-    @reviews = Review.all
-  end
+    def index
+      @lifehack = Lifehack.find(params[:lifehack_id])
+      # @review = Review.order(created_at: :desc)
+    end
 
   def new
     @lifehack = Lifehack.find(params[:lifehack_id])
@@ -14,6 +15,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @user = current_user
     @review.lifehack = @lifehack
+
+    @reviews = @lifehack.reviews.order(created_at: :desc).page(params[:page])
     @review.creator = @user
     if @review.save
       ReviewMailer.new_review(@review).deliver_later
@@ -35,6 +38,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :comment)
+    params.require(:review).permit(:rating, :comment, :creator_id, :lifehack_id)
   end
 end
