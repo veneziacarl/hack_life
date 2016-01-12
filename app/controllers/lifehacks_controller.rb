@@ -78,7 +78,4 @@ class LifehacksController < ApplicationController
   def search_params
     params.require(:search).permit(:title, :description, :user, :all)
   end
-
-  def check_for_multiple_params
-  end
 end
