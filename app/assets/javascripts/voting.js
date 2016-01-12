@@ -1,3 +1,41 @@
+var makeAjaxRequestPost = function(buttonEle, reviewId, voteScore) {
+  var request = $.ajax({
+    method: 'POST',
+    data: { score: voteScore },
+    url: '/api/v1/reviews/' + reviewId + '/votes'
+  });
+
+  request.success(function(data) {
+    var buttons = $(buttonEle).closest('.vote_buttons_create');
+    $(buttons).removeClass('vote_buttons_create');
+    $(buttons).addClass('vote_buttons_update');
+    var voteButtons = $(buttons).children();
+    for (var i = 0; i < voteButtons.length; i++) {
+      $(voteButtons[i]).attr('action', '/reviews/' + reviewId + '/vote/' + data['vote']['id']);
+    }
+    var parentReviewScore = $(buttonEle).closest('.review').find('.score');
+    parentReviewScore.text('Score: ' + data.data.review.sum_score);
+  });
+};
+
+var makeAjaxRequestUpdate = function(buttonEle, reviewId, voteId, voteScore) {
+  var request = $.ajax({
+    method: 'PATCH',
+    data: { score: voteScore },
+    url: '/api/v1/reviews/' + reviewId + '/votes/' + voteId
+  });
+
+  request.success(function(data) {
+    var parentReviewScore = $(buttonEle).closest('.review').find('.score');
+    parentReviewScore.text('Score: ' + data.review.sum_score);
+    $('.flash-ajax p').remove();
+  });
+
+  request.error(function(data) {
+    $('.flash-ajax').html('<p>' + data.responseJSON.error + '</p>');
+  });
+};
+
 $(document).ready(function() {
   $(document).on('click', '.vote_buttons_create', function(event) {
     event.preventDefault();
@@ -24,40 +62,40 @@ $(document).ready(function() {
   });
 });
 
-var makeAjaxRequestPost = function(buttonElement, reviewId, voteScore) {
-  var request = $.ajax({
-    method: 'POST',
-    data: { score: voteScore },
-    url: '/api/v1/reviews/' + reviewId + '/votes'
-  });
-
-  request.success(function(data) {
-    var buttons = $(buttonElement).closest('.vote_buttons_create');
-    $(buttons).removeClass('vote_buttons_create');
-    $(buttons).addClass('vote_buttons_update');
-    var voteButtons = $(buttons).children();
-    for (var i = 0; i < voteButtons.length; i++) {
-      $(voteButtons[i]).attr('action', '/reviews/' + reviewId + '/vote/' + data['vote']['id']);
-    }
-    var parentReviewScore = $(buttonElement).closest('.review').find('.score');
-    parentReviewScore.text('Score: ' + data.data.review.sum_score);
-  });
-};
-
-var makeAjaxRequestUpdate = function(buttonElement, reviewId, voteId, voteScore) {
-  var request = $.ajax({
-    method: 'PATCH',
-    data: { score: voteScore },
-    url: '/api/v1/reviews/' + reviewId + '/votes/' + voteId
-  });
-
-  request.success(function(data) {
-    var parentReviewScore = $(buttonElement).closest('.review').find('.score');
-    parentReviewScore.text('Score: ' + data.review.sum_score);
-    $('.flash-ajax p').remove();
-  });
-
-  request.error(function(data) {
-    $('.flash-ajax').html('<p>' + data.responseJSON.error + '</p>');
-  });
-};
+// var makeAjaxRequestPost = function(buttonEle, reviewId, voteScore) {
+//   var request = $.ajax({
+//     method: 'POST',
+//     data: { score: voteScore },
+//     url: '/api/v1/reviews/' + reviewId + '/votes'
+//   });
+//
+//   request.success(function(data) {
+//     var buttons = $(buttonEle).closest('.vote_buttons_create');
+//     $(buttons).removeClass('vote_buttons_create');
+//     $(buttons).addClass('vote_buttons_update');
+//     var voteButtons = $(buttons).children();
+//     for (var i = 0; i < voteButtons.length; i++) {
+//       $(voteButtons[i]).attr('action', '/reviews/' + reviewId + '/vote/' + data['vote']['id']);
+//     }
+//     var parentReviewScore = $(buttonEle).closest('.review').find('.score');
+//     parentReviewScore.text('Score: ' + data.data.review.sum_score);
+//   });
+// };
+//
+// var makeAjaxRequestUpdate = function(buttonEle, reviewId, voteId, voteScore) {
+//   var request = $.ajax({
+//     method: 'PATCH',
+//     data: { score: voteScore },
+//     url: '/api/v1/reviews/' + reviewId + '/votes/' + voteId
+//   });
+//
+//   request.success(function(data) {
+//     var parentReviewScore = $(buttonEle).closest('.review').find('.score');
+//     parentReviewScore.text('Score: ' + data.review.sum_score);
+//     $('.flash-ajax p').remove();
+//   });
+//
+//   request.error(function(data) {
+//     $('.flash-ajax').html('<p>' + data.responseJSON.error + '</p>');
+//   });
+// };
