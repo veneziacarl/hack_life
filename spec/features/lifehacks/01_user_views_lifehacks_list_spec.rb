@@ -2,10 +2,10 @@ require 'rails_helper'
 require 'spec_helper'
 require 'orderly'
 
-# [√] I should see an index of all lifehacks at the root of the app
-# [√] I should see the title, date
-# [] I should see the creator (add this in once user is built)
-# [√] I should see a list sorted by date by default
+# [ ] I should see an index of all lifehacks at the root of the app
+# [ ] I should see the title, date
+# [ ] I should see the creator (add this in once user is built)
+# [ ] I should see a list sorted by date by default
 
 feature "user sees list of lifehacks" do
 
