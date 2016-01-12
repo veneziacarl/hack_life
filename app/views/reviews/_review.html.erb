@@ -5,7 +5,7 @@
   Created At: <%= review.created_at.strftime("%m/%d/%Y") %> <%= review.created_at.strftime("%I:%M%p") %>
   Updated At: <%= review.updated_at.strftime("%m/%d/%Y") %> <%= review.updated_at.strftime("%I:%M%p") %>
   Score: <%= review.sum_score %>
- 
+
   <% if user_signed_in? %>
     <% if current_user.has_vote?(review) %>
       <div class="vote_buttons">
