@@ -34,22 +34,29 @@ class LifehacksController < ApplicationController
   def search
     lifehacks = []
     if search_params[:all] && search_params[:all] != ""
-      lifehacks << Lifehack.where("title ILIKE ? OR description ILIKE ?", "%#{search_params[:all]}%", "%#{search_params[:all]}%")
+      lifehacks << Lifehack.where(
+        "title ILIKE ? OR description ILIKE ?",
+        "%#{search_params[:all]}%", "%#{search_params[:all]}%"
+      )
     end
     if search_params[:title] && search_params[:title] != ""
       lifehacks << Lifehack.where("title ILIKE ?", "%#{search_params[:title]}%")
     end
     if search_params[:description] && search_params[:description] != ""
-      lifehacks << Lifehack.where("description ILIKE ?", "%#{search_params[:description]}%")
+      lifehacks << Lifehack.where(
+        "description ILIKE ?", "%#{search_params[:description]}%"
+      )
     end
     if search_params[:user] && search_params[:user] != ""
-      userDetails = search_params[:user]
-      sqlQuery = "first_name ILIKE ? OR last_name ILIKE ?"
-      if userDetails.include?(" ")
-        userDetails = userDetails.split(" ")
-        user = User.where(sqlQuery, "%#{userDetails[0]}%", "%#{userDetails[1]}%")
+      user_details = search_params[:user]
+      sql_query = "first_name ILIKE ? OR last_name ILIKE ?"
+      if user_details.include?(" ")
+        user_details = user_details.split(" ")
+        user = User.where(
+          sql_query, "%#{user_details[0]}%", "%#{user_details[1]}%"
+        )
       else
-        user = User.where(sqlQuery, "%#{userDetails}%", "%#{userDetails}%")
+        user = User.where(sql_query, "%#{user_details}%", "%#{user_details}%")
       end
       lifehacks << Lifehack.where(creator: user)
     end

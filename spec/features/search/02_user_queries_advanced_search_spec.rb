@@ -39,7 +39,7 @@ feature 'user uses advanced search', %{
     expect(page).to have_content('2 result(s) found')
   end
 
-  scenario 'user advanced searches by user first name and is case-insensitive' do
+  scenario 'user advanced searches by user first name, case-insensitive' do
     user_sign_in(user)
     click_link 'Advanced'
     within('.advanced-search') do
@@ -85,7 +85,10 @@ feature 'user uses advanced search', %{
 
   scenario 'user searches using multiple fields' do
     user_sign_in(user)
-    georgia = User.create(first_name: 'georgia', last_name: 'ly', email: 'm@m.com', password: 'password')
+    georgia = User.create(
+      first_name: 'georgia', last_name: 'ly',
+      email: 'm@m.com', password: 'password'
+    )
     georgia_hack = Lifehack.create(title: 'test', creator: georgia)
     click_link 'Advanced'
     within('.advanced-search') do
