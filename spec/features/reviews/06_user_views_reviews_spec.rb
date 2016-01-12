@@ -12,10 +12,10 @@ feature 'user views reviews for a lifehack', %{
   # [√] I can see a list of reviews ordered by most recent review
 
   let!(:lifehack) { FactoryGirl.create(:lifehack) }
-  let!(:reviews) { FactoryGirl.create_list(:review, 4, lifehack:lifehack) }
+  let!(:reviews) { FactoryGirl.create_list(:review, 4, lifehack: lifehack) }
   let(:user) { FactoryGirl.create(:user) }
 
-  scenario 'user visits lifehack details and sees the latest three reviews for that lifehack' do
+  scenario 'user visits lifehack details and sees latest three reviews for that lifehack' do
 
     old_review = reviews.shift
 

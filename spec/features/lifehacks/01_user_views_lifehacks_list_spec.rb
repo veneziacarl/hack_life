@@ -19,7 +19,7 @@ feature "user sees list of lifehacks" do
     lifehacks.each do |lifehack|
       expect(page).to have_link(lifehack.title, exact: true)
       expect(page).to have_content(time_ago_in_words(lifehack.created_at))
-      expect(page).to have_content "Submitted By: #{lifehack.creator.first_name}"
+      expect(page).to have_content(lifehack.creator.first_name)
     end
 
     expect(lifehacks.last.title).to appear_before(lifehacks.first.title)
