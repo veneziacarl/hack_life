@@ -35,11 +35,20 @@ class LifehacksController < ApplicationController
   end
 
   def search
-    if params[:search].nil?
-      @lifehacks = []
-    else
-      @lifehacks = Lifehack.where("title ILIKE ?", "%#{params[:search]}%")
+    @lifehacks = []
+    if search_params[:all] && search_params[:all] != ""
+      @lifehacks << Lifehack.search_all(search_params[:all])
     end
+    if search_params[:title] && search_params[:title] != ""
+      @lifehacks << Lifehack.search_title(search_params[:title])
+    end
+    if search_params[:description] && search_params[:description] != ""
+      @lifehacks << Lifehack.search_description(search_params[:description])
+    end
+    if search_params[:user] && search_params[:user] != ""
+      @lifehacks << Lifehack.search_user(search_params[:user])
+    end
+    @lifehacks = @lifehacks.flatten.uniq
   end
 
   def destroy
@@ -74,5 +83,7 @@ class LifehacksController < ApplicationController
       flash[:alert] = "You are not the Authorized User"
       redirect_to after_sign_in_path_for(current_user)
     end
+  def search_params
+    params.require(:search).permit(:title, :description, :user, :all)
   end
 end
