@@ -3,12 +3,13 @@ class LifehacksController < ApplicationController
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    @lifehacks = Lifehack.order(created_at: :desc)
+    @lifehacks = Lifehack.order(created_at: :desc).page(params[:page])
   end
 
   def show
     @lifehack = Lifehack.find(params[:id])
-    @reviews = @lifehack.reviews
+    @review = Review.new
+    @reviews = @lifehack.reviews.order(created_at: :desc).page(params[:page])
   end
 
   def new
