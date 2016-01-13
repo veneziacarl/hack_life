@@ -1,7 +1,6 @@
 <div class="row">
 <!-- Figure out to nest this "fixed elemnt projfsperly" -->
   <div class="large-8 columns  clearfix">
-    <% @lifehacks.each do |lifehack| %>
     <div class="panel right large-12 columns">
       <h5><%= link_to lifehack.title, lifehack_path(lifehack) %></h5>
       <table>
@@ -16,6 +15,5 @@
       </table>
 
     </div>
-    <% end %>
   </div>
 </div>

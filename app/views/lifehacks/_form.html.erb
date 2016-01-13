@@ -1,5 +1,4 @@
 <%= form_for [@lifehack] do |f| %>
-
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -9,7 +8,7 @@
   <%= f.hidden_field :creator, value: current_user %>
 
   <div class="actions">
-    <%= f.submit 'Add Lifehack', class: 'button tiny'%>
+      <%= f.submit 'Add Lifehack', class: 'button tiny'%>
   </div>
 
 <% end %>

@@ -25,6 +25,11 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    binding.pry
+    @review = Review.find(params[:id])
+  end
+
   def destroy
     @lifehack = Lifehack.find(params[:lifehack_id])
     @review = Review.destroy(params[:id])

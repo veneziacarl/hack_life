@@ -6,6 +6,8 @@
 </p>
 
 <%= link_to 'Home', lifehacks_path %>
+<%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack) %>
+<%= button_to 'Delete Lifehack', @lifehack, { method: :delete} %>
 
 <% if user_signed_in? %>
   <%= link_to 'Add Review', new_lifehack_review_path(@lifehack) %>
