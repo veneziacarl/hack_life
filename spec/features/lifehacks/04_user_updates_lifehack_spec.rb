@@ -19,17 +19,17 @@ feature 'user updates lifehack', %{
     user_sign_in(user)
     click_link(lh.title)
 
-    expect(current_path).to eq(lifehack_path(lifehack))
+    expect(current_path).to eq(lifehack_path(lh))
 
     click_link('Edit Lifehack')
 
-    expect(find_field('lh[title]').value).to eq(lh.title)
-    expect(find_field('lh[description]').value).to eq(lh.description)
+    expect(find_field('lifehack[title]').value).to eq(lh.title)
+    expect(find_field('lifehack[description]').value).to eq(lh.description)
 
     title = 'Hopefully this work'
     description = 'Testing out this cool new edition to the lifehack'
-    fill_in('lh[title]', with: title)
-    fill_in('lh[description]', with: description)
+    fill_in('lifehack[title]', with: title)
+    fill_in('lifehack[description]', with: description)
     click_button('Add Lifehack')
 
     expect(current_path).to eq(lifehack_path(lh))
@@ -43,16 +43,16 @@ feature 'user updates lifehack', %{
     click_link(lh.title)
     click_link('Edit Lifehack')
 
-    expect(find_field('lh[title]').value).to eq(lh.title)
-    expect(find_field('lh[description]').value).to eq(lh.description)
+    expect(find_field('lifehack[title]').value).to eq(lh.title)
+    expect(find_field('lifehack[description]').value).to eq(lh.description)
 
     description = 'How fast can I type this without making a mistake'
-    fill_in('lh[title]', with: '')
-    fill_in('lh[description]', with: description)
+    fill_in('lifehack[title]', with: '')
+    fill_in('lifehack[description]', with: description)
     click_button('Add Lifehack')
 
-    expect(find_field('lh[title]').value).to eq('')
-    expect(find_field('lh[description]').value).to eq(description)
+    expect(find_field('lifehack[title]').value).to eq('')
+    expect(find_field('lifehack[description]').value).to eq(description)
   end
 
   scenario 'user attempts to edit another user\'s lifehack' do
