@@ -22,33 +22,33 @@
        </ul>
 
     <section class="top-bar-section">
-     <!-- Left Nav Section -->
-     <ul class="left">
-       <li class="has-form">
-         <form>
-           <div class="row collapse" >
-             <div class="small-10 columns">
-               <%= form_tag(search_lifehacks_path, method: "get") do %>
-               <%= text_field_tag(:search) %>
-             <div class="submit small-2 columns">
-               <%= submit_tag("Search") %>
-               <% end %>
-             </div>
-           </div>
-         </form>
-       </li>
-     </ul>
-
      <!-- Right Nav Section -->
      <ul class="right">
        <% if user_signed_in? %>
         <li><img src="<%= current_user.profile_photo %>"></li>
-      <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       <% else %>
-      <li><%= link_to 'Sign In', new_user_session_path %></li>
-      <li><%= link_to 'Sign Up', new_user_registration_path %></ul><li>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></ul><li>
         <% end %>
      </ul>
+     <ul class="right">
+       <li class="has-form">
+         <div class="row collapse">
+           <div class="submit small-2 columns">
+             <%= submit_tag("Search") %>
+           </div>
+           <div class="small-10 columns">
+             <li class="divider show-for-small"></li>
+              <li class="has-form">
+             <%= form_tag(search_lifehacks_path, method: "get") do %>
+             <%= text_field_tag(:search) %>
+           </li>
+            </div>
+           <% end %>
+         </li>
+        </ul>
+      </div>
     </section>
 
     <div class="row">
