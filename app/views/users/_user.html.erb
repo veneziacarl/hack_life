@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="large-8 columns  clearfix">
+    <% @users.each do |user| %>
+      <div class="panel right large-12 columns">
+        <h5><%= link_to user.full_name, user_path(user) %></h5>
+      </div>
+    <% end %>
+  </div>
+</div>
