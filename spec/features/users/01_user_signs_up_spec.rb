@@ -23,7 +23,7 @@ feature 'user signs up', %{
     fill_in 'Password Confirmation', with: 'password'
     click_button 'Sign Up'
 
-    expect(page).to have_content('Welcome to the club!')
+    expect(page).to have_content('Welcome to the club!', count: 1)
     expect(page).to have_content('Sign Out')
   end
 
