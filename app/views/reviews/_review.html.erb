@@ -2,9 +2,9 @@
   Rating: <%= review.rating %>
   Comment: <%= review.comment %>
   User:
-  Created At: <%= "#{review.created_at.strftime("%m/%d/%Y")} #{review.created_at.strftime("%I:%M%p")}" %>
-  Updated At: <%= "#{review.updated_at.strftime("%m/%d/%Y")} #{review.updated_at.strftime("%I:%M%p")}" %>
-  Lifehack: <%= review.lifehack %>
+  Created At: <%= review.created_at.strftime("%m/%d/%Y") %> <%= review.created_at.strftime("%I:%M%p") %>
+  Updated At: <%= review.updated_at.strftime("%m/%d/%Y") %> <%= review.updated_at.strftime("%I:%M%p") %>
+
   <div class="score">
     Score: <%= review.sum_score %>
   </div>
@@ -31,4 +31,5 @@
         </div>
       <% end %>
   <% end %>
+
 </div>

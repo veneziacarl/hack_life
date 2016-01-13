@@ -6,7 +6,7 @@
       <table>
         <tbody>
           <tr>
-            <td><%= "#{lifehack.created_at.strftime("%m/%d/%Y")} #{lifehack.created_at.strftime("%I:%M%p")}"%></td>
+            <td><%= time_ago_in_words(lifehack.created_at)%></td>
             <td>Submitted By: <%= lifehack.creator.first_name %> </td>
             <td>Average Rating:</td>
           </tr>

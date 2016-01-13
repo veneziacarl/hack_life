@@ -4,6 +4,8 @@ class Lifehack < ActiveRecord::Base
   validates :title, presence: true
   before_validation :strip_whitespace
 
+  paginates_per 10
+
   private
 
   def strip_whitespace
