@@ -8,7 +8,6 @@ feature 'user deletes lifehack', %{
   # Acceptance Criteria:
   # [√] I must be able delete a lifehack from the lifehack show page
   # [√] If I am not the creator, I cannot delete the lifehack
-  # [] All associated reviews with the lifehack must also be deleted
 
   let (:user) { FactoryGirl.create(:user) }
   let!(:lifehack) { FactoryGirl.create(:lifehack, creator: user) }

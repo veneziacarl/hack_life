@@ -33,7 +33,6 @@ feature 'user updates review', %{
 
     expect(page).to have_content(lifehack.title)
     expect(page).to have_content(lifehack.description)
-    save_and_open_page
     expect(page).to have_content('Lifehack Edited Successfully!')
     expect(page).to have_content(new_comment)
   end
