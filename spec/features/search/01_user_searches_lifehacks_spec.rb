@@ -48,16 +48,8 @@ feature 'user searches lifehack', %{
     click_button 'Search'
 
     expect(page).to have_content('2 result(s) found')
-    expect(page).to have_content(lifehack.title)
-    expect(page).to have_content("#{lifehack.created_at.strftime('%m/%d/%Y')}
-    #{lifehack.created_at.strftime('%I:%M%p')}")
-    expect(page).to have_content "Submitted By: #{lifehack.creator.first_name}"
-    expect("#{lifehack.title}").to appear_before("#{lifehack2.title}")
-
-    expect(page).to have_content(lifehack2.title)
-    expect(page).to have_content("#{lifehack.created_at.strftime('%m/%d/%Y')}
-    #{lifehack.created_at.strftime('%I:%M%p')}")
-    expect(page).to have_content "Submitted By: #{lifehack.creator.first_name}"
+    expect(page).to have_link(lifehack.title)
+    expect(page).to have_link(lifehack2.title)
   end
 
   scenario 'user views details of a specfic lifehack found through search' do

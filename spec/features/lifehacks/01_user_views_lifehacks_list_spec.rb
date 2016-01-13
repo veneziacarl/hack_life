@@ -2,23 +2,34 @@ require 'rails_helper'
 require 'spec_helper'
 require 'orderly'
 
+include ActionView::Helpers::DateHelper
+
+# [√] I should see an index of all lifehacks at the root of the app
+# [√] I should see the title, date
+# [] I should see the creator (add this in once user is built)
+# [√] I should see a list sorted by date by default
+
 # [ ] I should see an index of all lifehacks at the root of the app
 # [ ] I should see the title, date
 # [ ] I should see the creator (add this in once user is built)
 # [ ] I should see a list sorted by date by default
 
 feature "user sees list of lifehacks" do
+  let!(:lifehacks) { FactoryGirl.create_list(:lifehack, 11) }
 
-  let!(:lifehack) { FactoryGirl.create(:lifehack) }
-  let!(:lifehack2) { FactoryGirl.create(:lifehack) }
+  scenario "user sees the latest 10 lifehacks" do
+    oldest_lifehack = lifehacks.shift
 
-  scenario "see all the lifehacks" do
     visit root_path
+    lifehacks.each do |lifehack|
+      expect(page).to have_link(lifehack.title, exact: true)
+      expect(page).to have_content(time_ago_in_words(lifehack.created_at))
+      expect(page).to have_content(lifehack.creator.first_name)
+    end
 
-    expect(page).to have_content(lifehack.title)
-    expect(page).to have_content("#{lifehack.created_at.strftime('%m/%d/%Y')}
-    #{lifehack.created_at.strftime('%I:%M%p')}")
-    expect("#{lifehack2.title}").to appear_before("#{lifehack.title}")
-    expect(page).to have_content "Submitted By: #{lifehack.creator.first_name}"
+    expect(lifehacks.last.title).to appear_before(lifehacks.first.title)
+
+    expect(page).to_not have_link(oldest_lifehack.title, exact: true)
+    expect(page).to have_link("Next ›")
   end
 end

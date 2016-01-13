@@ -35,6 +35,7 @@ gem 'foundation-rails'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'carrierwave'
+gem 'kaminari'
 gem 'fog'
 gem 'active_model_serializers'
 gem 'mini_magick'
@@ -45,7 +46,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'launchy'
+  gem 'launchy', require: false
   gem 'factory_girl_rails'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
