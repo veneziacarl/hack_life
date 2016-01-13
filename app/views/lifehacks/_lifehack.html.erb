@@ -7,8 +7,9 @@
         <tbody>
           <tr>
             <td><%= time_ago_in_words(lifehack.created_at)%></td>
-            <td>Submitted By: <%= lifehack.creator.first_name %> </td>
-            <td>Average Rating:</td>
+            <td>Submitted By: <%= lifehack.creator.first_name %></td>
+            <td>Number of Ratings: <%= lifehack.reviews.count %></td>
+            <td>Average Rating: <%= lifehack.avg_review_rating %></td>
             <td>Description: <%= lifehack.short_description %> ... </td>
           </tr>
         </tbody>

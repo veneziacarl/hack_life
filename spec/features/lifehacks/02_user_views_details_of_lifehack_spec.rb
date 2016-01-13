@@ -15,6 +15,8 @@ feature "user sees the details of a lifehack" do
     expect(page).to have_content(lifehack.description)
     expect(page).to have_content(lifehack.creator.first_name)
     expect(page).to have_content(lifehack.creator.last_name)
+    expect(page).to have_content(lifehack.avg_review_rating)
+    expect(page).to have_content(lifehack.reviews.count)
   end
 
   scenario "navigates back to index page" do

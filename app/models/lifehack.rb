@@ -41,6 +41,15 @@ class Lifehack < ActiveRecord::Base
     Lifehack.where(creator: user)
   end
 
+  def avg_review_rating
+    if reviews.empty?
+      avg = 0
+    else
+      avg = reviews.inject(0.0){ |sum, r| sum + r.rating } / reviews.size
+    end
+    sprintf "%.2f", avg
+  end
+
   paginates_per 10
 
   private

@@ -5,4 +5,6 @@ User Details
 Name: <%= current_user.full_name %>
 Email: <%= current_user.email %>
 Lifehacks: <%= render @lifehacks %>
-Reviews: <%= render @reviews %>
+<div class="reviews">
+  Reviews: <%= render @reviews %>
+</div>

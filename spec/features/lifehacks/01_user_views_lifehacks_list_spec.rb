@@ -25,6 +25,8 @@ feature "user sees list of lifehacks" do
       expect(page).to have_link(lifehack.title, exact: true)
       expect(page).to have_content(time_ago_in_words(lifehack.created_at))
       expect(page).to have_content(lifehack.creator.first_name)
+      expect(page).to have_content(lifehack.avg_review_rating)
+      expect(page).to have_content(lifehack.reviews.count)
     end
 
     expect(lifehacks.last.title).to appear_before(lifehacks.first.title)

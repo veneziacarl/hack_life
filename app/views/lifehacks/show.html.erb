@@ -2,7 +2,9 @@
 <h5><%= @lifehack.title %></h5>
 <p>
   <%= @lifehack.description %>
-  <%= "#{@lifehack.creator.first_name} #{@lifehack.creator.last_name}" %>
+  <%= @lifehack.creator.full_name %>
+  # of Reviews: <%= @lifehack.reviews.count %>
+  Average Rating: <%= @lifehack.avg_review_rating %>
 </p>
 
 <%= link_to 'Home', lifehacks_path %>
