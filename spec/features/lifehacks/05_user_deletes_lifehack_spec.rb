@@ -6,13 +6,14 @@ feature 'user deletes lifehack', %{
 } do
 
   # Acceptance Criteria:
-  # [] I must be able delete a lifehack from the lifehack show page
-  # [] If I am not the creator, I cannot delete the lifehack
+  # [√] I must be able delete a lifehack from the lifehack show page
+  # [√] If I am not the creator, I cannot delete the lifehack
   # [] All associated reviews with the lifehack must also be deleted
 
   let (:user) { FactoryGirl.create(:user) }
   let!(:lifehack) { FactoryGirl.create(:lifehack, creator: user) }
   let!(:lifehack2) { FactoryGirl.create(:lifehack, creator: user) }
+  let!(:reviews) { FactoryGirl.create_list(:review, lifehack: lifehack) }
 
   let (:user2) { FactoryGirl.create(:user) }
 
@@ -43,6 +44,4 @@ feature 'user deletes lifehack', %{
     expect(current_path).to eq(root_path)
     expect(page).to have_content(lifehack2.title)
   end
-
-  scenario 'check to see if reviews are deleted with lifehack'
 end
