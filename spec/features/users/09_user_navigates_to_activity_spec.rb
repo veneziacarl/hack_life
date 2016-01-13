@@ -3,7 +3,7 @@ require 'rails_helper'
 feature "user has an activity profile" do
   let! (:user) { FactoryGirl.create(:user) }
   let! (:lifehack) { FactoryGirl.create(:lifehack, creator: user) }
-  let! (:review) { FactoryGirl.create(:review, creator: user)}
+  let! (:review) { FactoryGirl.create(:review, creator: user) }
 
   before (:each) do
     user_sign_in(user)

@@ -45,7 +45,7 @@ class Lifehack < ActiveRecord::Base
     if reviews.empty?
       avg = 0
     else
-      avg = reviews.inject(0.0){ |sum, r| sum + r.rating } / reviews.size
+      avg = reviews.inject(0.0) { |sum, r| sum + r.rating } / reviews.size
     end
     sprintf "%.2f", avg
   end
