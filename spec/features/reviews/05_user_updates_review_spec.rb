@@ -16,7 +16,6 @@ feature 'user updates review', %{
   let!(:lifehack) { FactoryGirl.create(:lifehack, creator: user) }
   let!(:review) { FactoryGirl.create(:review, creator: user2) }
 
-
   scenario 'user sucessfully edits review' do
     user_sign_in(user2)
     click_link(lifehack.title)
