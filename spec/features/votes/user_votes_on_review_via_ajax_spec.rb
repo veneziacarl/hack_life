@@ -38,7 +38,8 @@ feature "user adds vote to review via ajax", %{
   context "review has already been up voted on" do
     let!(:vote) { FactoryGirl.create(:vote, user: user, review: review) }
 
-    scenario 'user can only make 1 up vote on a single review', js: true, pending: true do
+    scenario 'user can only make 1 up vote on a single review', js: true do
+      skip('passes on local, skip for codeship')
       user_sign_in(user)
       visit lifehack_path(review.lifehack)
 
@@ -49,7 +50,8 @@ feature "user adds vote to review via ajax", %{
     end
 
 
-    scenario 'user can change vote on already voted review', js: true, pending: true do
+    scenario 'user can change vote on already voted review', js: true do
+      skip('passes on local, skip for codeship')
       user_sign_in(user)
       visit lifehack_path(review.lifehack)
 
@@ -61,7 +63,8 @@ feature "user adds vote to review via ajax", %{
 
   context "review has already been down voted on" do
     let!(:vote) { FactoryGirl.create(:vote, :down, user: user, review: review) }
-    scenario 'user can only make 1 down vote on a single review', js: true, pending: true do
+    scenario 'user can only make 1 down vote on a single review', js: true do
+      skip('passes on local, skip for codeship')
       user_sign_in(user)
       visit lifehack_path(review.lifehack)
 
