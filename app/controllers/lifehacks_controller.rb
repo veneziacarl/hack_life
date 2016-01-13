@@ -69,7 +69,7 @@ class LifehacksController < ApplicationController
 
   def authorize_user!
     user = Lifehack.find(params[:id]).creator
-    unless current_user == user
+    unless current_user == user || current_user.role == 'admin'
       flash[:alert] = "You are not the Authorized User"
       redirect_to after_sign_in_path_for(current_user)
     end

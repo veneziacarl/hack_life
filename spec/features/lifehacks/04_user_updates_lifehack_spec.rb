@@ -18,7 +18,6 @@ feature 'user updates lifehack', %{
   scenario 'navigate to lifehack show page and edit lifehack' do
     user_sign_in(user)
     click_link(lifehack.title)
-    save_and_open_page
 
     expect(current_path).to eq(lifehack_path(lifehack))
 
@@ -43,7 +42,6 @@ feature 'user updates lifehack', %{
     user_sign_in(user)
     click_link(lifehack.title)
     click_link('Edit Lifehack')
-    save_and_open_page
 
     expect(find_field('lifehack[title]').value).to eq(lifehack.title)
     expect(find_field('lifehack[description]').value).to eq(lifehack.description)
