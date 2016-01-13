@@ -6,7 +6,7 @@ class Lifehack < ActiveRecord::Base
 
   def short_description
     desired_length = 40
-    unless ( description.nil? || description.strip.empty? )
+    unless description.nil? || description.strip.empty?
       short_descr = ""
       description.split('').each_with_index.map do |char, index|
         short_descr << char if index < desired_length
