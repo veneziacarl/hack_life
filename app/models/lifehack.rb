@@ -41,6 +41,7 @@ class Lifehack < ActiveRecord::Base
     Lifehack.where(creator: user)
   end
 
+  paginates_per 10
 
   private
 

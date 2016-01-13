@@ -35,8 +35,10 @@ gem 'foundation-rails'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'carrierwave'
+gem 'kaminari'
 gem 'fog'
 gem 'active_model_serializers'
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,13 +46,11 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'launchy'
+  gem 'launchy', require: false
   gem 'factory_girl_rails'
   gem 'valid_attribute'
-  gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
   gem 'orderly'
-  gem 'poltergeist'
 end
 
 group :development do
@@ -60,6 +60,8 @@ end
 
 group :test do
   gem 'coveralls', require: false
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :production do
