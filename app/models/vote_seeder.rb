@@ -17,7 +17,7 @@ class VoteSeeder
     end
     other_users = users - up_vote_users
     other_users_count = other_users.count
-    down_vote_users = other_users.sample((other_users_count/2).floor)
+    down_vote_users = other_users.sample((other_users_count / 2).floor)
     down_vote_users.each do |user|
       FactoryGirl.create(:vote, :down, review: review, user: user)
     end
