@@ -21,8 +21,8 @@ FactoryGirl.define do
         "#{UserSeeder.fake_email[1]}#{n}#{UserSeeder.fake_email[2]}"
       end
       profile_photo do
-        Rack::Test::UploadedFile.new(File.join(
-          Rails.root, 'spec', 'support', 'images', UserSeeder.fake_photo))
+        Rack::Test::UploadedFile.new(
+          File.join(Rails.root, 'spec', 'support', 'images', UserSeeder.f_phot))
       end
     end
 

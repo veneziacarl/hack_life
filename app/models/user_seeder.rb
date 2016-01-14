@@ -10,7 +10,7 @@ class UserSeeder
     email
   end
 
-  def self.fake_photo
+  def self.f_phot
     dog_or_cat = ["dog", "cat"]
     "#{dog_or_cat.sample}#{rand(9) + 1}.jpeg"
   end

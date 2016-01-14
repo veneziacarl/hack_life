@@ -15,7 +15,7 @@ RSpec.describe UserSeeder, type: :model do
 
   it 'creates a photo' do
     5.times do
-      expect(UserSeeder.fake_photo.match(/(dog|cat)\d\.jpeg/)).to_not be_nil
+      expect(UserSeeder.f_phot.match(/(dog|cat)\d\.jpeg/)).to_not be_nil
     end
   end
 end
