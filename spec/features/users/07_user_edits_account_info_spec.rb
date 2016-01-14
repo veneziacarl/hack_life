@@ -95,4 +95,18 @@ feature "edit account details" do
     expect(page).to_not have_css("img[src*='photo.png']")
     expect(page).to have_css("img[src*='NAF-logo.png']")
   end
+
+  scenario "user cannot update other profiles" do
+    click_link('Sign Out')
+    user_sign_in(FactoryGirl.create(:user))
+    visit lifehack_path(lifehack)
+    within ".review-#{review.id}" do
+      click_link review.creator.full_name
+    end
+
+    expect(current_path).to eq(user_path(review.creator))
+    expect(page).to_not have_link('Update Account Information')
+    expect(page).to have_content("Name: #{review.creator.full_name}")
+    expect(page).to have_content("Email: #{review.creator.email}")
+  end
 end

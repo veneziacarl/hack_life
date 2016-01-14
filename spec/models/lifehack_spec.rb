@@ -26,7 +26,7 @@ RSpec.describe Lifehack, type: :model do
     expect(search_result.length).to eq(2)
 
     search_result = Lifehack.search_all(hack1.description.split('').pop)
-    expect(search_result.length).to eq(2)
+    expect(search_result.length).to eq(1)
 
     search_result = Lifehack.search_all('kNOt')
     expect(search_result.length).to eq(2)

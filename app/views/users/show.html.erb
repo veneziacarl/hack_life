@@ -1,9 +1,11 @@
-<%= link_to 'Update Account Information', edit_user_registration_path %>
+<% if current_user == @user %>
+  <%= link_to 'Update Account Information', edit_user_registration_path %>
+<% end %>
 
 User Details
 <hr />
-Name: <%= current_user.full_name %>
-Email: <%= current_user.email %>
+Name: <%= @user.full_name %>
+Email: <%= @user.email %>
 Lifehacks: <%= render @lifehacks %>
 <div class="reviews">
   Reviews: <%= render @reviews %>
