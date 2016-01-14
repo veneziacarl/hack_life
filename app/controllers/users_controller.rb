@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     @lifehacks = Lifehack.where(creator_id: params[:id])
     @reviews = Review.where(creator_id: params[:id])
   end
