@@ -1,4 +1,4 @@
-.form_text {
+.form-text {
   float: left;
   font-size: 15px;
   font-weight: bold;
@@ -10,69 +10,67 @@
   padding: rem-calc(50);
 }
 
-  .panel {
+.panel {
 
-      h5 {
+  h5 {
+    font-size: 30px;
+    text-align: center;
+  }
 
-        font-size: 30px;
-        text-align: center;
-      }
-      h2 {
+  h2 {
     border-style: double;
     color: $primary-color;
     font-size: 60px;
     text-align: center;
     }
 
-    table tr td {
-      background-color: $smoke;
-      padding: 13px 0.875rem 13px 2.875rem;
-      }
+  table tr td {
+    background-color: $smoke;
+    padding: 13px 0.875rem 13px 2.875rem;
+  }
 
-    .creator-name {
-      padding: 0;
-      }
+  .creator-name {
+    padding: 0;
+  }
 
-    .creator-image {
-      padding: 5;
-      }
+  .creator-image {
+    padding: 5;
+  }
 
-    .lifehack-description {
-      font-size: 20px;
-    }
+  .lifehack-description {
+    font-size: 20px;
+  }
+}
 
-    }
+.description   {
+  p {
+    color: $primary-color;
+    font-size: 50px;
+    padding: 25px 15px 100px 20px;
+    text-align: justify;
+    width: 300px;
+  }
 
-  .description   {
-    p {
-      text-align: justify;
-      color: $primary-color;
-      font-size: 50px;
-      padding: 25px 15px 100px 20px;
-      width: 300px;
-    }
+  table tr th {
+    background-color: $smoke;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px 5.875rem 21px 4.875rem;
+    text-align: center;
+  }
 
-    table tr th {
-      background-color: $smoke;
-      font-size: 18px;
-      margin-right: auto;
-      margin-left: auto;
-      padding: 3px 5.875rem 21px 4.875rem;
-      text-align: center;
-    }
+  table tr td {
 
-    table tr td {
-
-      background-color: $smoke;
-      font-size: 15px;
-      margin-right: auto;
-      margin-left: auto;
-      padding: 1px 3.875rem 1px 2.875rem;
-      text-align: center;
-
-    }
+    background-color: $smoke;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1px 3.875rem 1px 2.875rem;
+    text-align: center;
 
   }
+}
 
   .profile-img-index {
     border-color: $gray;
@@ -84,24 +82,24 @@
 
 
 .button {
-  border-radius: 28px;
   border: 1px solid #18ab29;
+  border-radius: 28px;
   display:inline-block;
   font-size: 15px;
   padding: 12px 20px
 }
 
 .actions .button {
-  border-radius: 28px;
   border: 1px solid #18ab29;
+  border-radius: 28px;
   display: inline-block;
   font-size: 15px;
   padding: 12px 20px;
 }
 
 .top-bar .button {
-  border-radius: 28px;
   border: 1px solid $white;
+  border-radius: 28px;
   display: inline-block;
   font-size: 15px;
   font-weight: normal;
@@ -110,9 +108,9 @@
 }
 
 .add-lifehack {
-	border-radius: 28px;
-	border: 1px solid #18ab29;
-	display: inline-block;
-	font-size: 15px;
-	padding: 12px 20px
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  font-size: 15px;
+  padding: 12px 20px;
 }

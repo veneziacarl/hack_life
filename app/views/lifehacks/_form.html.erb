@@ -2,10 +2,10 @@
 
 <%= form_for [@lifehack] do |f| %>
 
-  <%= f.label :title, class:'form_text' %>
+  <%= f.label :title, class:'form-text' %>
   <%= f.text_field :title %>
 
-  <%= f.label :description, class:'form_text' %>
+  <%= f.label :description, class:'form-text' %>
   <%= f.text_field :description %>
 
   <%= f.hidden_field :creator, value: current_user %>
