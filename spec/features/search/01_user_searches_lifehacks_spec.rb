@@ -34,7 +34,7 @@ feature 'user searches lifehack', %{
     visit lifehacks_path
     fill_in 'search-all', with: 'how to'
     click_button 'Search'
- 
+
     expect(page).to have_content('1 result(s) found')
     expect(page).to have_content(lifehack.title)
   end

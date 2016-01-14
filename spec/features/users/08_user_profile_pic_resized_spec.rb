@@ -18,7 +18,7 @@ feature "profile photo resizing" do
     img_height = page.evaluate_script("$('nav ul.right img')[0].clientHeight")
     img_width = page.evaluate_script("$('nav ul.right img')[0].clientWidth")
 
-    expect(img_height).to eq(100)
-    expect(img_width).to eq(100)
+    expect(img_height).to eq(36)
+    expect(img_width).to eq(36)
   end
 end

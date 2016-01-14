@@ -8,21 +8,21 @@
 }
 
 .has-form {
- padding: 0px 0px 0px 0px;
+  padding: 0;
 }
 
 .submit {
- padding: 0px 0px 0px 0px;
+  padding: 0;
 }
 
 .profile-info {
-  .profile_img {
-  border-radius: 50%;
-  width: 40px;
+  .profile-img {
+    border-radius: 50%;
+    width: 40px;
   }
 
-  .profile_name {
-    color: white;
+  .profile-name {
+    color: $white;
     font-size:15px;
   }
 }

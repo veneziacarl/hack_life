@@ -32,8 +32,8 @@
          </li>
          <li>
            <div class="profile-info">
-             <%= link_to 'Welcome ' + current_user.first_name, user_path(current_user), :class => "profile_name" %>
-             <%= image_tag(current_user.profile_photo, :class => "profile_img") %>
+             <%= link_to 'Welcome ' + current_user.first_name, user_path(current_user), :class => "profile-name" %>
+             <%= image_tag(current_user.profile_photo, :class => "profile-img") %>
            </div>
          </li>
          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
