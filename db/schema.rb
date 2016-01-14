@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111160743) do
+ActiveRecord::Schema.define(version: 20160114160200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "lifehacks", force: :cascade do |t|
     t.string   "title",       null: false
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "creator_id",  null: false
+    t.text     "url"
   end
 
   add_index "lifehacks", ["creator_id"], name: "index_lifehacks_on_creator_id", using: :btree

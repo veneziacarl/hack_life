@@ -12,7 +12,9 @@
 !/log/.keep
 /tmp
 /coverage
+
 .env
+reddit_json_structure.txt
 
 # Ignore uploaded files in test/development
 /public/uploads
