@@ -60,8 +60,8 @@ RSpec.describe Lifehack, type: :model do
   end
 
   it 'averages review ratings above 0 and rounds to 2 digits' do
-    review1 = FactoryGirl.create(:review, lifehack: hack1, rating: 3)
-    review2 = FactoryGirl.create(:review, lifehack: hack1, rating: 4)
+    FactoryGirl.create(:review, lifehack: hack1, rating: 3)
+    FactoryGirl.create(:review, lifehack: hack1, rating: 4)
 
     expect(hack1.reviews.count).to eq(2)
     expect(hack1.avg_review_rating).to eq("3.50")
