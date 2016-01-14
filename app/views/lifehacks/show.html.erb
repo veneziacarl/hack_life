@@ -1,4 +1,3 @@
-<!-- <div class="row large-12 columns  clearfix" id="index-panels"> -->
 <div class="row">
   <ul class="button medium">
     <%= link_to 'Home', lifehacks_path %>
@@ -20,10 +19,23 @@
     <h2><%= @lifehack.title %></h2>
   </div>
   <div class="row description">
-    <p>
-      <%= @lifehack.description %>
-      <%= "#{@lifehack.creator.first_name} #{@lifehack.creator.last_name}" %>
-    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Created By:</th>
+          <th># of Reviews:</th>
+          <th>Average Rating:</th>
+          <th>Updated:</th>
+        </tr>
+      </thead>
+      <tr>
+        <td><%= @lifehack.creator.full_name %></td>
+        <td><%= @lifehack.reviews.count %></td>
+        <td><%= @lifehack.avg_review_rating %></td>
+        <td><%= time_ago_in_words(@lifehack.updated_at)%> ago</td>
+      </tr>
+    </table>
+    <p><%= @lifehack.description %></p>
   </div>
 </div>
 

@@ -9,7 +9,6 @@
           <th width="200">Rating</th>
           <th>Comment</th>
           <th width="200">User</th>
-          <th width="300">Created At</th>
           <th width="400">Updated At</th>
           <th width="250">Lifehack</th>
         </tr>
@@ -45,10 +44,13 @@
         <td class="rev_score"><%= review.sum_score %></td>
         <td><%= review.rating %></td>
         <td><%= review.comment %></td>
-        <td>user</td>
+        <td><%= link_to review.creator.full_name, user_path(review.creator) %></td>
+        <td><%= time_ago_in_words(review.updated_at)%> ago</td>
         <td><%= "#{review.created_at.strftime("%m/%d/%Y")} #{review.created_at.strftime("%I:%M%p")}" %></td>
         <td><%= "#{review.updated_at.strftime("%m/%d/%Y")} #{review.updated_at.strftime("%I:%M%p")}" %></td>
-        <td><%= review.lifehack %></td>
+        <% unless current_page?(lifehack_path(review.lifehack)) %>
+          <td>Lifehack: <%= link_to review.lifehack.title, lifehack_path(review.lifehack) %>
+        </td><% end %>
       </tr>
     </tbody>
     </table>

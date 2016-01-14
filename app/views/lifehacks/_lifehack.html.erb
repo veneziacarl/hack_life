@@ -11,17 +11,18 @@
           </tr>
         </thead>
         <tbody>
+          <tr><td class="lifehack_description"><%= lifehack.short_description %></td></tr>
           <tr>
-            <td>Description: <%= lifehack.short_description %> ... </td>
-          </tr>
-          <tr>
-            <td><%= time_ago_in_words(lifehack.created_at)%></td>
-            <td>Submitted By: <%= lifehack.creator.first_name %>
-              <td>
+            <td>Updated: <%= time_ago_in_words(lifehack.updated_at)%> ago</td>
+            <td>Submitted By:
+              <td class="creator_name"><%= link_to lifehack.creator.full_name,
+                user_path(lifehack.creator) %></td>
+            </td>
+              <td class="creator_image">
                 <%= image_tag(lifehack.creator.profile_photo, :class => "profile_img_index") %>  </td>
               </td>
-            <td>Average Rating:</td>
-
+            <td>Number of Ratings: <%= lifehack.reviews.count %></td>
+            <td>Average Rating: <%= lifehack.avg_review_rating %></td>
           </tr>
         </tbody>
       </table>

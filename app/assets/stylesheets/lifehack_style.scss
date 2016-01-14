@@ -26,16 +26,51 @@
 
     table tr td {
       background-color: $smoke;
-      padding: 3px 5.875rem 6px 2.875rem;
-    }
-  }
+      padding: 13px 0.875rem 13px 2.875rem;
+      }
 
-  .description p  {
-    text-align: justify;
-    color: $primary-color;
-    font-size: 40px;
-    padding: 170px 20px 170px 20px;
-    width: 300px;
+    .creator_name {
+      padding: 0 0 0 0;
+      }
+
+    .creator_image {
+      padding: 5 5 5 5;
+      }
+
+    .lifehack_description {
+      font-size: 20px;
+    }
+
+    }
+
+  .description   {
+    p {
+      text-align: justify;
+      color: $primary-color;
+      font-size: 50px;
+      padding: 25px 15px 100px 20px;
+      width: 300px;
+    }
+
+    table tr th {
+      background-color: $smoke;
+      font-size: 18px;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 3px 5.875rem 21px 4.875rem;
+      text-align: center;
+    }
+
+    table tr td {
+
+      background-color: $smoke;
+      font-size: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 1px 3.875rem 1px 2.875rem;
+      text-align: center;
+
+    }
 
   }
 
@@ -49,6 +84,14 @@
 
 
 .button {
+  border-radius:28px;
+  border:1px solid #18ab29;
+  display:inline-block;
+  font-size:15px;
+  padding:12px 20px
+}
+
+.actions .button {
   border-radius:28px;
   border:1px solid #18ab29;
   display:inline-block;
