@@ -5,8 +5,7 @@
   Rating: <%= review.rating %>
   Comment: <%= review.comment %>
   User: <%= link_to review.creator.full_name, user_path(review.creator) %>
-  Created At: <%= review.created_at.strftime("%m/%d/%Y") %> <%= review.created_at.strftime("%I:%M%p") %>
-  Updated At: <%= review.updated_at.strftime("%m/%d/%Y") %> <%= review.updated_at.strftime("%I:%M%p") %>
+  Updated: <%= time_ago_in_words(review.updated_at)%> ago
 
   <div class="score">
     Score: <%= review.sum_score %>

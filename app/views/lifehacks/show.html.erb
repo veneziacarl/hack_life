@@ -5,6 +5,8 @@
   <%= @lifehack.creator.full_name %>
   # of Reviews: <%= @lifehack.reviews.count %>
   Average Rating: <%= @lifehack.avg_review_rating %>
+  Updated: <%= time_ago_in_words(@lifehack.updated_at)%> ago
+
 </p>
 
 <%= link_to 'Home', lifehacks_path %>
