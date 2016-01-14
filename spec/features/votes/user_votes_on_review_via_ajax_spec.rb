@@ -21,7 +21,8 @@ feature "user adds vote to review via ajax", %{
 
     click_button '+1'
 
-    expect(page).to have_content("Score: 1")
+    expect(page).to have_content("Score")
+    expect(page).to have_content("1")
     expect(page).to_not have_content("Vote cast!")
   end
 
@@ -31,7 +32,8 @@ feature "user adds vote to review via ajax", %{
 
     click_button '-1'
 
-    expect(page).to have_content("Score: -1")
+    expect(page).to have_content("Score")
+    expect(page).to have_content('-1')
     expect(page).to_not have_content("Vote cast!")
   end
 
@@ -46,7 +48,8 @@ feature "user adds vote to review via ajax", %{
       click_button '+1'
 
       expect(page).to have_content('You have already upvoted this review!')
-      expect(page).to have_content("Score: 1")
+      expect(page).to have_content("Score")
+      expect(page).to have_content("1")
     end
 
 
@@ -57,7 +60,8 @@ feature "user adds vote to review via ajax", %{
 
       click_button '-1'
 
-      expect(page).to have_content("Score: -1")
+      expect(page).to have_content("Score")
+      expect(page).to have_content("-1")
     end
   end
 
@@ -71,7 +75,8 @@ feature "user adds vote to review via ajax", %{
       click_button '-1'
 
       expect(page).to have_content('You have already downvoted this review!')
-      expect(page).to have_content("Score: -1")
+      expect(page).to have_content("Score")
+      expect(page).to have_content("-1")
     end
   end
 end

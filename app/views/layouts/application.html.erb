@@ -44,20 +44,23 @@
      </ul>
      <ul class="right" id="search-bar">
        <li class="has-form">
-         <div class="row collapse">
-           <div class="submit small-2 columns">
-             <%= submit_tag("Search") %>
-           </div>
+         <!-- <div class="row collapse"> -->
            <div class="small-10 columns">
              <li class="divider show-for-small"></li>
               <li class="has-form">
              <%= form_tag(search_lifehacks_path, method: "get") do %>
-             <%= text_field_tag(:search) %>
+             <%= text_field_tag(:"search[all]", nil, placeholder: "enter keyword", id: "search-all") %>
+              <div>
+                <%= submit_tag("Search", :class => "button")%>
+                  <div class="button">
+                    <%= link_to 'Advanced', search_lifehacks_path(search: {all: ""}) %>
+                  </div>
+              </div>
            </li>
             </div>
            <% end %>
          </li>
-      </div>
+    </ul>
     </section>
     </nav>
 

@@ -10,25 +10,35 @@
   padding: rem-calc(50);
 }
 
-.lifehack_link  {
-  color: $primary-color;
-  font-size: 50px;
-  text-align: center;
-}
-  .panel h2 {
+  .panel {
+
+      h5 {
+
+        font-size: 30px;
+        text-align: center;
+      }
+      h2  {
     border-style: double;
     color: $primary-color;
     font-size: 60px;
     text-align: center;
+    }
+
+    table tr td {
+      background-color: $smoke;
+      padding: 3px 5.875rem 6px 2.875rem;
+    }
   }
 
-p {
-  text-align: justify;
-  color: $primary-color;
-  font-size: 25px;
-}
+  .description p  {
+    text-align: justify;
+    color: $primary-color;
+    font-size: 40px;
+    padding: 170px 20px 170px 20px;
+    width: 300px;
 
-.profile-info {
+  }
+
   .profile_img_index {
     border-color: $gray;
     border-radius: 50%;
@@ -36,4 +46,30 @@ p {
     border-width: 1px;
     width: 50px;
   }
+
+
+.button {
+  border-radius:28px;
+  border:1px solid #18ab29;
+  display:inline-block;
+  font-size:15px;
+  padding:12px 20px
+}
+
+.top-bar .button {
+  border-radius:28px;
+  border:1px solid $white;
+  display:inline-block;
+  font-size:15px;
+  font-weight: normal;
+  padding:3px 30px
+
+}
+
+.add_lifehack {
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	font-size:15px;
+	padding:12px 20px
 }

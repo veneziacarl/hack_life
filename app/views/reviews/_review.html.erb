@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr>
+      <tr class="rev_row">
         <td>
           <div class="row">
             <% if user_signed_in? %>
@@ -42,7 +42,7 @@
             <% end %>
           </div>
         </td>
-        <td><%= review.sum_score %></td>
+        <td class="rev_score"><%= review.sum_score %></td>
         <td><%= review.rating %></td>
         <td><%= review.comment %></td>
         <td>user</td>
