@@ -1,0 +1,8 @@
+<%= link_to 'Update Account Information', edit_user_registration_path %>
+
+User Details
+<hr />
+Name: <%= current_user.full_name %>
+Email: <%= current_user.email %>
+Lifehacks: <%= render @lifehacks %>
+Reviews: <%= render @reviews %>

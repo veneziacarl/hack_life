@@ -14,9 +14,6 @@ class Api::V1::BaseController < ApplicationController
   end
 
   def api_error(status: 500, errors: [])
-    unless Rails.env.production?
-      logger.error errors.full_messages if errors.respond_to? :full_messages
-    end
     return head status: status if errors.empty?
 
     render json: errors.to_json, status: status

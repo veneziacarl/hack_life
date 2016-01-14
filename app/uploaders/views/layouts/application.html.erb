@@ -25,13 +25,24 @@
      <!-- Right Nav Section -->
      <ul class="right">
        <% if user_signed_in? %>
-        <li><img src="<%= current_user.profile_photo %>"></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></ul><li>
-        <% end %>
+         <li>
+           <% if current_user.admin? %>
+             <%= link_to 'Admin Access', users_path %>
+           <% end %>
+         </li>
+         <li>
+           <div class="profile-info">
+             <%= link_to 'Welcome ' + current_user.first_name, user_path(current_user), :class => "profile_name" %>
+             <%= image_tag(current_user.profile_photo, :class => "profile_img") %>
+           </div>
+         </li>
+         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+       <% else %>
+         <li><%= link_to 'Sign In', new_user_session_path %></li>
+         <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+       <% end %>
      </ul>
+
      <ul class="right">
        <li class="has-form">
          <div class="row collapse">
@@ -50,16 +61,20 @@
         </ul>
       </div>
     </section>
+    </nav>
 
-    <div class="row">
+
+
+    <div class="messages">
       <% flash.each do |type, message| %>
         <div class="flash flash-<%= type %>">
           <%= message %>
         </div>
       <% end %>
+    </div>
+
       <div class="flash flash-ajax">
       </div>
-    </div>
 
     <div class="row">
       <%= yield %>

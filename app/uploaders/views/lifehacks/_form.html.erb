@@ -1,0 +1,15 @@
+<div class=inline">
+
+<%= form_for [@lifehack] do |f| %>
+
+  <%= f.label :title, class:'form_text' %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description, class:'form_text' %>
+  <%= f.text_field :description %>
+
+  <%= f.hidden_field :creator, value: current_user %>
+
+  <%= f.submit 'Add Lifehack', class: 'button small'%>
+<% end %>
+</div>

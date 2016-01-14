@@ -90,7 +90,7 @@ $include-html-global-classes: $include-html-classes;
 // $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 // $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
-
+   $font-family-roboto: 'Roboto Slab', serif;
 // We use these to define default font weights
 // $font-weight-normal: normal;
 // $font-weight-bold: bold;
@@ -101,7 +101,7 @@ $white: #ffffff;
 // $vapor       : #F6F6F6;
 // $white-smoke : #F5F5F5;
 // $silver      : #EFEFEF;
-// $smoke       : #EEEEEE;
+$smoke       : #EEEEEE;
 // $gainsboro   : #DDDDDD;
 // $iron        : #CCCCCC;
 // $base        : #AAAAAA;
@@ -113,10 +113,14 @@ $white: #ffffff;
 // $tuatara     : #444444;
 // $oil         : #333333;
 // $jet         : #222222;
-// $black       : #000000;
+$black       : #000000;
+// $turquoise    : #ABDCD6;
+$gray         : #cccccc;
 
-// We use these as default colors throughout
-$primary-color: #008cba;
+ // We use these as default colors throughout
+
+$primary-color:$black;
+// #5BC5BF;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -124,9 +128,9 @@ $primary-color: #008cba;
 // $info-color: #a0d3e8;
 
 // We use these to control various global styles
-// $body-bg: $white;
+$body-bg: $smoke;
 // $body-font-color: $jet;
-// $body-font-family: $font-family-sans-serif;
+$body-font-family: $font-family-roboto;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -437,37 +441,37 @@ $accordion-content-padding: rem-calc(0);
 // 05. Buttons
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
+$button-tny: rem-calc(5);
 // $button-sml: rem-calc(14);
 // $button-med: rem-calc(16);
 // $button-lrg: rem-calc(18);
 
 // We use this to control the display property.
 // $button-display: inline-block;
-// $button-margin-bottom: rem-calc(20);
+$button-margin-bottom: rem-calc(8);
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
-// $button-font-color: $white;
+$button-font-color: $primary-color;
 // $button-font-color-alt: $oil;
 // $button-font-tny: rem-calc(11);
-// $button-font-sml: rem-calc(13);
+$button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
 // $button-font-weight: $font-weight-normal;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+$button-function-factor: -20%;
 
 // We use these to control button border styles.
-// $button-border-width: 0;
-// $button-border-style: solid;
-// $button-bg-color: $primary-color;
-// $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-bg-color: $smoke;
+$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
@@ -989,23 +993,23 @@ $accordion-content-padding: rem-calc(0);
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-// $panel-bg: scale-color($white, $lightness: -5%);
-// $panel-border-style: solid;
-// $panel-border-size: 1px;
+$panel-bg: transparent;
+$panel-border-style: solid;
+$panel-border-size: 1px;
 // $callout-panel-bg: scale-color($primary-color, $lightness: 94%);
 
 // We use this % to control how much we darken things on hover
-// $panel-border-color: scale-color($panel-bg, $lightness: -11%);
+$panel-border-color: $gray;
+// scale-color($panel-bg, $lightness: -11%);
 
 // We use these to set default inner padding and bottom margin
 // $panel-margin-bottom: rem-calc(20);
 $panel-padding: rem-calc(10);
 
 // We use these to set default font colors
-// $panel-font-color: $oil;
-// $panel-font-color-alt: $white;
+$panel-font-color: $primary-color;
 
-// $panel-header-adjust: true;
+// $panel-header-a  djust: true;
 // $callout-panel-link-color: $primary-color;
 // $callout-panel-link-color-hover: scale-color($callout-panel-link-color, $lightness: -14%);
 
@@ -1295,7 +1299,8 @@ $side-nav-link-padding: rem-calc(4 40 7 14);
 // $include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
-$table-bg: scale-color($white, $lightness: -5%);
+$table-bg: transparent;
+// scale-color($white, $lightness: -5%)
 // $table-even-row-bg: $snow;
 
 // These control the table cell border style
@@ -1304,11 +1309,11 @@ $table-border-size: 0;
 // $table-border-color: $gainsboro;
 
 // These control the table head styles
-// $table-head-bg: $white-smoke;
+$table-head-bg: transparent;
 // $table-head-font-size: rem-calc(14);
-// $table-head-font-color: $jet;
+// $table-head-font-color: $turquoise;
 // $table-head-font-weight: $font-weight-bold;
-// $table-head-padding: rem-calc(8 10 10);
+$table-head-padding: rem-calc(0 30 0 30);
 
 // These control the table foot styles
 // $table-foot-bg: $table-head-bg;
@@ -1324,10 +1329,10 @@ $table-border-size: 0;
 // $table-caption-font-weight: bold;
 
 // These control the row padding and font styles
-$table-row-padding: rem-calc(0 10 0 0);
-$table-row-font-size: rem-calc(10);
+$table-row-padding: rem-calc(0 30 0 30);
+$table-row-font-size: rem-calc(15);
 // $table-row-font-color: $jet;
-// $table-line-height: rem-calc(18);
+// $table-line-height: rem-calc(10);
 
 // These are for controlling the layout, display and margin of tables
 // $table-layout: auto;
@@ -1408,7 +1413,7 @@ $table-row-font-size: rem-calc(10);
 
 // Height and margin
 // $topbar-height: rem-calc(45);
-$topbar-margin-bottom: rem-calc(20);
+$topbar-margin-bottom: rem-calc(50);
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;

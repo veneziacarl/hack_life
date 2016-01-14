@@ -1,0 +1,39 @@
+.form_text {
+  float: left;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.lifehack_details {
+  max-width: 300rem;
+  padding: rem-calc(50);
+}
+
+.lifehack_link  {
+  color: $primary-color;
+  font-size: 50px;
+  text-align: center;
+}
+  .panel h2 {
+    border-style: double;
+    color: $primary-color;
+    font-size: 60px;
+    text-align: center;
+  }
+
+p {
+  text-align: justify;
+  color: $primary-color;
+  font-size: 25px;
+}
+
+.profile-info {
+  .profile_img_index {
+    border-color: $gray;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    width: 50px;
+  }
+}

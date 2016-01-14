@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="review review-<%= review.id %>">
+    <table>
+      <thead>
+        <tr>
+          <th width="100">Votes</th>
+          <th width="200">Score </th>
+          <th width="200">Rating</th>
+          <th>Comment</th>
+          <th width="200">User</th>
+          <th width="300">Created At</th>
+          <th width="400">Updated At</th>
+          <th width="250">Lifehack</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <div class="row">
+            <% if user_signed_in? %>
+              <% if current_user.has_vote?(review) %>
+                <div class="vote_buttons_update">
+                  <%= button_to '+1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
+                  <%= button_to '-1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
+                </div>
+              <% else %>
+                <div class="vote_buttons_create">
+                  <%= button_to '+1', review_votes_path(review),
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
+                  <%= button_to '-1', review_votes_path(review),
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
+                </div>
+              <% end %>
+                <% if current_user.admin? %>
+                  <div class="review-admin-panel">
+                    <%= button_to "Delete Review", lifehack_review_path(@lifehack, review), method: :delete %>
+                  </div>
+                <% end %>
+            <% end %>
+          </div>
+        </td>
+        <td><%= review.sum_score %></td>
+        <td><%= review.rating %></td>
+        <td><%= review.comment %></td>
+        <td>user</td>
+        <td><%= "#{review.created_at.strftime("%m/%d/%Y")} #{review.created_at.strftime("%I:%M%p")}" %></td>
+        <td><%= "#{review.updated_at.strftime("%m/%d/%Y")} #{review.updated_at.strftime("%I:%M%p")}" %></td>
+        <td><%= review.lifehack %></td>
+      </tr>
+    </tbody>
+    </table>
+
+<!-- <div class="row">
+  <% if user_signed_in? %>
+    <% if current_user.has_vote?(review) %>
+      <div class="vote_buttons_update">
+        <%= button_to '+1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
+          params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
+        <%= button_to '-1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
+          params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
+      </div>
+    <% else %>
+      <div class="vote_buttons_create">
+        <%= button_to '+1', review_votes_path(review),
+          params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
+        <%= button_to '-1', review_votes_path(review),
+          params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
+      </div>
+    <% end %>
+      <% if current_user.admin? %>
+        <div class="review-admin-panel">
+          <%= button_to "Delete Review", lifehack_review_path(@lifehack, review), method: :delete %>
+        </div>
+      <% end %>
+  <% end %>
+</div> -->
+</div>
+</div>

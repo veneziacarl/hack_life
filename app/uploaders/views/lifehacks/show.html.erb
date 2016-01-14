@@ -1,0 +1,35 @@
+<!-- <div class="row large-12 columns  clearfix" id="index-panels"> -->
+<div class="row">
+  <ul class="button medium">
+    <%= link_to 'Home', lifehacks_path %>
+  </ul>
+  <ul class="button medium">
+    <% if user_signed_in? %>
+    <%= link_to 'Add Review', new_lifehack_review_path(@lifehack) %>
+    <% if current_user.admin? %>
+    <div class="lifehack-admin-panel">
+      <%= button_to "Delete Lifehack", lifehack_path, method: :delete %>
+    </div>
+    <% end %>
+    <% else %>
+    You must sign in to add a review
+    <% end %>
+  </ul>
+</div>
+  <div class="panel lifehack_title large-12 columns ">
+    <h2><%= @lifehack.title %></h2>
+  </div>
+  <div class="row">
+    <p class="description">
+      <%= @lifehack.description %>
+      <%= "#{@lifehack.creator.first_name} #{@lifehack.creator.last_name}" %>
+    </p>
+  </div>
+</div>
+
+
+<% if !@lifehack.reviews.nil? %>
+  <%= render @reviews %>
+<% else %>
+  No reviews yet!
+<% end %>
