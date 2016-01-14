@@ -23,3 +23,4 @@ lpt_data = RedditData.new('LifeProTips')
 lpt_data.seed_db
 
 ReviewSeeder.seed_reviews
+VoteSeeder.seed_votes
