@@ -1,14 +1,8 @@
 class ReviewSeeder
   FAKESTUFF = [
-    Faker::Avatar.image,
-    Faker::University.name,
-    Faker::Internet.email,
     Faker::Hacker.say_something_smart,
-    Faker::Lorem.sentence,
-    Faker::Company.catch_phrase,
-    Faker::Company.bs,
-    Faker::Commerce.product_name,
-    Faker::Commerce.department(3)
+    Faker::Lorem.paragraph,
+    Faker::Company.catch_phrase
   ]
 
   def self.seed_reviews(num = 10)
