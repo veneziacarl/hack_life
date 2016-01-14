@@ -22,7 +22,7 @@ FactoryGirl.define do
       end
       profile_photo do
         Rack::Test::UploadedFile.new(File.join(
-        Rails.root, 'spec', 'support', 'images', UserSeeder.fake_photo))
+          Rails.root, 'spec', 'support', 'images', UserSeeder.fake_photo))
       end
     end
 
