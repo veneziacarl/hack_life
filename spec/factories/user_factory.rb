@@ -20,8 +20,10 @@ FactoryGirl.define do
       sequence(:email) do |n|
         "#{UserSeeder.fake_email[1]}#{n}#{UserSeeder.fake_email[2]}"
       end
-      profile_photo { Rack::Test::UploadedFile.new(File.join(
-        Rails.root, 'spec', 'support', 'images', UserSeeder.fake_photo)) }
+      profile_photo do
+        Rack::Test::UploadedFile.new(File.join(
+        Rails.root, 'spec', 'support', 'images', UserSeeder.fake_photo))
+      end
     end
 
     trait :admin do

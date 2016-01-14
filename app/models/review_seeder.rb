@@ -20,7 +20,7 @@ class ReviewSeeder
       rating = rand(5) + 1
       user = User.all.sample
       Review.create!(rating: rating, comment: ReviewSeeder.make_comment,
-        lifehack: lifehack, creator: user)
+                      lifehack: lifehack, creator: user)
     end
   end
 
