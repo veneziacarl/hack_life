@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'orderly'
 
 feature "user adds vote to review via ajax", %{
   As a User
@@ -24,6 +25,7 @@ feature "user adds vote to review via ajax", %{
     expect(page).to have_content("Score")
     expect(page).to have_content("1")
     expect(page).to_not have_content("Vote cast!")
+    expect(p)
   end
 
   scenario 'user downvotes review', js: true do
@@ -44,7 +46,6 @@ feature "user adds vote to review via ajax", %{
       skip('passes on local, skip for codeship')
       user_sign_in(user)
       visit lifehack_path(review.lifehack)
-
       click_button '+1'
 
       expect(page).to have_content('You have already upvoted this review!')
@@ -57,7 +58,6 @@ feature "user adds vote to review via ajax", %{
       skip('passes on local, skip for codeship')
       user_sign_in(user)
       visit lifehack_path(review.lifehack)
-
       click_button '-1'
 
       expect(page).to have_content("Score")

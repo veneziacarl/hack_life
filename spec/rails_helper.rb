@@ -10,6 +10,7 @@ require 'capybara/poltergeist'
 require 'factory_girl_rails'
 require 'valid_attribute'
 require 'spec_helper'
+require 'webmock/rspec'
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 Capybara.javascript_driver = :poltergeist
 # Capybara.register_driver :poltergeist do |app|

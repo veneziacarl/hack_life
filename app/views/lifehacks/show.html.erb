@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row">
   <ul class="button medium">
     <%= link_to 'Home', lifehacks_path %>
@@ -36,13 +37,13 @@
       </tr>
     </table>
     <p><%= @lifehack.description %></p>
+    <p><%= @lifehack.url %></p>
   </div>
 </div>
 
 
 <% if !@lifehack.reviews.nil? %>
   <%= render @reviews %>
-  <%= paginate @reviews %>
 <% else %>
   No reviews yet!
 <% end %>
