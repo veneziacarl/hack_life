@@ -47,9 +47,7 @@ feature "user adds vote to review via ajax", %{
       click_button '+1'
 
       expect(page).to have_content('You have already upvoted this review!')
-      save_screenshot("capybara-js3.png")
       expect(page).to have_content("Score: 1")
-      save_screenshot("capybara-js4.png")
     end
 
 
