@@ -6,7 +6,7 @@
       <table>
         <tbody>
           <tr>
-            <td><%= time_ago_in_words(lifehack.created_at)%></td>
+            <td>Updated: <%= time_ago_in_words(lifehack.updated_at)%> ago</td>
             <td>Submitted By: <%= link_to lifehack.creator.full_name,
                 user_path(lifehack.creator) %></td>
             <td>Number of Ratings: <%= lifehack.reviews.count %></td>

@@ -23,7 +23,7 @@ feature "user sees list of lifehacks" do
     visit root_path
     lifehacks.each do |lifehack|
       expect(page).to have_link(lifehack.title, exact: true)
-      expect(page).to have_content(time_ago_in_words(lifehack.created_at))
+      expect(page).to have_content(time_ago_in_words(lifehack.updated_at))
       expect(page).to have_link(lifehack.creator.full_name)
       expect(page).to have_content(lifehack.avg_review_rating)
       expect(page).to have_content(lifehack.reviews.count)
