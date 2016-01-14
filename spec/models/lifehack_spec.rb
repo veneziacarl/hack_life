@@ -58,4 +58,14 @@ RSpec.describe Lifehack, type: :model do
     search_result = Lifehack.search_user('johN las')
     expect(search_result.length).to eq(2)
   end
+
+  it 'averages review ratings above 0 and rounds to 2 digits' do
+    FactoryGirl.create(:review, lifehack: hack1, rating: 3)
+    FactoryGirl.create(:review, lifehack: hack1, rating: 4)
+
+    expect(hack1.reviews.count).to eq(2)
+    expect(hack1.avg_review_rating).to eq("3.50")
+    expect(hack2.reviews.count).to eq(0)
+    expect(hack2.avg_review_rating).to eq("0.00")
+  end
 end

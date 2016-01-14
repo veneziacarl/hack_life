@@ -1,7 +1,10 @@
 <div class="review review-<%= review.id %>">
+  <% unless current_page?(lifehack_path(review.lifehack)) %>
+    Lifehack: <%= link_to review.lifehack.title, lifehack_path(review.lifehack) %>
+  <% end %>
   Rating: <%= review.rating %>
   Comment: <%= review.comment %>
-  User:
+  User: <%= link_to review.creator.full_name, user_path(review.creator) %>
   Created At: <%= review.created_at.strftime("%m/%d/%Y") %> <%= review.created_at.strftime("%I:%M%p") %>
   Updated At: <%= review.updated_at.strftime("%m/%d/%Y") %> <%= review.updated_at.strftime("%I:%M%p") %>
 
@@ -31,5 +34,4 @@
         </div>
       <% end %>
   <% end %>
-
 </div>
