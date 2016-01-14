@@ -25,7 +25,7 @@
             <td>Submitted By: <%= lifehack.creator.first_name %> </td>
             <td>Average Rating:</td>
             <td class="profile-info">
-                <%= image_tag(current_user.profile_photo, :class => "profile_img_index") %>
+                <%= image_tag(lifehack.creator.profile_photo, :class => "profile_img_index") %>
             </td>
           </tr>
         </tbody>
