@@ -52,6 +52,8 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
   gem 'orderly'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do

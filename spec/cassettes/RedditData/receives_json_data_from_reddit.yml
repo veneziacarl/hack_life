@@ -1,0 +1,760 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.reddit.com/r/LifeProTips.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Thu, 14 Jan 2016 20:03:23 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '10063'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d88146468849c52aea58220bd0cbc6a1e1452801803; expires=Fri, 13-Jan-17
+        20:03:23 GMT; path=/; domain=.reddit.com; HttpOnly
+      X-Ua-Compatible:
+      - IE=edge
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-Reddit-Tracking, X-Moose
+      X-Reddit-Tracking:
+      - https://pixel.redditmedia.com/pixel/of_destiny.png?v=t7wYk03ubeOrIHY%2B1GS6ED0oo1dk9VSEFvb5s1EZkOEBaVf9hoaFN22deRe7IBT7znnhfWdVoo35r5FK20P0uZN3lUOONwqU
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - max-age=0, must-revalidate
+      X-Moose:
+      - majestic
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - EXPIRED
+      Cf-Ray:
+      - 264bf1a72ef7213e-EWR
+    body:
+      encoding: UTF-8
+      string: '{"kind": "Listing", "data": {"modhash": "", "children": [{"kind": "t3",
+        "data": {"domain": "self.LifeProTips", "banned_by": null, "media_embed": {},
+        "subreddit": "LifeProTips", "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div
+        class=\"md\"&gt;&lt;p&gt;I&amp;#39;ve noticed in a few highly upvoted LPT
+        submissions many comments indicating how the sub sucks, &amp;#39;who&amp;#39;s
+        upvoting this stuff?&amp;#39; and a bunch of other negative comments. Some
+        comments even going so far to call others retarded and bash them for having
+        zero common sense.&lt;/p&gt;\n\n&lt;p&gt;If you don&amp;#39;t like it, downvote
+        and move on. I mean, I understand the need to complain about it but it turns
+        more into a circlejerk and ruins the discussion for those who actually like
+        the tip and learned from it.&lt;/p&gt;\n\n&lt;p&gt;Enough of the hivemind
+        pitchfork angry mentality please. If you want to raise your pitchfork, sharpen
+        it up and hit it hard, do so with the &lt;strong&gt;report button&lt;/strong&gt;.
+        In doing this you&amp;#39;ll quickly show the mods that, no no no, this shouldn&amp;#39;t
+        be here better than the comments will. &lt;/p&gt;\n\n&lt;p&gt;I didn&amp;#39;t
+        think the tip was fantastic either but just because many hate it and many
+        love it, doesn&amp;#39;t mean it gives the mods the right to remove on personal
+        preference. We do try and remove posts based on rule-breaking content and
+        leave the voting to you.&lt;/p&gt;\n\n&lt;p&gt;Just my two cents. Be kind
+        please...there are ways to tell someone something sucks without bashing them
+        personally.&lt;/p&gt;\n\n&lt;p&gt;Also, keep in mind troll posts aren&amp;#39;t
+        allowed so don&amp;#39;t try to be funny with submitting a troll-worthy &lt;a
+        href=\"/r/ShittyLifeProTips\"&gt;/r/ShittyLifeProTips&lt;/a&gt; post here
+        because you are likely to end up with a ban. I know sometimes people will
+        do this in attempts to mock the poorly received, highly upvoted tip but it
+        will backfire. Just a warning.&lt;/p&gt;\n\n&lt;p&gt;Edit: I expected people
+        to aim their pitchforks at me, and that&amp;#39;s fine, but just as an FYI
+        to those of you who think that we should &amp;#39;shut up and do your jobs&amp;#39;
+        please realize that this isn&amp;#39;t our jobs; we have jobs and lives outside
+        of reddit and help volunteer our time to moderate. I think some people assume
+        this is our FT job or something and are surprised to find out we&amp;#39;re
+        just like you, a redditor first and a support to a subreddit second.&lt;/p&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "selftext": "I''ve noticed in a few highly upvoted LPT submissions
+        many comments indicating how the sub sucks, ''who''s upvoting this stuff?''
+        and a bunch of other negative comments. Some comments even going so far to
+        call others retarded and bash them for having zero common sense.\n\nIf you
+        don''t like it, downvote and move on. I mean, I understand the need to complain
+        about it but it turns more into a circlejerk and ruins the discussion for
+        those who actually like the tip and learned from it.\n\nEnough of the hivemind
+        pitchfork angry mentality please. If you want to raise your pitchfork, sharpen
+        it up and hit it hard, do so with the **report button**. In doing this you''ll
+        quickly show the mods that, no no no, this shouldn''t be here better than
+        the comments will. \n\nI didn''t think the tip was fantastic either but just
+        because many hate it and many love it, doesn''t mean it gives the mods the
+        right to remove on personal preference. We do try and remove posts based on
+        rule-breaking content and leave the voting to you.\n\nJust my two cents. Be
+        kind please...there are ways to tell someone something sucks without bashing
+        them personally.\n\nAlso, keep in mind troll posts aren''t allowed so don''t
+        try to be funny with submitting a troll-worthy /r/ShittyLifeProTips post here
+        because you are likely to end up with a ban. I know sometimes people will
+        do this in attempts to mock the poorly received, highly upvoted tip but it
+        will backfire. Just a warning.\n\nEdit: I expected people to aim their pitchforks
+        at me, and that''s fine, but just as an FYI to those of you who think that
+        we should ''shut up and do your jobs'' please realize that this isn''t our
+        jobs; we have jobs and lives outside of reddit and help volunteer our time
+        to moderate. I think some people assume this is our FT job or something and
+        are surprised to find out we''re just like you, a redditor first and a support
+        to a subreddit second.", "likes": null, "suggested_sort": "confidence", "user_reports":
+        [], "secure_media": null, "link_flair_text": null, "id": "3nvnlw", "from_kind":
+        null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "favoritehello", "media": null, "score": 1399, "approved_by":
+        null, "over_18": false, "hidden": false, "num_comments": 232, "thumbnail":
+        "self", "subreddit_id": "t5_2s5oq", "hide_score": false, "edited": 1444269175.0,
+        "link_flair_css_class": null, "author_flair_css_class": null, "downs": 0,
+        "secure_media_embed": {}, "saved": false, "removal_reason": null, "stickied":
+        true, "from": null, "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/3nvnlw/mod_post_put_down_your_pitchforks_and_be_civil/",
+        "locked": false, "name": "t3_3nvnlw", "created": 1444275536.0, "url": "https://www.reddit.com/r/LifeProTips/comments/3nvnlw/mod_post_put_down_your_pitchforks_and_be_civil/",
+        "author_flair_text": null, "quarantine": false, "title": "Mod Post: Put down
+        your pitchforks and be civil.", "created_utc": 1444246736.0, "distinguished":
+        "moderator", "mod_reports": [], "visited": false, "num_reports": null, "ups":
+        1399}}, {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by":
+        null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!--
+        SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;Hullo &lt;a href=\"/r/LifeProTips\"&gt;/r/LifeProTips&lt;/a&gt;
+        :)&lt;/p&gt;\n\n&lt;h1&gt;Awhile ago I started putting together a wiki of
+        a few things, &lt;a href=\"https://www.reddit.com/r/LifeProTips/wiki/commonlpts\"&gt;LINK
+        HERE&lt;/a&gt;:&lt;/h1&gt;\n\n&lt;h2&gt;1) Commonly Submitted LPTs&lt;/h2&gt;\n\n&lt;h2&gt;2)
+        Misconceptions&lt;/h2&gt;\n\n&lt;h2&gt;3) Interesting LPT Discussion Threads
+        (Received a lot of positive feedback, discussion and some were gilded.)&lt;/h2&gt;\n\n&lt;h2&gt;4)
+        Computer Shortcuts/Tips&lt;/h2&gt;\n\n&lt;h1&gt;I figure why not get feedback
+        from the community? If you have any suggestions on what to add to the list,
+        please comment down below.&lt;/h1&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;",
+        "selftext": "Hullo /r/LifeProTips :)\n\n#Awhile ago I started putting together
+        a wiki of a few things, [LINK HERE](https://www.reddit.com/r/LifeProTips/wiki/commonlpts):\n\n##1)
+        Commonly Submitted LPTs\n\n##2) Misconceptions\n\n##3) Interesting LPT Discussion
+        Threads (Received a lot of positive feedback, discussion and some were gilded.)\n\n##4)
+        Computer Shortcuts/Tips\n\n#I figure why not get feedback from the community?
+        If you have any suggestions on what to add to the list, please comment down
+        below.", "likes": null, "suggested_sort": "confidence", "user_reports": [],
+        "secure_media": null, "link_flair_text": null, "id": "3o1t72", "from_kind":
+        null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "favoritehello", "media": null, "score": 521, "approved_by":
+        null, "over_18": false, "hidden": false, "num_comments": 128, "thumbnail":
+        "self", "subreddit_id": "t5_2s5oq", "hide_score": false, "edited": false,
+        "link_flair_css_class": null, "author_flair_css_class": null, "downs": 0,
+        "secure_media_embed": {}, "saved": false, "removal_reason": null, "stickied":
+        true, "from": null, "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/3o1t72/compiling_a_list_commonly_submitted_lpts_computer/",
+        "locked": false, "name": "t3_3o1t72", "created": 1444384756.0, "url": "https://www.reddit.com/r/LifeProTips/comments/3o1t72/compiling_a_list_commonly_submitted_lpts_computer/",
+        "author_flair_text": null, "quarantine": false, "title": "Compiling a List:
+        Commonly Submitted LPTs + Computer Shortcuts/Tips", "created_utc": 1444355956.0,
+        "distinguished": "moderator", "mod_reports": [], "visited": false, "num_reports":
+        null, "ups": 521}}, {"kind": "t3", "data": {"domain": "self.LifeProTips",
+        "banned_by": null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html":
+        "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;Prevents accidentally
+        sending the email.&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;", "selftext":
+        "Prevents accidentally sending the email.", "likes": null, "suggested_sort":
+        "confidence", "user_reports": [], "secure_media": null, "link_flair_text":
+        null, "id": "40w4mu", "from_kind": null, "gilded": 0, "archived": false, "clicked":
+        false, "report_reasons": null, "author": "agiantwhale", "media": null, "score":
+        4854, "approved_by": null, "over_18": false, "hidden": false, "num_comments":
+        576, "thumbnail": "self", "subreddit_id": "t5_2s5oq", "hide_score": false,
+        "edited": false, "link_flair_css_class": null, "author_flair_css_class": null,
+        "downs": 0, "secure_media_embed": {}, "saved": false, "removal_reason": null,
+        "stickied": false, "from": null, "is_self": true, "from_id": null, "permalink":
+        "/r/LifeProTips/comments/40w4mu/lpt_always_enter_the_email_recipient_after_you/",
+        "locked": false, "name": "t3_40w4mu", "created": 1452776245.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40w4mu/lpt_always_enter_the_email_recipient_after_you/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: Always enter
+        the email recipient after you have finalized the email body.", "created_utc":
+        1452747445.0, "distinguished": null, "mod_reports": [], "visited": false,
+        "num_reports": null, "ups": 4854}}, {"kind": "t3", "data": {"domain": "self.LifeProTips",
+        "banned_by": null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html":
+        "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;This may sound strange
+        but I learned it from a friend. My mother passed away last year but I was
+        able to send her flowers on my birthday and she loved it so much she called
+        me crying. Think about it; your birthday is a bigger deal for your mom than
+        it is for you. Why not surprise her and show her you love her when it&amp;#39;s
+        supposed to be your day. And while you&amp;#39;re at it, call your mom right
+        now and see how she&amp;#39;s doing and tell her you love her. &lt;/p&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "selftext": "This may sound strange but I learned it from a
+        friend. My mother passed away last year but I was able to send her flowers
+        on my birthday and she loved it so much she called me crying. Think about
+        it; your birthday is a bigger deal for your mom than it is for you. Why not
+        surprise her and show her you love her when it''s supposed to be your day.
+        And while you''re at it, call your mom right now and see how she''s doing
+        and tell her you love her. ", "likes": null, "suggested_sort": "confidence",
+        "user_reports": [], "secure_media": null, "link_flair_text": null, "id": "40yqo9",
+        "from_kind": null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "Loomr313", "media": null, "score": 19, "approved_by": null,
+        "over_18": false, "hidden": false, "num_comments": 14, "thumbnail": "self",
+        "subreddit_id": "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        null, "author_flair_css_class": null, "downs": 0, "secure_media_embed": {},
+        "saved": false, "removal_reason": null, "stickied": false, "from": null, "is_self":
+        true, "from_id": null, "permalink": "/r/LifeProTips/comments/40yqo9/lpt_arrange_to_have_flowers_sent_to_your_mom_on/",
+        "locked": false, "name": "t3_40yqo9", "created": 1452823379.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40yqo9/lpt_arrange_to_have_flowers_sent_to_your_mom_on/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: Arrange to
+        have flowers sent to your Mom on YOUR birthday.", "created_utc": 1452794579.0,
+        "distinguished": null, "mod_reports": [], "visited": false, "num_reports":
+        null, "ups": 19}}, {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by":
+        null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!--
+        SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;During long trips in the summer
+        we have found that letting our kids run and play during a rest stop helps
+        them to burn off energy. We use the toilet and get food before we leave and
+        get them to eat in the car which gives them something to do whilst also helping
+        them to not get restless on the next leg of the journey. &lt;/p&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "selftext": "During long trips in the summer we have found
+        that letting our kids run and play during a rest stop helps them to burn off
+        energy. We use the toilet and get food before we leave and get them to eat
+        in the car which gives them something to do whilst also helping them to not
+        get restless on the next leg of the journey. ", "likes": null, "suggested_sort":
+        "confidence", "user_reports": [], "secure_media": null, "link_flair_text":
+        null, "id": "40ymho", "from_kind": null, "gilded": 0, "archived": false, "clicked":
+        false, "report_reasons": null, "author": "Yelty", "media": null, "score":
+        16, "approved_by": null, "over_18": false, "hidden": false, "num_comments":
+        5, "thumbnail": "self", "subreddit_id": "t5_2s5oq", "hide_score": false, "edited":
+        false, "link_flair_css_class": null, "author_flair_css_class": null, "downs":
+        0, "secure_media_embed": {}, "saved": false, "removal_reason": null, "stickied":
+        false, "from": null, "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/40ymho/lpt_let_your_kids_run_and_burn_off_enegy_during_a/",
+        "locked": false, "name": "t3_40ymho", "created": 1452821967.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40ymho/lpt_let_your_kids_run_and_burn_off_enegy_during_a/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: Let your kids
+        run and burn off enegy during a stop on a long journey. Let them eat back
+        in the car.", "created_utc": 1452793167.0, "distinguished": null, "mod_reports":
+        [], "visited": false, "num_reports": null, "ups": 16}}, {"kind": "t3", "data":
+        {"domain": "self.LifeProTips", "banned_by": null, "media_embed": {}, "subreddit":
+        "LifeProTips", "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;After
+        owning an automatic transmission car for 10 years, I bought my first standard
+        car before even learning how to drive standard. My only experience with learning
+        was through movies where it looked like the driver was gripping the knob with
+        all their strength. It took 6 months to realize, the softer you grip the knob
+        and &amp;quot;guide&amp;quot; the shift knob, the less likely you are to grind
+        the gears and destroy the transmission.&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON
+        --&gt;", "selftext": "After owning an automatic transmission car for 10 years,
+        I bought my first standard car before even learning how to drive standard.
+        My only experience with learning was through movies where it looked like the
+        driver was gripping the knob with all their strength. It took 6 months to
+        realize, the softer you grip the knob and \"guide\" the shift knob, the less
+        likely you are to grind the gears and destroy the transmission.", "likes":
+        null, "suggested_sort": "confidence", "user_reports": [], "secure_media":
+        null, "link_flair_text": "Autos &amp; Vehicles", "id": "40xsom", "from_kind":
+        null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "MarkoWolf", "media": null, "score": 10, "approved_by": null,
+        "over_18": false, "hidden": false, "num_comments": 8, "thumbnail": "self",
+        "subreddit_id": "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        "anv", "author_flair_css_class": null, "downs": 0, "secure_media_embed": {},
+        "saved": false, "removal_reason": null, "stickied": false, "from": null, "is_self":
+        true, "from_id": null, "permalink": "/r/LifeProTips/comments/40xsom/lpt_on_a_standard_manual_car_gripping_the_shift/",
+        "locked": false, "name": "t3_40xsom", "created": 1452810855.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40xsom/lpt_on_a_standard_manual_car_gripping_the_shift/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: On a standard
+        (manual) car, gripping the shift knob tightly is a fast way to grinding the
+        gears.", "created_utc": 1452782055.0, "distinguished": null, "mod_reports":
+        [], "visited": false, "num_reports": null, "ups": 10}}, {"kind": "t3", "data":
+        {"domain": "self.LifeProTips", "banned_by": null, "media_embed": {}, "subreddit":
+        "LifeProTips", "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;That
+        saves a lot of work with pairing them.&lt;/p&gt;\n\n&lt;p&gt;When hanging
+        clothes, designate roughly the required length of string for socks, and hang
+        them in two groups:&lt;/p&gt;\n\n&lt;ul&gt;\n&lt;li&gt; colorful, starting
+        with red on one end, blue on the other, yellow, orange towards red, green
+        towards blue.&lt;/li&gt;\n&lt;li&gt;black/gray/white with black on one end,
+        white on the other, shades of grey respectively in between.&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;p&gt;The
+        result is that almost all your socks, sorted like this, will be  paired, or
+        very close to their pair, so when you take them off the string dry, just roll
+        complete pairs, and leave the odd few unpaired for the end, when their pairs
+        become apparent (e.g. if you hanged a beige one with yellows, and the other
+        with light greys).&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;", "selftext":
+        "That saves a lot of work with pairing them.\n\nWhen hanging clothes, designate
+        roughly the required length of string for socks, and hang them in two groups:\n\n*  colorful,
+        starting with red on one end, blue on the other, yellow, orange towards red,
+        green towards blue.\n* black/gray/white with black on one end, white on the
+        other, shades of grey respectively in between.\n\nThe result is that almost
+        all your socks, sorted like this, will be  paired, or very close to their
+        pair, so when you take them off the string dry, just roll complete pairs,
+        and leave the odd few unpaired for the end, when their pairs become apparent
+        (e.g. if you hanged a beige one with yellows, and the other with light greys).",
+        "likes": null, "suggested_sort": "confidence", "user_reports": [], "secure_media":
+        null, "link_flair_text": "Clothing", "id": "40xjjp", "from_kind": null, "gilded":
+        0, "archived": false, "clicked": false, "report_reasons": null, "author":
+        "sharfpang", "media": null, "score": 11, "approved_by": null, "over_18": false,
+        "hidden": false, "num_comments": 10, "thumbnail": "self", "subreddit_id":
+        "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        "cloth", "author_flair_css_class": null, "downs": 0, "secure_media_embed":
+        {}, "saved": false, "removal_reason": null, "stickied": false, "from": null,
+        "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/40xjjp/lpt_when_hanging_socks_to_dry_try_to_make_a/",
+        "locked": false, "name": "t3_40xjjp", "created": 1452806762.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40xjjp/lpt_when_hanging_socks_to_dry_try_to_make_a/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: When hanging
+        socks to dry, try to make a rainbow and a grayscale.", "created_utc": 1452777962.0,
+        "distinguished": null, "mod_reports": [], "visited": false, "num_reports":
+        null, "ups": 11}}, {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by":
+        null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!--
+        SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;I&amp;#39;ve had a bad habit
+        of chewing up the inside of my cheeks for many years. I&amp;#39;d really like
+        to stop.&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;", "selftext": "I''ve
+        had a bad habit of chewing up the inside of my cheeks for many years. I''d
+        really like to stop.", "likes": null, "suggested_sort": "confidence", "user_reports":
+        [], "secure_media": null, "link_flair_text": "Request", "id": "40zai1", "from_kind":
+        null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "undergroundloft", "media": null, "score": 3, "approved_by":
+        null, "over_18": false, "hidden": false, "num_comments": 1, "thumbnail": "self",
+        "subreddit_id": "t5_2s5oq", "hide_score": true, "edited": false, "link_flair_css_class":
+        "request", "author_flair_css_class": null, "downs": 0, "secure_media_embed":
+        {}, "saved": false, "removal_reason": null, "stickied": false, "from": null,
+        "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/40zai1/lpt_request_how_to_stop_chewing_the_inside_of_my/",
+        "locked": false, "name": "t3_40zai1", "created": 1452830129.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40zai1/lpt_request_how_to_stop_chewing_the_inside_of_my/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT Request: How
+        to stop chewing the inside of my cheeks", "created_utc": 1452801329.0, "distinguished":
+        null, "mod_reports": [], "visited": false, "num_reports": null, "ups": 3}},
+        {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by": null, "media_embed":
+        {}, "subreddit": "LifeProTips", "selftext_html": null, "selftext": "", "likes":
+        null, "suggested_sort": "confidence", "user_reports": [], "secure_media":
+        null, "link_flair_text": "Request", "id": "40vuye", "from_kind": null, "gilded":
+        0, "archived": false, "clicked": false, "report_reasons": null, "author":
+        "EarthAmbassadorLuke", "media": null, "score": 48, "approved_by": null, "over_18":
+        false, "hidden": false, "num_comments": 65, "thumbnail": "self", "subreddit_id":
+        "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        "request", "author_flair_css_class": null, "downs": 0, "secure_media_embed":
+        {}, "saved": false, "removal_reason": null, "stickied": false, "from": null,
+        "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/40vuye/lpt_request_how_to_find_someone_in_a_large_crowd/",
+        "locked": false, "name": "t3_40vuye", "created": 1452771936.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40vuye/lpt_request_how_to_find_someone_in_a_large_crowd/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT Request how
+        to find someone in a large crowd", "created_utc": 1452743136.0, "distinguished":
+        null, "mod_reports": [], "visited": false, "num_reports": null, "ups": 48}},
+        {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by": null, "media_embed":
+        {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div
+        class=\"md\"&gt;&lt;p&gt;A friend of mine is currently being sued, but while
+        looking around on the county public records website we found pages and pages
+        of prior lawsuits by the same guy. If he had done the search prior to any
+        involvement he could have known just how scummy he was. &lt;/p&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "selftext": "A friend of mine is currently being sued, but
+        while looking around on the county public records website we found pages and
+        pages of prior lawsuits by the same guy. If he had done the search prior to
+        any involvement he could have known just how scummy he was. \n\n", "likes":
+        null, "suggested_sort": "confidence", "user_reports": [], "secure_media":
+        null, "link_flair_text": "Request", "id": "40qfxi", "from_kind": null, "gilded":
+        0, "archived": false, "clicked": false, "report_reasons": null, "author":
+        "freshthrowaway1138", "media": null, "score": 3121, "approved_by": null, "over_18":
+        false, "hidden": false, "num_comments": 423, "thumbnail": "self", "subreddit_id":
+        "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        "request", "author_flair_css_class": null, "downs": 0, "secure_media_embed":
+        {}, "saved": false, "removal_reason": null, "stickied": false, "from": null,
+        "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/40qfxi/lpt_before_getting_legally_involved_with_someone/",
+        "locked": false, "name": "t3_40qfxi", "created": 1452689515.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40qfxi/lpt_before_getting_legally_involved_with_someone/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: Before getting
+        legally involved with someone, do a public records request to see about their
+        background.", "created_utc": 1452660715.0, "distinguished": null, "mod_reports":
+        [], "visited": false, "num_reports": null, "ups": 3121}}, {"kind": "t3", "data":
+        {"domain": "self.LifeProTips", "banned_by": null, "media_embed": {}, "subreddit":
+        "LifeProTips", "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;Usually,
+        people tend to have friends with mutual/similar likes and ways of thinking.
+        So, if you can&amp;#39;t get out of the friendzone, it is probably better
+        to meet new people.\nAnd you can ask your friend-that-friendzoned-you  for
+        advice on the likes of the person you just met, date ideas and etc.\nThis
+        way, everyone ends happy!&lt;/p&gt;\n\n&lt;p&gt;edit: As Danny_2109 said,
+        sometimes this is enough to make them like you. That&amp;#39;s because when
+        you know you have something easily, you tend to care less about it, but when
+        you loose it, you start wanting it back.&lt;/p&gt;\n\n&lt;p&gt;sry 4 splling
+        mistaeks duds&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;", "selftext": "Usually,
+        people tend to have friends with mutual/similar likes and ways of thinking.
+        So, if you can''t get out of the friendzone, it is probably better to meet
+        new people.\nAnd you can ask your friend-that-friendzoned-you  for advice
+        on the likes of the person you just met, date ideas and etc.\nThis way, everyone
+        ends happy!\n\nedit: As Danny_2109 said, sometimes this is enough to make
+        them like you. That''s because when you know you have something easily, you
+        tend to care less about it, but when you loose it, you start wanting it back.\n\n\nsry
+        4 splling mistaeks duds", "likes": null, "suggested_sort": "confidence", "user_reports":
+        [], "secure_media": null, "link_flair_text": null, "id": "40xu62", "from_kind":
+        null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "Jiotich", "media": null, "score": 6, "approved_by": null,
+        "over_18": false, "hidden": false, "num_comments": 21, "thumbnail": "self",
+        "subreddit_id": "t5_2s5oq", "hide_score": false, "edited": 1452784190.0, "link_flair_css_class":
+        null, "author_flair_css_class": null, "downs": 0, "secure_media_embed": {},
+        "saved": false, "removal_reason": null, "stickied": false, "from": null, "is_self":
+        true, "from_id": null, "permalink": "/r/LifeProTips/comments/40xu62/lpt_if_you_get_friendzoned_by_someone_ask_the/",
+        "locked": false, "name": "t3_40xu62", "created": 1452811426.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40xu62/lpt_if_you_get_friendzoned_by_someone_ask_the/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: If you get
+        friendzoned by someone, ask the person to introduce you to one of his friends.",
+        "created_utc": 1452782626.0, "distinguished": null, "mod_reports": [], "visited":
+        false, "num_reports": null, "ups": 6}}, {"kind": "t3", "data": {"domain":
+        "self.LifeProTips", "banned_by": null, "media_embed": {}, "subreddit": "LifeProTips",
+        "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;&lt;a
+        href=\"http://www.todayshomeowner.com/video/how-to-position-small-objects-for-gluing/\"&gt;This
+        link demonstrates the method&lt;/a&gt;&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON
+        --&gt;", "selftext": "[This link demonstrates the method](http://www.todayshomeowner.com/video/how-to-position-small-objects-for-gluing/)",
+        "likes": null, "suggested_sort": "confidence", "user_reports": [], "secure_media":
+        null, "link_flair_text": null, "id": "40tu7g", "from_kind": null, "gilded":
+        0, "archived": false, "clicked": false, "report_reasons": null, "author":
+        "EthosPathosLegos", "media": null, "score": 143, "approved_by": null, "over_18":
+        false, "hidden": false, "preview": {"images": [{"source": {"url": "https://i.redditmedia.com/kSqRLcoy5wejxUCexV5N7vdXZApgiKfMUPwyYEcgO0U.jpg?s=91fa5c0accfd57e8b0c75f76f1c0162d",
+        "width": 150, "height": 125}, "resolutions": [{"url": "https://i.redditmedia.com/kSqRLcoy5wejxUCexV5N7vdXZApgiKfMUPwyYEcgO0U.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=8988667014ea9ff2560486c4dca8f691",
+        "width": 108, "height": 90}], "variants": {}, "id": "htTwnJ1Cg_WJ0_AMKyKQ-KaPbIhE0TP838cJfZBvqlo"}]},
+        "num_comments": 7, "thumbnail": "self", "subreddit_id": "t5_2s5oq", "hide_score":
+        false, "edited": false, "link_flair_css_class": null, "author_flair_css_class":
+        null, "downs": 0, "secure_media_embed": {}, "saved": false, "removal_reason":
+        null, "post_hint": "self", "stickied": false, "from": null, "is_self": true,
+        "from_id": null, "permalink": "/r/LifeProTips/comments/40tu7g/lpt_when_gluing_small_awkward_objects_use_playdoh/",
+        "locked": false, "name": "t3_40tu7g", "created": 1452744202.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40tu7g/lpt_when_gluing_small_awkward_objects_use_playdoh/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: When gluing
+        small awkward objects, use Play-Doh to hold them in place.", "created_utc":
+        1452715402.0, "distinguished": null, "mod_reports": [], "visited": false,
+        "num_reports": null, "ups": 143}}, {"kind": "t3", "data": {"domain": "self.LifeProTips",
+        "banned_by": null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html":
+        "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;This one has changed
+        my life.&lt;/p&gt;\n\n&lt;p&gt;The movie theaters in my part of the world
+        usually have two aisles of stairs that go all the way up to the back row of
+        seats. At the very top of each set of stairs, against the back wall, are usually
+        two or three seats.&lt;/p&gt;\n\n&lt;p&gt;Sit in these seats. You will never
+        have anybody sit in front of you and block your view. You will have infinite
+        leg room. You will never have to squeeze by anybody to use the bathroom. Nor
+        will you have to get up out of your seat to let someone by.&lt;/p&gt;\n\n&lt;p&gt;Even
+        though you aren&amp;#39;t in the center of the theater, because you&amp;#39;re
+        sitting further back, the angle off from the center of the screen is akin
+        to sitting on one side of a three person couch in a living room, as opposed
+        to the middle.&lt;/p&gt;\n\n&lt;p&gt;Try it out for yourselves. Nobody seems
+        to realize how amazing these seats are. You&amp;#39;ll often enter a packed
+        theater, with everybody clustered in the middle, jockeying for position, while
+        these seats are left wide open.&lt;/p&gt;\n\n&lt;p&gt;I&amp;#39;ll take them
+        even if I&amp;#39;m early and none of the middle seats are taken -- I know
+        even if the theater fills I won&amp;#39;t be affected in the slightest.&lt;/p&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "selftext": "This one has changed my life.\n\nThe movie theaters
+        in my part of the world usually have two aisles of stairs that go all the
+        way up to the back row of seats. At the very top of each set of stairs, against
+        the back wall, are usually two or three seats.\n\nSit in these seats. You
+        will never have anybody sit in front of you and block your view. You will
+        have infinite leg room. You will never have to squeeze by anybody to use the
+        bathroom. Nor will you have to get up out of your seat to let someone by.\n\nEven
+        though you aren''t in the center of the theater, because you''re sitting further
+        back, the angle off from the center of the screen is akin to sitting on one
+        side of a three person couch in a living room, as opposed to the middle.\n\nTry
+        it out for yourselves. Nobody seems to realize how amazing these seats are.
+        You''ll often enter a packed theater, with everybody clustered in the middle,
+        jockeying for position, while these seats are left wide open.\n\nI''ll take
+        them even if I''m early and none of the middle seats are taken -- I know even
+        if the theater fills I won''t be affected in the slightest.", "likes": null,
+        "suggested_sort": "confidence", "user_reports": [], "secure_media": null,
+        "link_flair_text": "Entertainment", "id": "40tska", "from_kind": null, "gilded":
+        0, "archived": false, "clicked": false, "report_reasons": null, "author":
+        "Trematode", "media": null, "score": 145, "approved_by": null, "over_18":
+        false, "hidden": false, "num_comments": 104, "thumbnail": "self", "subreddit_id":
+        "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        "ent", "author_flair_css_class": null, "downs": 0, "secure_media_embed": {},
+        "saved": false, "removal_reason": null, "stickied": false, "from": null, "is_self":
+        true, "from_id": null, "permalink": "/r/LifeProTips/comments/40tska/lpt_sit_at_the_top_of_the_stairs_in_a_movie/",
+        "locked": false, "name": "t3_40tska", "created": 1452743643.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40tska/lpt_sit_at_the_top_of_the_stairs_in_a_movie/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: Sit At The
+        Top Of The Stairs In A Movie Theater", "created_utc": 1452714843.0, "distinguished":
+        null, "mod_reports": [], "visited": false, "num_reports": null, "ups": 145}},
+        {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by": null, "media_embed":
+        {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div
+        class=\"md\"&gt;&lt;p&gt;They can reduce the fines entirely or at least by
+        a significant percentage if you simply ask. Five minutes on the phone is worth
+        it.&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;", "selftext": "They can reduce
+        the fines entirely or at least by a significant percentage if you simply ask.
+        Five minutes on the phone is worth it.", "likes": null, "suggested_sort":
+        "confidence", "user_reports": [], "secure_media": null, "link_flair_text":
+        "Money &amp; Finance", "id": "40ud31", "from_kind": null, "gilded": 0, "archived":
+        false, "clicked": false, "report_reasons": null, "author": "DenSem", "media":
+        null, "score": 81, "approved_by": null, "over_18": false, "hidden": false,
+        "num_comments": 32, "thumbnail": "self", "subreddit_id": "t5_2s5oq", "hide_score":
+        false, "edited": false, "link_flair_css_class": "mnf", "author_flair_css_class":
+        null, "downs": 0, "secure_media_embed": {}, "saved": false, "removal_reason":
+        null, "stickied": false, "from": null, "is_self": true, "from_id": null, "permalink":
+        "/r/LifeProTips/comments/40ud31/lpt_call_your_bank_if_you_overdraft_your_account/",
+        "locked": false, "name": "t3_40ud31", "created": 1452750818.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40ud31/lpt_call_your_bank_if_you_overdraft_your_account/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: Call your bank
+        if you overdraft your account", "created_utc": 1452722018.0, "distinguished":
+        null, "mod_reports": [], "visited": false, "num_reports": null, "ups": 81}},
+        {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by": null, "media_embed":
+        {}, "subreddit": "LifeProTips", "selftext_html": null, "selftext": "", "likes":
+        null, "suggested_sort": "confidence", "user_reports": [], "secure_media":
+        null, "link_flair_text": "Request", "id": "40xpea", "from_kind": null, "gilded":
+        0, "archived": false, "clicked": false, "report_reasons": null, "author":
+        "PM_FOR_GENITALIA", "media": null, "score": 4, "approved_by": null, "over_18":
+        false, "hidden": false, "num_comments": 15, "thumbnail": "self", "subreddit_id":
+        "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        "request", "author_flair_css_class": null, "downs": 0, "secure_media_embed":
+        {}, "saved": false, "removal_reason": null, "stickied": false, "from": null,
+        "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/40xpea/lpt_request_how_to_fix_a_pen_when_it_has_ink_but/",
+        "locked": false, "name": "t3_40xpea", "created": 1452809484.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40xpea/lpt_request_how_to_fix_a_pen_when_it_has_ink_but/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT Request: How
+        to fix a pen when it has ink, but won''t write?", "created_utc": 1452780684.0,
+        "distinguished": null, "mod_reports": [], "visited": false, "num_reports":
+        null, "ups": 4}}, {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by":
+        null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!--
+        SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;Trick has worked with every
+        spam/solicitation phone call I have received. At any point during the recorded
+        message, dial 2. It will end the call and none of the numbers have placed
+        additional calls to me.  Note: this is a per number/company basis. Dialing
+        will have to be done with each separately.&lt;/p&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "selftext": "Trick has worked with every spam/solicitation
+        phone call I have received. At any point during the recorded message, dial
+        2. It will end the call and none of the numbers have placed additional calls
+        to me.  Note: this is a per number/company basis. Dialing will have to be
+        done with each separately.", "likes": null, "suggested_sort": "confidence",
+        "user_reports": [], "secure_media": null, "link_flair_text": null, "id": "40zahz",
+        "from_kind": null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "krashwithak", "media": null, "score": 0, "approved_by": null,
+        "over_18": false, "hidden": false, "num_comments": 1, "thumbnail": "self",
+        "subreddit_id": "t5_2s5oq", "hide_score": true, "edited": false, "link_flair_css_class":
+        null, "author_flair_css_class": null, "downs": 0, "secure_media_embed": {},
+        "saved": false, "removal_reason": null, "stickied": false, "from": null, "is_self":
+        true, "from_id": null, "permalink": "/r/LifeProTips/comments/40zahz/lpt_dial_2_to_be_placed_on_a_spam_numbers_do_not/",
+        "locked": false, "name": "t3_40zahz", "created": 1452830127.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40zahz/lpt_dial_2_to_be_placed_on_a_spam_numbers_do_not/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: Dial 2 to be
+        placed on a Spam number''s do not call list", "created_utc": 1452801327.0,
+        "distinguished": null, "mod_reports": [], "visited": false, "num_reports":
+        null, "ups": 0}}, {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by":
+        null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!--
+        SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;The phosphate will help to settle
+        your stomach for a few minutes at a time. Same idea as Ginger Ale but doesn&amp;#39;t
+        need to be room temperature to be effective.&lt;/p&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "selftext": "The phosphate will help to settle your stomach
+        for a few minutes at a time. Same idea as Ginger Ale but doesn''t need to
+        be room temperature to be effective.", "likes": null, "suggested_sort": "confidence",
+        "user_reports": [], "secure_media": null, "link_flair_text": null, "id": "40z9tq",
+        "from_kind": null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "aramisbear", "media": null, "score": 0, "approved_by": null,
+        "over_18": false, "hidden": false, "num_comments": 0, "thumbnail": "self",
+        "subreddit_id": "t5_2s5oq", "hide_score": true, "edited": false, "link_flair_css_class":
+        null, "author_flair_css_class": null, "downs": 0, "secure_media_embed": {},
+        "saved": false, "removal_reason": null, "stickied": false, "from": null, "is_self":
+        true, "from_id": null, "permalink": "/r/LifeProTips/comments/40z9tq/lpt_if_you_feel_nauseous_take_a_sip_of_a_pepsi_or/",
+        "locked": false, "name": "t3_40z9tq", "created": 1452829885.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40z9tq/lpt_if_you_feel_nauseous_take_a_sip_of_a_pepsi_or/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: If you feel
+        nauseous, take a sip of a Pepsi or Dr. Pepper", "created_utc": 1452801085.0,
+        "distinguished": null, "mod_reports": [], "visited": false, "num_reports":
+        null, "ups": 0}}, {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by":
+        null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!--
+        SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;If you ever want to use your
+        photos or video on a website, or edit a video, or really anything digital,
+        having your photos/video horizontally oriented is the way to go.&lt;/p&gt;\n\n&lt;p&gt;It&amp;#39;s
+        way easier to crop a horizontal pic later to make it fit a vertical space,
+        than to blow up a vertical pic to make it properly fit a horizontal space.
+        And - watching vertically oriented videos on youtube and such = so much wasted
+        space on the sides!&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;", "selftext":
+        "If you ever want to use your photos or video on a website, or edit a video,
+        or really anything digital, having your photos/video horizontally oriented
+        is the way to go.\n\nIt''s way easier to crop a horizontal pic later to make
+        it fit a vertical space, than to blow up a vertical pic to make it properly
+        fit a horizontal space. And - watching vertically oriented videos on youtube
+        and such = so much wasted space on the sides!", "likes": null, "suggested_sort":
+        "confidence", "user_reports": [], "secure_media": null, "link_flair_text":
+        null, "id": "40z3qs", "from_kind": null, "gilded": 0, "archived": false, "clicked":
+        false, "report_reasons": null, "author": "pbrooks19", "media": null, "score":
+        1, "approved_by": null, "over_18": false, "hidden": false, "num_comments":
+        2, "thumbnail": "self", "subreddit_id": "t5_2s5oq", "hide_score": true, "edited":
+        false, "link_flair_css_class": null, "author_flair_css_class": null, "downs":
+        0, "secure_media_embed": {}, "saved": false, "removal_reason": null, "stickied":
+        false, "from": null, "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/40z3qs/lpt_when_taking_photos_or_shooting_video_go/",
+        "locked": false, "name": "t3_40z3qs", "created": 1452827796.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40z3qs/lpt_when_taking_photos_or_shooting_video_go/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: When taking
+        photos or shooting video, go HORIZONTAL (wide frame), not vertical (narrow
+        frame).", "created_utc": 1452798996.0, "distinguished": null, "mod_reports":
+        [], "visited": false, "num_reports": null, "ups": 1}}, {"kind": "t3", "data":
+        {"domain": "self.LifeProTips", "banned_by": null, "media_embed": {}, "subreddit":
+        "LifeProTips", "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;So,
+        I was recently prescribed a autoinjector of whatever and the initial shots
+        I gave myself after a bit of clenching and heavy breathing. &lt;/p&gt;\n\n&lt;p&gt;Now
+        two weeks later it is time for the next round, and I have been unable to press
+        the button at all. &lt;/p&gt;\n\n&lt;p&gt;I know in my head that it doesn&amp;#39;t
+        hurt. I get tattoos regularly and have no issue when I get blood drawn, which
+        pisses me off more that I can&amp;#39;t do this. &lt;/p&gt;\n\n&lt;p&gt;Does
+        anyone have tips on how to get past/ get around this Irrational fear?&lt;/p&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "selftext": "So, I was recently prescribed a autoinjector of
+        whatever and the initial shots I gave myself after a bit of clenching and
+        heavy breathing. \n\nNow two weeks later it is time for the next round, and
+        I have been unable to press the button at all. \n\nI know in my head that
+        it doesn''t hurt. I get tattoos regularly and have no issue when I get blood
+        drawn, which pisses me off more that I can''t do this. \n\nDoes anyone have
+        tips on how to get past/ get around this Irrational fear?", "likes": null,
+        "suggested_sort": "confidence", "user_reports": [], "secure_media": null,
+        "link_flair_text": "Request", "id": "40wgvd", "from_kind": null, "gilded":
+        0, "archived": false, "clicked": false, "report_reasons": null, "author":
+        "kamikazeaa", "media": null, "score": 10, "approved_by": null, "over_18":
+        false, "hidden": false, "num_comments": 6, "thumbnail": "self", "subreddit_id":
+        "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        "request", "author_flair_css_class": null, "downs": 0, "secure_media_embed":
+        {}, "saved": false, "removal_reason": null, "stickied": false, "from": null,
+        "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/40wgvd/lpt_request_getting_over_fear_of_self_injection/",
+        "locked": false, "name": "t3_40wgvd", "created": 1452782259.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40wgvd/lpt_request_getting_over_fear_of_self_injection/",
+        "author_flair_text": null, "quarantine": false, "title": "[LPT Request] Getting
+        over fear of self injection.", "created_utc": 1452753459.0, "distinguished":
+        null, "mod_reports": [], "visited": false, "num_reports": null, "ups": 10}},
+        {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by": null, "media_embed":
+        {}, "subreddit": "LifeProTips", "selftext_html": null, "selftext": "", "likes":
+        null, "suggested_sort": "confidence", "user_reports": [], "secure_media":
+        null, "link_flair_text": "Request", "id": "40rmhy", "from_kind": null, "gilded":
+        0, "archived": false, "clicked": false, "report_reasons": null, "author":
+        "fizzlydizzly", "media": null, "score": 302, "approved_by": null, "over_18":
+        false, "hidden": false, "num_comments": 184, "thumbnail": "self", "subreddit_id":
+        "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        "request", "author_flair_css_class": null, "downs": 0, "secure_media_embed":
+        {}, "saved": false, "removal_reason": null, "stickied": false, "from": null,
+        "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/40rmhy/lpt_request_how_to_keep_a_room_as_cool_as/",
+        "locked": false, "name": "t3_40rmhy", "created": 1452712955.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40rmhy/lpt_request_how_to_keep_a_room_as_cool_as/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT Request: How
+        to keep a room as cool as possible throughout the Summer without A/C", "created_utc":
+        1452684155.0, "distinguished": null, "mod_reports": [], "visited": false,
+        "num_reports": null, "ups": 302}}, {"kind": "t3", "data": {"domain": "self.LifeProTips",
+        "banned_by": null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html":
+        "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;A lot of times when
+        starting a new job, you don&amp;#39;t know what the pace of the day is going
+        to look like.  A lot of people come in expecting to buy their lunch and either
+        go hungry because they realize they won&amp;#39;t have time to buy lunch or
+        they are late back to work because they took too long.  Make sure to pack
+        a lunch for the first week or so to ensure you understand the time you&amp;#39;ll
+        have for lunch everyday.&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;", "selftext":
+        "A lot of times when starting a new job, you don''t know what the pace of
+        the day is going to look like.  A lot of people come in expecting to buy their
+        lunch and either go hungry because they realize they won''t have time to buy
+        lunch or they are late back to work because they took too long.  Make sure
+        to pack a lunch for the first week or so to ensure you understand the time
+        you''ll have for lunch everyday.", "likes": null, "suggested_sort": "confidence",
+        "user_reports": [], "secure_media": null, "link_flair_text": null, "id": "40yt8i",
+        "from_kind": null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "aallen92", "media": null, "score": 1, "approved_by": null,
+        "over_18": false, "hidden": false, "num_comments": 4, "thumbnail": "self",
+        "subreddit_id": "t5_2s5oq", "hide_score": true, "edited": false, "link_flair_css_class":
+        null, "author_flair_css_class": null, "downs": 0, "secure_media_embed": {},
+        "saved": false, "removal_reason": null, "stickied": false, "from": null, "is_self":
+        true, "from_id": null, "permalink": "/r/LifeProTips/comments/40yt8i/lpt_when_starting_a_new_job_always_pack_your/",
+        "locked": false, "name": "t3_40yt8i", "created": 1452824204.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40yt8i/lpt_when_starting_a_new_job_always_pack_your/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: When starting
+        a new job, always pack your lunch for the first week", "created_utc": 1452795404.0,
+        "distinguished": null, "mod_reports": [], "visited": false, "num_reports":
+        null, "ups": 1}}, {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by":
+        null, "media_embed": {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!--
+        SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;May it be a robot vacuum cleaner
+        or a cat-scratcher; something neat that makes your home-mileu less obstaclish.&lt;/p&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "selftext": "May it be a robot vacuum cleaner or a cat-scratcher;
+        something neat that makes your home-mileu less obstaclish.", "likes": null,
+        "suggested_sort": "confidence", "user_reports": [], "secure_media": null,
+        "link_flair_text": "Home &amp; Garden", "id": "40yngc", "from_kind": null,
+        "gilded": 0, "archived": false, "clicked": false, "report_reasons": null,
+        "author": "Survivorbelt", "media": null, "score": 0, "approved_by": null,
+        "over_18": false, "hidden": false, "num_comments": 3, "thumbnail": "self",
+        "subreddit_id": "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        "hng", "author_flair_css_class": null, "downs": 0, "secure_media_embed": {},
+        "saved": false, "removal_reason": null, "stickied": false, "from": null, "is_self":
+        true, "from_id": null, "permalink": "/r/LifeProTips/comments/40yngc/lpt_request_what_are_your_best_solutions_for_a/",
+        "locked": false, "name": "t3_40yngc", "created": 1452822302.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40yngc/lpt_request_what_are_your_best_solutions_for_a/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT Request: What
+        are your best solutions for a smart home, making your life THAT much easier?",
+        "created_utc": 1452793502.0, "distinguished": null, "mod_reports": [], "visited":
+        false, "num_reports": null, "ups": 0}}, {"kind": "t3", "data": {"domain":
+        "self.LifeProTips", "banned_by": null, "media_embed": {}, "subreddit": "LifeProTips",
+        "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;My
+        cousin was killed when a driver made an illegal u-turn in front of him that
+        caused him to die on impact. Always watch for motorcycles, you could save
+        a life.&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;", "selftext": "My cousin
+        was killed when a driver made an illegal u-turn in front of him that caused
+        him to die on impact. Always watch for motorcycles, you could save a life.",
+        "likes": null, "suggested_sort": "confidence", "user_reports": [], "secure_media":
+        null, "link_flair_text": "LPT: ", "id": "40wgu4", "from_kind": null, "gilded":
+        0, "archived": false, "clicked": false, "report_reasons": null, "author":
+        "your_sbt", "media": null, "score": 6, "approved_by": null, "over_18": false,
+        "hidden": false, "num_comments": 7, "thumbnail": "self", "subreddit_id": "t5_2s5oq",
+        "hide_score": false, "edited": false, "link_flair_css_class": "fixed", "author_flair_css_class":
+        null, "downs": 0, "secure_media_embed": {}, "saved": false, "removal_reason":
+        null, "stickied": false, "from": null, "is_self": true, "from_id": null, "permalink":
+        "/r/LifeProTips/comments/40wgu4/lptwatch_for_motorcycles/", "locked": false,
+        "name": "t3_40wgu4", "created": 1452782234.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40wgu4/lptwatch_for_motorcycles/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT:Watch for motorcycles",
+        "created_utc": 1452753434.0, "distinguished": null, "mod_reports": [], "visited":
+        false, "num_reports": null, "ups": 6}}, {"kind": "t3", "data": {"domain":
+        "self.LifeProTips", "banned_by": null, "media_embed": {}, "subreddit": "LifeProTips",
+        "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;Colleges
+        and universities often print their own daytimers or agendas (for students).
+        They will almost always give you a surplus one for free after the start of
+        the school year, student or not. &lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;",
+        "selftext": "Colleges and universities often print their own daytimers or
+        agendas (for students). They will almost always give you a surplus one for
+        free after the start of the school year, student or not. ", "likes": null,
+        "suggested_sort": "confidence", "user_reports": [], "secure_media": null,
+        "link_flair_text": null, "id": "40vqi0", "from_kind": null, "gilded": 0, "archived":
+        false, "clicked": false, "report_reasons": null, "author": "e67", "media":
+        null, "score": 11, "approved_by": null, "over_18": false, "hidden": false,
+        "num_comments": 7, "thumbnail": "self", "subreddit_id": "t5_2s5oq", "hide_score":
+        false, "edited": false, "link_flair_css_class": null, "author_flair_css_class":
+        null, "downs": 0, "secure_media_embed": {}, "saved": false, "removal_reason":
+        null, "stickied": false, "from": null, "is_self": true, "from_id": null, "permalink":
+        "/r/LifeProTips/comments/40vqi0/lpt_get_free_daytimers_from_your_local_college_or/",
+        "locked": false, "name": "t3_40vqi0", "created": 1452770116.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40vqi0/lpt_get_free_daytimers_from_your_local_college_or/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: get free daytimers
+        from your local college or university", "created_utc": 1452741316.0, "distinguished":
+        null, "mod_reports": [], "visited": false, "num_reports": null, "ups": 11}},
+        {"kind": "t3", "data": {"domain": "self.LifeProTips", "banned_by": null, "media_embed":
+        {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div
+        class=\"md\"&gt;&lt;p&gt;&lt;a href=\"https://chrome.google.com/webstore/detail/readability/oknpjjbmpnndlpmnhmekjpocelpnlfdi?hl=en\"&gt;LINK&lt;/a&gt;&lt;/p&gt;\n\n&lt;p&gt;Great
+        for new websites.&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;", "selftext":
+        "[LINK](https://chrome.google.com/webstore/detail/readability/oknpjjbmpnndlpmnhmekjpocelpnlfdi?hl=en)\n\nGreat
+        for new websites.", "likes": null, "suggested_sort": "confidence", "user_reports":
+        [], "secure_media": null, "link_flair_text": null, "id": "40y68t", "from_kind":
+        null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "EthosPathosLegos", "media": null, "score": 0, "approved_by":
+        null, "over_18": false, "hidden": false, "preview": {"images": [{"source":
+        {"url": "https://i.redditmedia.com/ONB-paUGpEJjjhPZq8Zzz15JO9o9sa833O15mT83j_w.jpg?s=890beb2271d2d391a68d930e0a3d9f89",
+        "width": 128, "height": 128}, "resolutions": [{"url": "https://i.redditmedia.com/ONB-paUGpEJjjhPZq8Zzz15JO9o9sa833O15mT83j_w.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=536c4279a367f472428408ae1947ab59",
+        "width": 108, "height": 108}], "variants": {}, "id": "Eak1U75vMa4GLZY5rPFpiqsk91uc1c7ztaZ-fbsxD5c"}]},
+        "num_comments": 2, "thumbnail": "self", "subreddit_id": "t5_2s5oq", "hide_score":
+        false, "edited": false, "link_flair_css_class": null, "author_flair_css_class":
+        null, "downs": 0, "secure_media_embed": {}, "saved": false, "removal_reason":
+        null, "post_hint": "self", "stickied": false, "from": null, "is_self": true,
+        "from_id": null, "permalink": "/r/LifeProTips/comments/40y68t/lpt_this_chrome_extension_removes_all_web_page/",
+        "locked": false, "name": "t3_40y68t", "created": 1452816027.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40y68t/lpt_this_chrome_extension_removes_all_web_page/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: This Chrome
+        extension removes all web page objects besides text, and makes the text easier
+        to read.", "created_utc": 1452787227.0, "distinguished": null, "mod_reports":
+        [], "visited": false, "num_reports": null, "ups": 0}}, {"kind": "t3", "data":
+        {"domain": "self.LifeProTips", "banned_by": null, "media_embed": {}, "subreddit":
+        "LifeProTips", "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;I&amp;#39;ve
+        put on a little bit of weight recently, and now the insides of my thighs rub
+        right at the top. I like wearing skirts/dresses but find it hard now as the
+        chafing gets sore. Am I stuck just wearing little shorts to stop it? &lt;/p&gt;\n&lt;/div&gt;&lt;!--
+        SC_ON --&gt;", "selftext": "I''ve put on a little bit of weight recently,
+        and now the insides of my thighs rub right at the top. I like wearing skirts/dresses
+        but find it hard now as the chafing gets sore. Am I stuck just wearing little
+        shorts to stop it? ", "likes": null, "suggested_sort": "confidence", "user_reports":
+        [], "secure_media": null, "link_flair_text": "Request", "id": "40wjam", "from_kind":
+        null, "gilded": 0, "archived": false, "clicked": false, "report_reasons":
+        null, "author": "_s1ren", "media": null, "score": 5, "approved_by": null,
+        "over_18": false, "hidden": false, "num_comments": 20, "thumbnail": "self",
+        "subreddit_id": "t5_2s5oq", "hide_score": false, "edited": false, "link_flair_css_class":
+        "request", "author_flair_css_class": null, "downs": 0, "secure_media_embed":
+        {}, "saved": false, "removal_reason": null, "stickied": false, "from": null,
+        "is_self": true, "from_id": null, "permalink": "/r/LifeProTips/comments/40wjam/lpt_request_how_to_stop_thigh_chafing/",
+        "locked": false, "name": "t3_40wjam", "created": 1452783724.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40wjam/lpt_request_how_to_stop_thigh_chafing/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT Request: how
+        to stop thigh chafing", "created_utc": 1452754924.0, "distinguished": null,
+        "mod_reports": [], "visited": false, "num_reports": null, "ups": 5}}, {"kind":
+        "t3", "data": {"domain": "self.LifeProTips", "banned_by": null, "media_embed":
+        {}, "subreddit": "LifeProTips", "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div
+        class=\"md\"&gt;&lt;p&gt;This method helps decrease boredom, helps you accomplish
+        things once hectic times slow, and can really organize your life and improve
+        efficiency.&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;", "selftext": "This
+        method helps decrease boredom, helps you accomplish things once hectic times
+        slow, and can really organize your life and improve efficiency.", "likes":
+        null, "suggested_sort": "confidence", "user_reports": [], "secure_media":
+        null, "link_flair_text": null, "id": "40uz7y", "from_kind": null, "gilded":
+        0, "archived": false, "clicked": false, "report_reasons": null, "author":
+        "the_lock", "media": null, "score": 16, "approved_by": null, "over_18": false,
+        "hidden": false, "num_comments": 2, "thumbnail": "self", "subreddit_id": "t5_2s5oq",
+        "hide_score": false, "edited": false, "link_flair_css_class": null, "author_flair_css_class":
+        null, "downs": 0, "secure_media_embed": {}, "saved": false, "removal_reason":
+        null, "stickied": false, "from": null, "is_self": true, "from_id": null, "permalink":
+        "/r/LifeProTips/comments/40uz7y/lpt_make_lists_of_things_you_need_or_would_like/",
+        "locked": false, "name": "t3_40uz7y", "created": 1452758979.0, "url": "https://www.reddit.com/r/LifeProTips/comments/40uz7y/lpt_make_lists_of_things_you_need_or_would_like/",
+        "author_flair_text": null, "quarantine": false, "title": "LPT: Make lists
+        of things you need or would like to do when your life is busy.", "created_utc":
+        1452730179.0, "distinguished": null, "mod_reports": [], "visited": false,
+        "num_reports": null, "ups": 16}}], "after": "t3_40uz7y", "before": null}}'
+    http_version: 
+  recorded_at: Thu, 14 Jan 2016 20:03:23 GMT
+recorded_with: VCR 3.0.0

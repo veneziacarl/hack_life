@@ -17,8 +17,11 @@ FactoryGirl.define do
     trait :image do
       sequence(:first_name) { UserSeeder.fake_name.first }
       sequence(:last_name) { UserSeeder.fake_name.last }
-      sequence(:email) { |n| "#{UserSeeder.fake_email[1]}#{n}#{UserSeeder.fake_email[2]}" }
-      profile_photo { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'images', UserSeeder.fake_photo)) }
+      sequence(:email) do |n|
+        "#{UserSeeder.fake_email[1]}#{n}#{UserSeeder.fake_email[2]}"
+      end
+      profile_photo { Rack::Test::UploadedFile.new(File.join(
+        Rails.root, 'spec', 'support', 'images', UserSeeder.fake_photo)) }
     end
 
     trait :admin do

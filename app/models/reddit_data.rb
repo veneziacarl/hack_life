@@ -8,7 +8,7 @@ class RedditData
   end
 
   def get_posts
-    uri_string ="https://www.reddit.com/r/#{subreddit}.json"
+    uri_string = "https://www.reddit.com/r/#{subreddit}.json"
     uri = URI(uri_string)
     response = Net::HTTP.get(uri)
 
@@ -24,8 +24,8 @@ class RedditData
       unless post['data']['stickied']
         title = post['data']["title"]
         url = post['data']['permalink']
-        description = post['data']['selftext']
-        output << { 'Title' => title, 'URL' => url, 'Description' => description}
+        descrip = post['data']['selftext']
+        output << { 'Title' => title, 'URL' => url, 'Description' => descrip }
       end
     end
     output

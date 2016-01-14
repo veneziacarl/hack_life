@@ -12,6 +12,6 @@ class UserSeeder
 
   def self.fake_photo
     dog_or_cat = ["dog", "cat"]
-    "#{dog_or_cat.sample}#{rand(9)+1}.jpeg"
+    "#{dog_or_cat.sample}#{rand(9) + 1}.jpeg"
   end
 end
