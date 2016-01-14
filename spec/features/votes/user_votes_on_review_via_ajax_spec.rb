@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'orderly'
 
 feature "user adds vote to review via ajax", %{
   As a User
@@ -23,6 +24,7 @@ feature "user adds vote to review via ajax", %{
 
     expect(page).to have_content("Score: 1")
     expect(page).to_not have_content("Vote cast!")
+    expect(p)
   end
 
   scenario 'user downvotes review', js: true do
@@ -39,22 +41,22 @@ feature "user adds vote to review via ajax", %{
     let!(:vote) { FactoryGirl.create(:vote, user: user, review: review) }
 
     scenario 'user can only make 1 up vote on a single review', js: true do
-      skip('passes on local, skip for codeship')
+      # skip('passes on local, skip for codeship')
       user_sign_in(user)
       visit lifehack_path(review.lifehack)
-
       click_button '+1'
 
       expect(page).to have_content('You have already upvoted this review!')
+      save_screenshot("capybara-js3.png")
       expect(page).to have_content("Score: 1")
+      save_screenshot("capybara-js4.png")
     end
 
 
     scenario 'user can change vote on already voted review', js: true do
-      skip('passes on local, skip for codeship')
+      # skip('passes on local, skip for codeship')
       user_sign_in(user)
       visit lifehack_path(review.lifehack)
-
       click_button '-1'
 
       expect(page).to have_content("Score: -1")
@@ -64,7 +66,7 @@ feature "user adds vote to review via ajax", %{
   context "review has already been down voted on" do
     let!(:vote) { FactoryGirl.create(:vote, :down, user: user, review: review) }
     scenario 'user can only make 1 down vote on a single review', js: true do
-      skip('passes on local, skip for codeship')
+      # skip('passes on local, skip for codeship')
       user_sign_in(user)
       visit lifehack_path(review.lifehack)
 
