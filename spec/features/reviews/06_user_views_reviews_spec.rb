@@ -28,6 +28,9 @@ feature 'user views reviews for a lifehack', %{
       within "div.review-#{review.id}" do
         expect(page).to have_content(review.rating)
         expect(page).to have_content(review.comment)
+        expect(page).to_not have_content(review.lifehack)
+        expect(page).to have_content(time_ago_in_words(lifehack.updated_at))
+        expect(page).to have_content(review.creator.full_name)
       end
     end
 
