@@ -5,7 +5,7 @@
   margin: 15px;
 }
 
-.lifehack_details {
+.lifehack-details {
   max-width: 300rem;
   padding: rem-calc(50);
 }
@@ -29,15 +29,15 @@
       padding: 13px 0.875rem 13px 2.875rem;
       }
 
-    .creator_name {
-      padding: 0 0 0 0;
+    .creator-name {
+      padding: 0;
       }
 
-    .creator_image {
-      padding: 5 5 5 5;
+    .creator-image {
+      padding: 5;
       }
 
-    .lifehack_description {
+    .lifehack-description {
       font-size: 20px;
     }
 
@@ -84,35 +84,35 @@
 
 
 .button {
-  border-radius:28px;
-  border:1px solid #18ab29;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
   display:inline-block;
-  font-size:15px;
-  padding:12px 20px
+  font-size: 15px;
+  padding: 12px 20px
 }
 
 .actions .button {
-  border-radius:28px;
-  border:1px solid #18ab29;
-  display:inline-block;
-  font-size:15px;
-  padding:12px 20px
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  font-size: 15px;
+  padding: 12px 20px;
 }
 
 .top-bar .button {
-  border-radius:28px;
-  border:1px solid $white;
-  display:inline-block;
-  font-size:15px;
+  border-radius: 28px;
+  border: 1px solid $white;
+  display: inline-block;
+  font-size: 15px;
   font-weight: normal;
   padding: 3px 30px;
 
 }
 
-.add_lifehack {
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	font-size:15px;
-	padding:12px 20px
+.add-lifehack {
+	border-radius: 28px;
+	border: 1px solid #18ab29;
+	display: inline-block;
+	font-size: 15px;
+	padding: 12px 20px
 }
