@@ -26,8 +26,8 @@ feature 'user adds review', %{
     click_button 'Add Review'
 
     expect(page).to have_content('Review made!')
-    expect(page).to have_content('Rating: 5')
-    expect(page).to have_content('Comment: testcomment')
+    expect(page).to have_content('5')
+    expect(page).to have_content('testcomment')
   end
 
   scenario 'user specifies rating' do
@@ -40,7 +40,7 @@ feature 'user adds review', %{
     click_button 'Add Review'
 
     expect(page).to have_content('Review made!')
-    expect(page).to have_content('Rating: 5')
+    expect(page).to have_content('5')
   end
 
   scenario 'user does not specify rating' do

@@ -12,13 +12,12 @@ feature 'user searches lifehack', %{
   #     to a results page where I can see all lifehacks containing my search
   #     term in the title
   # [x] I should be able to click a returned result and be brought to that
-  #     lifehack's show page
-  # [ ] On the search results page, I should be able to sort my search results
-  # [ ] On the search results page, I should be presented with additional search
-  #     options to search by title, description, author, etc.
+  #     lifehack's show page.
   # [x] If I enter in a search query that has no results, I should be brought
   #     to the search page and told that there are no results. I should be
   #     presented with a link to return to the main page
+  # [x] Search is case-insensitive
+
 
   let! (:lifehack) { FactoryGirl.create(:lifehack) }
   let (:lifehack2) { FactoryGirl.create(:lifehack) }
@@ -33,7 +32,7 @@ feature 'user searches lifehack', %{
   scenario 'user searches and finds one item' do
     user_sign_in(user)
     visit lifehacks_path
-    fill_in 'search', with: 'how to'
+    fill_in 'search-all', with: 'how to'
     click_button 'Search'
 
     expect(page).to have_content('1 result(s) found')
@@ -44,27 +43,19 @@ feature 'user searches lifehack', %{
     user_sign_in(user)
     lifehack2
     visit lifehacks_path
-    fill_in 'search', with: 'how to'
+    fill_in 'search-all', with: 'how to'
     click_button 'Search'
 
     expect(page).to have_content('2 result(s) found')
-    expect(page).to have_content(lifehack.title)
-    expect(page).to have_content("#{lifehack.created_at.strftime('%m/%d/%Y')}
-    #{lifehack.created_at.strftime('%I:%M%p')}")
-    expect(page).to have_content "Submitted By: #{lifehack.creator.first_name}"
-    expect("#{lifehack.title}").to appear_before("#{lifehack2.title}")
-
-    expect(page).to have_content(lifehack2.title)
-    expect(page).to have_content("#{lifehack.created_at.strftime('%m/%d/%Y')}
-    #{lifehack.created_at.strftime('%I:%M%p')}")
-    expect(page).to have_content "Submitted By: #{lifehack.creator.first_name}"
+    expect(page).to have_link(lifehack.title)
+    expect(page).to have_link(lifehack2.title)
   end
 
   scenario 'user views details of a specfic lifehack found through search' do
     user_sign_in(user)
     lifehack
     visit lifehacks_path
-    fill_in 'search', with: 'how to'
+    fill_in 'search-all', with: 'how to'
     click_button 'Search'
     click_link lifehack.title
 
@@ -77,7 +68,7 @@ feature 'user searches lifehack', %{
   scenario 'search query returns no result' do
     user_sign_in(user)
     visit lifehacks_path
-    fill_in 'search', with: 'this won\'t work'
+    fill_in 'search-all', with: 'this won\'t work'
     click_button 'Search'
 
     expect(page).to have_content('0 result(s) found')
@@ -86,5 +77,13 @@ feature 'user searches lifehack', %{
     expect(current_path).to eq(lifehacks_path)
   end
 
-  scenario 'user sorts search results'
+  scenario 'search is case-insensitive' do
+    user_sign_in(user)
+    visit lifehacks_path
+    fill_in 'search-all', with: 'HoW TO'
+    click_button 'Search'
+
+    expect(page).to have_content('1 result(s) found')
+    expect(page).to have_content(lifehack.title)
+  end
 end

@@ -42,8 +42,7 @@
          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
        <% end %>
      </ul>
-
-     <ul class="right">
+     <ul class="right" id="search-bar">
        <li class="has-form">
          <div class="row collapse">
            <div class="submit small-2 columns">
@@ -58,12 +57,9 @@
             </div>
            <% end %>
          </li>
-        </ul>
       </div>
     </section>
     </nav>
-
-
 
     <div class="messages">
       <% flash.each do |type, message| %>
@@ -73,8 +69,8 @@
       <% end %>
     </div>
 
-      <div class="flash flash-ajax">
-      </div>
+    <div class="flash flash-ajax">
+    </div>
 
     <div class="row">
       <%= yield %>

@@ -1,17 +1,9 @@
 
 <div class="row">
-  <div>
-    <ul class="button medium" id="add_lifehack">
-      <%= link_to 'Add Lifehack', new_lifehack_path%>
-    </ul>
-  </div>
-</div>
-<div class="row">
-
     <% @lifehacks.each do |lifehack| %>
     <div class="panel large-12 columns clearfix">
     <!-- <div class="panel right large-12 columns"> -->
-      <table>
+       <table>
         <thead>
           <tr>
             <th>
@@ -21,12 +13,13 @@
         </thead>
         <tbody>
           <tr>
-            <td><%= "#{lifehack.created_at.strftime("%m/%d/%Y")} #{lifehack.created_at.strftime("%I:%M%p")}"%></td>
+            <td><%= time_ago_in_words(lifehack.created_at)%></td>
             <td>Submitted By: <%= lifehack.creator.first_name %> </td>
             <td>Average Rating:</td>
             <td class="profile-info">
                 <%= image_tag(lifehack.creator.profile_photo, :class => "profile_img_index") %>
             </td>
+            <td>Description: <%= lifehack.short_description %> ... </td>
           </tr>
         </tbody>
       </table>
