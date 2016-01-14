@@ -13,8 +13,8 @@ feature 'user updates review', %{
 
   let!(:user) { FactoryGirl.create(:user) }
   let!(:user2) { FactoryGirl.create(:user) }
-  let!(:lifehack) { FactoryGirl.create(:lifehack, creator: user) }
-  let!(:review) { FactoryGirl.create(:review, creator: user2) }
+  let!(:lifehack) { FactoryGirl.create(:lifehack,  creator: user) }
+  let!(:review) { FactoryGirl.create(:review, lifehack: lifehack, creator: user2) }
 
   scenario 'user sucessfully edits review' do
     user_sign_in(user2)
@@ -22,13 +22,15 @@ feature 'user updates review', %{
 
     expect(page).to have_content(lifehack.title)
     expect(page).to have_content(lifehack.description)
+    expect(page).to have_content(review.comment)
 
     click_link('Edit Review')
-
     new_comment = 'Changing the review'
     fill_in('review[comment]', with: new_comment)
 
-    click_button('Add Review')
+    click_link('Update Review')
+    save_and_open_page
+    binding.pry
 
     expect(page).to have_content(lifehack.title)
     expect(page).to have_content(lifehack.description)
@@ -48,7 +50,10 @@ feature 'user updates review', %{
 
     fill_in('review[comment]', with: '')
 
-    click_button('Add Review')
+    save_and_open_page
+    binding.pry
+
+    click_link('Updated Review')
 
     expect(page).to have_content('Review rating can\'t be blank!')
   end
@@ -60,16 +65,9 @@ feature 'user updates review', %{
     expect(current_path).to eq(lifehack_path(lifehack))
     expect(page).to have_content(lifehack.title)
     expect(page).to have_content(lifehack.description)
+    expect(page).to have_content(review.comment)
 
-    click_link('Edit Review')
-
-    new_comment = 'Malicious User'
-    fill_in('review[comment]', with: new_comment)
-
-    click_button('Add Review')
-
-    expect(page).to have_content('You are not the Authorized User')
-    expect(current_path).to eq(root_path)
-    expect(page).to have_content(lifehack2.title)
+    expect(page).to_not have_link('Edit Review')
+    expect(page).to_not have_link('Delete Review')
   end
 end

@@ -6,18 +6,14 @@
 </p>
 
 <%= link_to 'Home', lifehacks_path %>
-<%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack) %>
-<%= button_to 'Delete Lifehack', @lifehack, { method: :delete} %>
+<%= link_to 'Add Review', new_lifehack_review_path(@lifehack) %>
+<%= link_to 'Update Review', lifehack_review_path(@lifehack) %>
 
-<% if user_signed_in? %>
-  <%= link_to 'Add Review', new_lifehack_review_path(@lifehack) %>
-  <% if current_user.admin? %>
-    <div class="lifehack-admin-panel">
-      <%= button_to "Delete Lifehack", lifehack_path, method: :delete %>
-    </div>
-  <% end %>
-<% else %>
-  You must sign in to add a review
+<% if @lifehack.creator == current_user || current_user.admin? %>
+  <div class="lifehack-admin-panel">
+    <%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack, review), { method: :edit} %>
+    <%= button_to 'Delete Lifehack', @lifehack, { method: :delete} %>
+  </div>
 <% end %>
 
 <% if !@lifehack.reviews.nil? %>

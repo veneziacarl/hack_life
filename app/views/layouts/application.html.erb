@@ -29,11 +29,12 @@
         <ul class="right" id="search-bar">
           <li>
             <%= form_tag(search_lifehacks_path, method: "get") do %>
-            <%= text_field_tag(:search) %>
+            <%= text_field_tag(:"search[all]", nil, placeholder: "enter keyword", id: "search-all") %>
             <div>
               <%= submit_tag("Search") %>
             </div>
             <% end %>
+              <%= link_to 'Advanced', search_lifehacks_path(search: {all: ""}) %>
           </li>
         </ul>
 

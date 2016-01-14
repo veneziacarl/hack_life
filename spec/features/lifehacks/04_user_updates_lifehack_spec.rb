@@ -11,16 +11,16 @@ feature 'user updates lifehack', %{
   # [√] If I am not logged in, I cannot modify the content of the lifehack
   # [√] If I am not the creator, I cannot modify the content of the lifehack
 
-  let (:user) { FactoryGirl.create(:user) }
-  let!(:lh) { FactoryGirl.create(:lifehack, creator: user) }
+  let!(:user) { FactoryGirl.create(:user) }
+  let (:lh) { FactoryGirl.create(:lifehack, creator: user) }
   let (:user2) { FactoryGirl.create(:user) }
 
   scenario 'navigate to lifehack show page and edit lifehack' do
+    lh
     user_sign_in(user)
     click_link(lh.title)
 
     expect(current_path).to eq(lifehack_path(lh))
-
     click_link('Edit Lifehack')
 
     expect(find_field('lifehack[title]').value).to eq(lh.title)
@@ -39,6 +39,7 @@ feature 'user updates lifehack', %{
   end
 
   scenario 'user attempts to post an invalid title' do
+    lh
     user_sign_in(user)
     click_link(lh.title)
     click_link('Edit Lifehack')
@@ -56,10 +57,10 @@ feature 'user updates lifehack', %{
   end
 
   scenario 'user attempts to edit another user\'s lifehack' do
+    lh
     user_sign_in(user2)
     click_link(lh.title)
-    click_link('Edit Lifehack')
 
-    expect(page).to have_content('You are not the Authorized User')
+    expect(page).to_not have_button('Edit Lifehack')
   end
 end
