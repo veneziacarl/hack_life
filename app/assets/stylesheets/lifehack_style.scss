@@ -101,7 +101,9 @@
   display: inline-block;
   font-size: 15px;
   padding: 12px 20px;
-  &:focus {outline:0;}
+  &:focus {
+      outline: 0;
+  }
   // .vote {
   //   @include button(
   //     $full-width: true
