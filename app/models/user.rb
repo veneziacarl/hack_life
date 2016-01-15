@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     votes.any? { |vote| vote.review_id == review.id }
   end
 
+  def vote_type(review)
+    find_vote_for_review(review).score
+  end
+
   def find_vote_for_review(review)
     votes.detect { |vote| vote.review_id == review.id }
   end

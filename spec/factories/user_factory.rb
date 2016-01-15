@@ -12,6 +12,11 @@ FactoryGirl.define do
       last_name "Bot"
       email "lifehackbot@gmail.com"
       password "lifehackbot"
+      profile_photo do
+        Rack::Test::UploadedFile.new(
+          File.join(Rails.root, 'spec', 'support', 'images', 'bot_image.png'))
+      end
+      role "admin"
     end
 
     trait :image do
