@@ -1,5 +1,7 @@
 Rails.application.configure do
+  WebMock.allow_net_connect!
   # Settings specified here will take precedence over those in config/application.rb.
+  WebMock.allow_net_connect!
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
