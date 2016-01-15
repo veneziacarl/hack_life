@@ -24,9 +24,9 @@ feature "user sees the details of a lifehack" do
 
   scenario "navigates back to index page" do
     visit lifehack_path(lifehack)
-    click_link("Home")
+    click_link("LifeHacks")
 
-    expect(current_path).to eq(lifehacks_path)
+    expect(current_path).to eq(root_path)
     expect(page).to have_content("#{lifehack.title}")
   end
 

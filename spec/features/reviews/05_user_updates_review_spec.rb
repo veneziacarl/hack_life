@@ -6,10 +6,10 @@ feature 'user updates review', %{
 } do
 
   # Acceptance Criteria:
-  # [] I must provide all of the required information
-  # [] If the information is incorrect, I must be provided errors
-  # [] If I am not logged in, I cannot modify the content of the review
-  # [] If I am not the creator, I cannot modify the content of the review
+  # [√] I must provide all of the required information
+  # [√] If the information is incorrect, I must be provided errors
+  # [√] If I am not logged in, I cannot modify the content of the review
+  # [√] If I am not the creator, I cannot modify the content of the review
 
   let!(:user) { FactoryGirl.create(:user) }
   let!(:user2) { FactoryGirl.create(:user) }
@@ -24,7 +24,7 @@ feature 'user updates review', %{
     expect(page).to have_content(lh.description)
     expect(page).to have_content(review.comment)
 
-    click_link('Edit Review')
+    click_link('Edit')
     new_comment = 'Changing the review'
     fill_in('review[comment]', with: new_comment)
 
@@ -44,7 +44,7 @@ feature 'user updates review', %{
     expect(page).to have_content(lh.title)
     expect(page).to have_content(lh.description)
 
-    click_link('Edit Review')
+    click_link('Edit')
 
     fill_in('review[comment]', with: '')
     click_button('Update Review')
@@ -59,8 +59,10 @@ feature 'user updates review', %{
     expect(page).to have_content(lh.title)
     expect(page).to have_content(lh.description)
     expect(page).to have_content(review.comment)
-
-    expect(page).to_not have_link('Edit Review')
-    expect(page).to_not have_link('Delete Review')
+  
+    within('.review') do
+      expect(page).to_not have_link('Edit')
+      expect(page).to_not have_link('Delete')
+    end
   end
 end

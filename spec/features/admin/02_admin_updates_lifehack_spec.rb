@@ -35,7 +35,7 @@ feature 'admin updates a lifehack', %{
     description = 'Testing out this cool new edition to the lifehack'
     fill_in('lifehack[title]', with: test_title)
     fill_in('lifehack[description]', with: description)
-    click_button('Add Lifehack')
+    click_button('Update Lifehack')
 
     expect(current_path).to eq(lifehack_path(lh))
     expect(page).to have_content(test_title)
@@ -52,7 +52,7 @@ feature 'admin updates a lifehack', %{
     click_link lh.title
 
     within('.review-admin-panel') do
-      click_link 'Edit Review'
+      click_link 'Edit'
     end
 
     fill_in('review[comment]', with: 'some new text')
@@ -80,6 +80,6 @@ feature 'admin updates a lifehack', %{
     visit lifehacks_path
     click_link lh.title
 
-    expect(page).to_not have_button('Edit Review')
+    expect(page).to_not have_button('Edit')
   end
 end

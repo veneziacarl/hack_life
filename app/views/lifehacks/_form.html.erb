@@ -10,7 +10,11 @@
 
   <%= f.hidden_field :creator, value: current_user %>
 
-<div class="actions">
-  <%= f.submit 'Add Lifehack', class: 'button'%>
+  <div class="actions">
+    <% unless current_page?(new_lifehack_path) %>
+      <%= f.submit 'Update Lifehack', class: 'button'%>
+    <% else %>
+      <%= f.submit 'Add Lifehack', class: 'button'%>
+    <% end %>
+  </div>
 <% end %>
-</div>
