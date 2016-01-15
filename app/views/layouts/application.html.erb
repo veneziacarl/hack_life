@@ -63,19 +63,24 @@
     </nav>
 
     <div class="messages">
-      <% flash.each do |type, message| %>
-        <div class="flash flash-<%= type %>">
-          <%= message %>
+      <% unless flash.empty? %>
+        <% flash.each do |type, message| %>
+          <div data-alert class="alert-box info radius flash">
+            <%= message %>
+            <a href="#" class="close">&times;</a>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="spacer">
         </div>
       <% end %>
     </div>
 
-    <div class="flash flash-ajax">
-    </div>
 
     <div class="row">
       <%= yield %>
     </div>
 
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   </body>
 </html>
