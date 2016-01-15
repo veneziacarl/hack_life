@@ -27,23 +27,28 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @lifehack = Lifehack.find(params[:lifehack_id])
     @review = Review.find(params[:id])
     @rating_list = Review::RATING_LIST
   end
 
   def update
-    binding.pry
-    # @lifehack = Lifehack.find(params[:id])
-    #
-    # if @lifehack.update_attributes(lifehack_params)
-    #   if current_user.admin?
-    #     redirect_to @lifehack, notice: "Admin successfully edited lifehack: #{@lifehack.title}"
-    #   else
-    #     redirect_to @lifehack, notice: 'Lifehack Edited Successfully!'
-    #   end
-    # else
-    #   render :edit, notice: 'You are not the authorized user'
-    # end
+    @lifehack = Lifehack.find(params[:lifehack_id])
+    @review = Review.find(params[:id])
+
+    if @review.update_attributes(review_params)
+      if current_user.admin?
+        redirect_to @lifehack, notice: "Admin edited review: #{@review.id}"
+      else
+        redirect_to @lifehack, notice: 'Review edited successfully!'
+      end
+    else
+      render :edit, notice: 'You are not the authorized user'
+    end
+  end
+
+  def show
+
   end
 
   def destroy

@@ -28,13 +28,11 @@ feature 'user updates review', %{
     new_comment = 'Changing the review'
     fill_in('review[comment]', with: new_comment)
 
-    click_link('Update Review')
-    save_and_open_page
-    binding.pry
+    click_button('Update Review')
 
     expect(page).to have_content(lifehack.title)
     expect(page).to have_content(lifehack.description)
-    expect(page).to have_content('Lifehack Edited Successfully!')
+    expect(page).to have_content('Review edited successfully!')
     expect(page).to have_content(new_comment)
   end
 
@@ -49,13 +47,9 @@ feature 'user updates review', %{
     click_link('Edit Review')
 
     fill_in('review[comment]', with: '')
-
+    click_button('Update Review')
     save_and_open_page
-    binding.pry
-
-    click_link('Updated Review')
-
-    expect(page).to have_content('Review rating can\'t be blank!')
+    expect(page).to have_content('Review edited successfully!')
   end
 
   scenario 'user attempts to edit another user\'s review' do

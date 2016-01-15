@@ -55,10 +55,13 @@ feature 'admin updates item', %{
       click_link 'Edit Review'
     end
 
-    expect(page).to have_content("Admin editd review: #{review.id}")
+    fill_in('review[comment]', with: 'some new text')
+    click_button('Update Review')
+
+    expect(page).to have_content("Admin edited review: #{review.id}")
     expect(page).to have_css('.lifehack-admin-panel')
     expect(page).to have_content(lh.title)
-    expect(page).to_not have_content(review.rating)
+    expect(page).to have_content("Rating: #{review.rating}")
     expect(page).to_not have_content(review.comment)
   end
 

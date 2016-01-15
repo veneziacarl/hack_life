@@ -8,7 +8,7 @@ class LifehacksController < ApplicationController
 
   def show
     @lifehack = Lifehack.find(params[:id])
-    @review = Review.new
+    # @review = Review.find(params[:id])
     @reviews = @lifehack.reviews.order(created_at: :desc).page(params[:page])
   end
 
