@@ -1,13 +1,17 @@
 class LifehacksController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
+
   def index
     @lifehacks = Lifehack.order(created_at: :desc).page(params[:page])
   end
 
   def show
     @lifehack = Lifehack.find(params[:id])
-    @review = Review.new
-    @reviews = @lifehack.reviews.order(created_at: :desc)
+    # @review = Review.find(params[:id])
+    @reviews = @lifehack.reviews.order(created_at: :desc).page(params[:page])
+    # @review = Review.new
+    # @reviews = @lifehack.reviews.order(created_at: :desc)
     @reviews = @reviews.sort_by { |review| review.sum_score }.reverse
   end
 
@@ -52,14 +56,41 @@ class LifehacksController < ApplicationController
 
   def destroy
     @lifehack = Lifehack.destroy(params[:id])
-    redirect_to lifehacks_path,
+    redirect_to root_path,
       notice: "Admin successfully deleted lifehack: #{@lifehack.title}"
+  end
+
+  def edit
+    @lifehack = Lifehack.find(params[:id])
+  end
+
+  def update
+    @lifehack = Lifehack.find(params[:id])
+
+    if @lifehack.update_attributes(lifehack_params)
+      if current_user.admin?
+        redirect_to @lifehack, notice:
+          "Admin successfully edited lifehack: #{@lifehack.title}"
+      else
+        redirect_to @lifehack, notice: 'Lifehack Edited Successfully!'
+      end
+    else
+      render :edit, notice: 'You are not the authorized user'
+    end
   end
 
   private
 
   def lifehack_params
     params.require(:lifehack).permit(:title, :description)
+  end
+
+  def authorize_user!
+    user = Lifehack.find(params[:id]).creator
+    unless current_user == user || current_user.admin?
+      flash[:alert] = "You are not the Authorized User"
+      redirect_to after_sign_in_path_for(current_user)
+    end
   end
 
   def search_params

@@ -8,8 +8,12 @@
   <%= f.text_field :comment %>
 
   <%= f.hidden_field :creator, value: current_user %>
-  <div class="actions">
-    <%= f.submit 'Add Review', class: 'button tiny'%>
-  </div>
 
+    <div class="actions">
+      <% unless current_page?(new_lifehack_review_path(@lifehack)) %>
+        <%= f.submit 'Update Review', class: 'button tiny'%>
+      <% else %>
+        <%= f.submit 'Add Review', class: 'button tiny'%>
+      <% end %>
+    </div>
 <% end %>

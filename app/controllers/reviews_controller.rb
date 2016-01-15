@@ -26,6 +26,27 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @lifehack = Lifehack.find(params[:lifehack_id])
+    @review = Review.find(params[:id])
+    @rating_list = Review::RATING_LIST
+  end
+
+  def update
+    @lifehack = Lifehack.find(params[:lifehack_id])
+    @review = Review.find(params[:id])
+
+    if @review.update_attributes(review_params)
+      if current_user.admin?
+        redirect_to @lifehack, notice: "Admin edited review: #{@review.id}"
+      else
+        redirect_to @lifehack, notice: 'Review edited successfully!'
+      end
+    else
+      render :edit, notice: 'You are not the authorized user'
+    end
+  end
+
   def destroy
     @lifehack = Lifehack.find(params[:lifehack_id])
     @review = Review.destroy(params[:id])

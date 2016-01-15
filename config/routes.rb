@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
 
   root 'lifehacks#index'
   resources :lifehacks, only: [:index, :new, :create, :destroy]
@@ -10,14 +11,12 @@ Rails.application.routes.draw do
   end
 
   resources :lifehacks, only: [:show] do
-    resources :reviews, only: [:new, :create, :index, :destroy]
+    resources :reviews, only: [:new, :create, :index, :destroy, :edit, :update]
   end
 
   resources :reviews, only: [:show] do
     resources :votes, only: [:create, :update]
   end
-
-  devise_for :users
   resources :users, only: [:index, :show]
 
   namespace :api do
