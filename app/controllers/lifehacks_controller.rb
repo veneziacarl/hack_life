@@ -8,8 +8,7 @@ class LifehacksController < ApplicationController
 
   def show
     @lifehack = Lifehack.find(params[:id])
-    @review = Review.new
-    @reviews = @lifehack.reviews.order(created_at: :desc)
+    @reviews = @lifehack.reviews.order(created_at: :desc).page(params[:page])
     @reviews = @reviews.sort_by { |review| review.sum_score }.reverse
   end
 
@@ -66,7 +65,12 @@ class LifehacksController < ApplicationController
     @lifehack = Lifehack.find(params[:id])
 
     if @lifehack.update_attributes(lifehack_params)
-      redirect_to @lifehack, notice: 'Lifehack Edited Successfully!'
+      if current_user.admin?
+        redirect_to @lifehack, notice:
+          "Admin successfully edited lifehack: #{@lifehack.title}"
+      else
+        redirect_to @lifehack, notice: 'Lifehack Edited Successfully!'
+      end
     else
       render :edit, notice: 'You are not the authorized user'
     end
@@ -80,10 +84,12 @@ class LifehacksController < ApplicationController
 
   def authorize_user!
     user = Lifehack.find(params[:id]).creator
-    unless current_user == user || current_user.role == 'admin'
+    unless current_user == user || current_user.admin?
       flash[:alert] = "You are not the Authorized User"
       redirect_to after_sign_in_path_for(current_user)
     end
+  end
+
   def search_params
     params.require(:search).permit(:title, :description, :user, :all)
   end

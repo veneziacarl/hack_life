@@ -11,20 +11,20 @@ feature 'user updates lifehack', %{
   # [√] If I am not logged in, I cannot modify the content of the lifehack
   # [√] If I am not the creator, I cannot modify the content of the lifehack
 
-  let (:user) { FactoryGirl.create(:user) }
-  let!(:lifehack) { FactoryGirl.create(:lifehack, creator: user) }
+  let!(:user) { FactoryGirl.create(:user) }
+  let (:lh) { FactoryGirl.create(:lifehack, creator: user) }
   let (:user2) { FactoryGirl.create(:user) }
 
   scenario 'navigate to lifehack show page and edit lifehack' do
+    lh
     user_sign_in(user)
-    click_link(lifehack.title)
+    click_link(lh.title)
 
-    expect(current_path).to eq(lifehack_path(lifehack))
-
+    expect(current_path).to eq(lifehack_path(lh))
     click_link('Edit Lifehack')
 
-    expect(find_field('lifehack[title]').value).to eq(lifehack.title)
-    expect(find_field('lifehack[description]').value).to eq(lifehack.description)
+    expect(find_field('lifehack[title]').value).to eq(lh.title)
+    expect(find_field('lifehack[description]').value).to eq(lh.description)
 
     title = 'Hopefully this work'
     description = 'Testing out this cool new edition to the lifehack'
@@ -32,20 +32,20 @@ feature 'user updates lifehack', %{
     fill_in('lifehack[description]', with: description)
     click_button('Add Lifehack')
 
-    expect(current_path).to eq(lifehack_path(lifehack))
+    expect(current_path).to eq(lifehack_path(lh))
     expect(page).to have_content(title)
     expect(page).to have_content(description)
     expect(page).to have_content('Lifehack Edited Successfully!')
   end
 
   scenario 'user attempts to post an invalid title' do
+    lh
     user_sign_in(user)
-    click_link(lifehack.title)
+    click_link(lh.title)
     click_link('Edit Lifehack')
 
-    expect(find_field('lifehack[title]').value).to eq(lifehack.title)
-    expect(find_field('lifehack[description]').value).to eq(lifehack.description)
-
+    expect(find_field('lifehack[title]').value).to eq(lh.title)
+    expect(find_field('lifehack[description]').value).to eq(lh.description)
 
     description = 'How fast can I type this without making a mistake'
     fill_in('lifehack[title]', with: '')
@@ -57,10 +57,10 @@ feature 'user updates lifehack', %{
   end
 
   scenario 'user attempts to edit another user\'s lifehack' do
+    lh
     user_sign_in(user2)
-    click_link(lifehack.title)
-    click_link('Edit Lifehack')
+    click_link(lh.title)
 
-    expect(page).to have_content('You are not the Authorized User')
+    expect(page).to_not have_button('Edit Lifehack')
   end
 end

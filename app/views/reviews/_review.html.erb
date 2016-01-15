@@ -1,36 +1,58 @@
-<div class="review review-<%= review.id %>">
-  <% unless current_page?(lifehack_path(review.lifehack)) %>
-    Lifehack: <%= link_to review.lifehack.title, lifehack_path(review.lifehack) %>
-  <% end %>
-  Rating: <%= review.rating %>
-  Comment: <%= review.comment %>
-  User: <%= link_to review.creator.full_name, user_path(review.creator) %>
-  Updated: <%= time_ago_in_words(review.updated_at)%> ago
 
-  <div class="score">
-    Score: <%= review.sum_score %>
+<div class="row">
+  <div class="review review-<%= review.id %>">
+    <table>
+      <thead>
+        <tr>
+          <th width="100">Votes</th>
+          <th width="200">Score </th>
+          <th width="200">Rating</th>
+          <th>Comment</th>
+          <th width="200">User</th>
+          <th width="400">Updated</th>
+          <th width="250">Lifehack</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="rev_row">
+        <td>
+          <div class="row">
+            <% if user_signed_in? %>
+              <% if current_user.has_vote?(review) %>
+                <div class="vote_buttons_update">
+                  <%= button_to '+1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
+                  <%= button_to '-1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
+                </div>
+              <% else %>
+                <div class="vote_buttons_create">
+                  <%= button_to '+1', review_votes_path(review),
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
+                  <%= button_to '-1', review_votes_path(review),
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
+                </div>
+              <% end %>
+              <% if review.creator == current_user || current_user.admin? %>
+                <div class="review-admin-panel">
+                  <%= link_to 'Edit Review', edit_lifehack_review_path(review.lifehack, review) %>
+                  <%= button_to "Delete Review", lifehack_review_path(review.lifehack, review), method: :delete %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </td>
+        <td class="rev_score"><%= review.sum_score %></td>
+        <td><%= review.rating %></td>
+        <td><%= review.comment %></td>
+        <td><%= link_to review.creator.full_name, user_path(review.creator) %></td>
+        <td><%= time_ago_in_words(review.updated_at)%> ago</td>
+        <% unless current_page?(lifehack_path(review.lifehack)) %>
+        <td><%= link_to review.lifehack.title, lifehack_path(review.lifehack) %>
+        </td>
+        <% end %>
+      </tr>
+    </tbody>
+    </table>
   </div>
-
-  <% if user_signed_in? %>
-    <% if current_user.has_vote?(review) %>
-      <div class="vote_buttons_update">
-        <%= button_to '+1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
-          params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
-        <%= button_to '-1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
-          params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
-      </div>
-    <% else %>
-      <div class="vote_buttons_create">
-        <%= button_to '+1', review_votes_path(review),
-          params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
-        <%= button_to '-1', review_votes_path(review),
-          params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
-      </div>
-    <% end %>
-      <% if current_user.admin? %>
-        <div class="review-admin-panel">
-          <%= button_to "Delete Review", lifehack_review_path(@lifehack, review), method: :delete %>
-        </div>
-      <% end %>
-  <% end %>
 </div>

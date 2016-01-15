@@ -1,12 +1,32 @@
-<% if current_user == @user %>
-  <%= link_to 'Update Account Information', edit_user_registration_path %>
-<% end %>
-
-User Details
-<hr />
-Name: <%= @user.full_name %>
-Email: <%= @user.email %>
-Lifehacks: <%= render @lifehacks %>
-<div class="reviews">
-  Reviews: <%= render @reviews %>
+<div class="row user-info">
+  <div class="profile-photo small-12 medium-4 medium-offset-1 columns">
+    <%= image_tag @user.profile_photo %>
+  </div>
+  <div class="user-details small-12 medium-4 columns end">
+    <u>User Details</u><br>
+    Name: <%= @user.full_name %><br>
+    Email: <%= @user.email %><br>
+    <% if current_user == @user %>
+      <%= link_to 'Update Account Information', edit_user_registration_path, class: 'button' %>
+    <% end %>
+  </div>
 </div>
+<% unless @lifehacks.empty? && @reviews.empty? %>
+  <hr />
+<% end %>
+<% unless @lifehacks.empty? %>
+  <div class="row">
+    <h3>Lifehacks</h3>
+  </div>
+  <div class="lifehacks">
+    <%= render @lifehacks %>
+  </div>
+<% end %>
+<% unless @reviews.empty? %>
+  <div class="row">
+    <h3>Reviews</h3>
+  </div>
+  <div class="reviews">
+    <%= render @reviews %>
+  </div>
+<% end %>

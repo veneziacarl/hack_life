@@ -22,7 +22,7 @@ feature "edit account details" do
   end
 
   scenario "user sees current account details" do
-    click_link "Logged In As: #{user.first_name}"
+    click_link "Welcome #{user.first_name}"
 
     expect(page).to have_content("User Details")
     expect(page).to have_content("Name: #{user.full_name}")
@@ -31,7 +31,7 @@ feature "edit account details" do
   end
 
   scenario 'user navigates to edit account page' do
-    click_link "Logged In As: #{user.first_name}"
+    click_link "Welcome #{user.first_name}"
     click_link "Update Account Information"
 
     expect(page).to have_content('Edit User')
@@ -45,7 +45,7 @@ feature "edit account details" do
 
     expect(page).to have_content("error")
 
-    click_link "Logged In As: #{user.first_name}"
+    click_link "Welcome #{user.first_name}"
     expect(page).to_not have_content("bob")
   end
 
@@ -56,7 +56,7 @@ feature "edit account details" do
     fill_in 'Current password', with: user.password
     click_button 'Update'
 
-    click_link("Logged In As: bob")
+    click_link("Welcome bob")
     expect(page).to have_content("Name: bob smith")
   end
 
@@ -65,7 +65,7 @@ feature "edit account details" do
     fill_in 'Email', with: "test@email.com"
     fill_in 'Current password', with: user.password
     click_button 'Update'
-    click_link "Logged In As: #{user.first_name}"
+    click_link "Welcome #{user.first_name}"
 
     expect(page).to have_content("Email: test@email.com")
   end
@@ -82,7 +82,7 @@ feature "edit account details" do
     fill_in 'Password', with: "newpassword"
     click_button 'Log In'
 
-    expect(page).to have_content("Logged In As: #{user.first_name}")
+    expect(page).to have_content("Welcome #{user.first_name}")
   end
 
   scenario "user updates profile picture" do

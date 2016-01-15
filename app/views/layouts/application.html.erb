@@ -13,60 +13,64 @@
   </head>
 
   <body>
+    <nav class="top-bar">
+       <ul class="title-area">
+         <li class="name">
+           <h1><%= link_to 'LifeHacks', root_path %></h1>
+         </li>
+         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+       </ul>
 
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to 'LifeHacks', root_path %></h1>
-        </li>
-         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-
-        <ul class="right" id="search-bar">
-          <li>
-            <%= form_tag(search_lifehacks_path, method: "get") do %>
-            <%= text_field_tag(:"search[all]", nil, placeholder: "enter keyword", id: "search-all") %>
-            <div>
-              <%= submit_tag("Search") %>
-            </div>
-            <% end %>
-              <%= link_to 'Advanced', search_lifehacks_path(search: {all: ""}) %>
-          </li>
-        </ul>
-
-        <ul class="right">
-          <% if user_signed_in? %>
-            <li>
-              <% if current_user.admin? %>
-                <%= link_to 'Admin Access', users_path %>
+    <section class="top-bar-section">
+     <!-- Right Nav Section -->
+     <ul class="right">
+       <% if user_signed_in? %>
+         <li>
+           <% if current_user.admin? %>
+             <%= link_to 'Admin Access', users_path %>
+           <% end %>
+         </li>
+         <li>
+           <div class="profile-info">
+             <%= link_to 'Welcome ' + current_user.first_name, user_path(current_user), :class => "profile-name" %>
+             <%= image_tag(current_user.profile_photo, :class => "profile-img") %>
+           </div>
+         </li>
+         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+       <% else %>
+         <li><%= link_to 'Sign In', new_user_session_path %></li>
+         <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+       <% end %>
+     </ul>
+     <ul>
+       <li class="has-form">
+         <div class="right" id="search-bar">
+           <%= form_tag(search_lifehacks_path, method: "get") do %>
+          <span><%= text_field_tag(:"search[all]", nil, placeholder: "enter keyword", id: "search-all") %></span>
+          <%= submit_tag("Search", :class => "button")%>
               <% end %>
-            </li>
-            <li>
-              <div class="profile-info">
-                <%= link_to 'Logged In As: ' + current_user.first_name, user_path(current_user) %>
-                <%= image_tag(current_user.profile_photo_url(:thumb)) %>
-              </div>
-            </li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li class="active"><%= link_to 'Sign In', new_user_session_path %></li>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <% end %>
-        </ul>
-      </section>
+            </div>
+        </li>
+      </ul>
+    </section>
+    <ul>
+      <li>
+        <div class="button" id="adv">
+          <span><%= link_to 'Advanced', search_lifehacks_path(search: {all: ""}) %></span>
+        </div>
+      </li>
+    </ul>
     </nav>
-    <div class="row">
+
+    <div class="messages">
       <% flash.each do |type, message| %>
         <div class="flash flash-<%= type %>">
           <%= message %>
         </div>
       <% end %>
-      <div class="flash flash-ajax">
-      </div>
+    </div>
+
+    <div class="flash flash-ajax">
     </div>
 
     <div class="row">

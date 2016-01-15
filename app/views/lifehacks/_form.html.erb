@@ -1,14 +1,16 @@
+<div class="inline">
+
 <%= form_for [@lifehack] do |f| %>
-  <%= f.label :title %>
+
+  <%= f.label :title, class:'form-text' %>
   <%= f.text_field :title %>
 
-  <%= f.label :description %>
+  <%= f.label :description, class:'form-text' %>
   <%= f.text_field :description %>
 
   <%= f.hidden_field :creator, value: current_user %>
 
-  <div class="actions">
-      <%= f.submit 'Add Lifehack', class: 'button tiny'%>
-  </div>
-
+<div class="actions">
+  <%= f.submit 'Add Lifehack', class: 'button'%>
 <% end %>
+</div>

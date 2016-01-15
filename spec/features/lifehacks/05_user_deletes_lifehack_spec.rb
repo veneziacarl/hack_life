@@ -6,13 +6,13 @@ feature 'user deletes lifehack', %{
 } do
 
   # Acceptance Criteria:
-  # [] I must be able delete a lifehack from the lifehack show page
-  # [] If I am not the creator, I cannot delete the lifehack
-  # [] All associated reviews with the lifehack must also be deleted
+  # [√] I must be able delete a lifehack from the lifehack show page
+  # [√] If I am not the creator, I cannot delete the lifehack
 
   let (:user) { FactoryGirl.create(:user) }
   let!(:lifehack) { FactoryGirl.create(:lifehack, creator: user) }
   let!(:lifehack2) { FactoryGirl.create(:lifehack, creator: user) }
+  # let!(:reviews) { FactoryGirl.create(:review, lifehack: lifehack) }
 
   let (:user2) { FactoryGirl.create(:user) }
 
@@ -26,7 +26,8 @@ feature 'user deletes lifehack', %{
 
     click_button('Delete Lifehack')
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("Admin successfully deleted lifehack: #{lifehack.title}")
+    expect(page).to have_content("Admin successfully deleted lifehack:
+    #{lifehack.title}")
 
     expect(page).to have_content(lifehack2.title)
   end
@@ -36,12 +37,7 @@ feature 'user deletes lifehack', %{
     expect(page).to have_content(lifehack2.title)
 
     click_link(lifehack2.title)
-    click_button('Delete Lifehack')
 
-    expect(page).to have_content('You are not the Authorized User')
-    expect(current_path).to eq(root_path)
-    expect(page).to have_content(lifehack2.title)
+    expect(page).to_not have_button('Delete Lifehack')
   end
-
-  scenario 'check to see if reviews are deleted with lifehack'
 end

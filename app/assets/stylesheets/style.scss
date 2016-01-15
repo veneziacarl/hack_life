@@ -7,6 +7,22 @@
   font-size: rem-calc(14);
 }
 
-.advanced-search li {
-  list-style: none;
+.has-form {
+  padding: 0;
+}
+
+.submit {
+  padding: 0;
+}
+
+.profile-info {
+  .profile-img {
+    border-radius: 50%;
+    width: 40px;
+  }
+
+  .profile-name {
+    color: $white;
+    font-size:15px;
+  }
 }
