@@ -97,26 +97,29 @@ $font-family-roboto: 'Roboto Slab', serif;
 
 $white: #ffffff;
 // $ghost       : #FAFAFA;
-// $snow        : #F9F9F9;
+// $snow: #F9F9F9;
 // $vapor       : #F6F6F6;
-// $white-smoke : #F5F5F5;
+$white-smoke: #F5F5F5;
 // $silver      : #EFEFEF;
 $smoke:       #eeeeee;
 // $gainsboro   : #DDDDDD;
-// $iron        : #CCCCCC;
+$iron        : #CCCCCC;
 // $base        : #AAAAAA;
 // $aluminum    : #999999;
 // $jumbo       : #888888;
 // $monsoon     : #777777;
-// $steel       : #666666;
-// $charcoal    : #555555;
+$steel       : #666666;
+$charcoal    : #555555;
 // $tuatara     : #444444;
-// $oil         : #333333;
+$oil         : #333333;
 // $jet         : #222222;
 $black:       #000000;
-// $turquoise    : #ABDCD6;
+$turquoise    : #ABDCD6;
 $gray:         #cccccc;
 $green: #18ab29;
+$cornsilk: #FEF0DB;
+
+// $red: #CC0000;
 
  // We use these as default colors throughout
 
@@ -129,7 +132,7 @@ $primary-color:$black;
 // $info-color: #a0d3e8;
 
 // We use these to control various global styles
-$body-bg: $smoke;
+$body-bg: $cornsilk;
 // $body-font-color: $jet;
 $body-font-family: $font-family-roboto;
 // $body-font-weight: $font-weight-normal;
@@ -471,9 +474,9 @@ $button-function-factor: -20%;
 // We use these to control button border styles.
 $button-border-width: 1px;
 $button-border-style: solid;
-$button-bg-color: $smoke;
-$button-bg-hover: scale-color($green, $lightness: $button-function-factor);
-// $button-border-color: $button-bg-hover;
+$button-bg-color: $turquoise;
+$button-bg-hover: $white;
+$button-border-color: $oil;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
 // $success-button-bg-hover: scale-color($success-color, $lightness: $button-function-factor);
@@ -994,7 +997,7 @@ $button-round: $global-rounded;
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-$panel-bg: transparent;
+$panel-bg: $oil;
 $panel-border-style: solid;
 $panel-border-size: 1px;
 // $callout-panel-bg: scale-color($primary-color, $lightness: 94%);
@@ -1300,7 +1303,7 @@ $side-nav-link-padding: rem-calc(4 40 7 14);
 // $include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
-$table-bg: transparent;
+$table-bg: $oil;
 // scale-color($white, $lightness: -5%)
 // $table-even-row-bg: $snow;
 
@@ -1409,8 +1412,8 @@ $table-row-font-size: rem-calc(15);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: $oil;
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: rem-calc(45);

@@ -5,7 +5,7 @@ class Lifehack < ActiveRecord::Base
   before_validation :strip_whitespace
 
   def short_description
-    desired_length = 40
+    desired_length = 80
     unless description.nil? || description.strip.empty?
       short_descr = ""
       description.split('').each_with_index.map do |char, index|

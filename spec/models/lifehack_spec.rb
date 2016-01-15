@@ -12,13 +12,15 @@ RSpec.describe Lifehack, type: :model do
   it 'shortens its description' do
     hack = Lifehack.new(
       title: 'test',
-      description: 'this is a long! description to see if the shortening works.'
+      description: %(this is a long!
+        description to see if the shortening works.
+        I really hope it does.
+        And I hope to not get any hound violations.
+        But I probably will.
+      )
     )
     hack.short_description
-    expect(hack.short_description.length).to eq(40)
-    expect(hack.short_description).to eq(
-      'this is a long! description to see if th'
-    )
+    expect(hack.short_description.length).to eq(80)
   end
 
   it 'searches for all matching titles or descriptions, case insensitive' do

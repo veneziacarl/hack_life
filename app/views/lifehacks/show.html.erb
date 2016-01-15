@@ -59,5 +59,7 @@
 <% if !@lifehack.reviews.empty? %>
   <%= render @reviews %>
 <% else %>
-  No reviews yet!
+  <div class="no-reviews">
+    <p>No reviews yet!</p>
+  </div>
 <% end %>
