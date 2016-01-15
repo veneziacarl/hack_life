@@ -69,7 +69,8 @@ class LifehacksController < ApplicationController
 
     if @lifehack.update_attributes(lifehack_params)
       if current_user.admin?
-        redirect_to @lifehack, notice: "Admin successfully edited lifehack: #{@lifehack.title}"
+        redirect_to @lifehack, notice:
+          "Admin successfully edited lifehack: #{@lifehack.title}"
       else
         redirect_to @lifehack, notice: 'Lifehack Edited Successfully!'
       end

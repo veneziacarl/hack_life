@@ -47,10 +47,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def show
-
-  end
-
   def destroy
     @lifehack = Lifehack.find(params[:lifehack_id])
     @review = Review.destroy(params[:id])

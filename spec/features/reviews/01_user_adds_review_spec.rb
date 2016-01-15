@@ -13,12 +13,12 @@ feature 'user adds review', %{
   # [x] On error, the review should not appear on the show page
 
   let (:user) { FactoryGirl.create(:user) }
-  let (:lifehack) { FactoryGirl.create(:lifehack) }
+  let (:lh) { FactoryGirl.create(:lifehack) }
 
   scenario 'user specifies rating and comment' do
 
     user_sign_in(user)
-    visit lifehack_path(lifehack)
+    visit lifehack_path(lh)
     click_link 'Add Review'
 
     within('.rating') { choose '5' }
@@ -33,7 +33,7 @@ feature 'user adds review', %{
   scenario 'user specifies rating' do
 
     user_sign_in(user)
-    visit lifehack_path(lifehack)
+    visit lifehack_path(lh)
     click_link 'Add Review'
 
     within('.rating') { choose '5' }
@@ -46,14 +46,14 @@ feature 'user adds review', %{
   scenario 'user does not specify rating' do
 
     user_sign_in(user)
-    visit lifehack_path(lifehack)
+    visit lifehack_path(lh)
     click_link 'Add Review'
 
     fill_in 'Comment', with: 'testcomment'
     click_button 'Add Review'
     expect(page).to have_content("Review rating can't be blank!")
 
-    visit lifehack_path(lifehack)
+    visit lifehack_path(lh)
     expect(page).to_not have_content('Comment: testcomment')
   end
 

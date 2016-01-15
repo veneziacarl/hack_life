@@ -41,7 +41,7 @@ feature 'admin updates item', %{
     expect(page).to have_content(test_title)
     expect(page).to have_content(description)
     expect(page).to have_content(
-    "Admin successfully edited lifehack: #{test_title}"
+      "Admin successfully edited lifehack: #{test_title}"
     )
   end
 

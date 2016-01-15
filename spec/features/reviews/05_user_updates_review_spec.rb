@@ -13,15 +13,15 @@ feature 'user updates review', %{
 
   let!(:user) { FactoryGirl.create(:user) }
   let!(:user2) { FactoryGirl.create(:user) }
-  let!(:lifehack) { FactoryGirl.create(:lifehack,  creator: user) }
-  let!(:review) { FactoryGirl.create(:review, lifehack: lifehack, creator: user2) }
+  let!(:lh) { FactoryGirl.create(:lifehack, creator: user) }
+  let!(:review) { FactoryGirl.create(:review, lifehack: lh, creator: user2) }
 
   scenario 'user sucessfully edits review' do
     user_sign_in(user2)
-    click_link(lifehack.title)
+    click_link(lh.title)
 
-    expect(page).to have_content(lifehack.title)
-    expect(page).to have_content(lifehack.description)
+    expect(page).to have_content(lh.title)
+    expect(page).to have_content(lh.description)
     expect(page).to have_content(review.comment)
 
     click_link('Edit Review')
@@ -30,19 +30,19 @@ feature 'user updates review', %{
 
     click_button('Update Review')
 
-    expect(page).to have_content(lifehack.title)
-    expect(page).to have_content(lifehack.description)
+    expect(page).to have_content(lh.title)
+    expect(page).to have_content(lh.description)
     expect(page).to have_content('Review edited successfully!')
     expect(page).to have_content(new_comment)
   end
 
   scenario 'user review edit unsuccessful' do
     user_sign_in(user2)
-    click_link(lifehack.title)
+    click_link(lh.title)
 
-    expect(current_path).to eq(lifehack_path(lifehack))
-    expect(page).to have_content(lifehack.title)
-    expect(page).to have_content(lifehack.description)
+    expect(current_path).to eq(lifehack_path(lh))
+    expect(page).to have_content(lh.title)
+    expect(page).to have_content(lh.description)
 
     click_link('Edit Review')
 
@@ -53,11 +53,11 @@ feature 'user updates review', %{
 
   scenario 'user attempts to edit another user\'s review' do
     user_sign_in(user)
-    click_link(lifehack.title)
+    click_link(lh.title)
 
-    expect(current_path).to eq(lifehack_path(lifehack))
-    expect(page).to have_content(lifehack.title)
-    expect(page).to have_content(lifehack.description)
+    expect(current_path).to eq(lifehack_path(lh))
+    expect(page).to have_content(lh.title)
+    expect(page).to have_content(lh.description)
     expect(page).to have_content(review.comment)
 
     expect(page).to_not have_link('Edit Review')
