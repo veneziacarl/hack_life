@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-feature 'admin updates item', %{
+feature 'admin updates a lifehack', %{
   As an Admin
-  I want to updated lifehacks and reviews
+  I want to update a lifehacks and reviews
   So I can curate the site's content
 } do
 
   # Acceptance Criteria:
-  # [] admin can edit lifehack
-  # [] admin can edit review
-  # [] member cannot edit lifehack where they are not the creator
-  # [] member cannot edit review where they are not the creator
+  # [√] admin can edit lifehack
+  # [√] admin can edit review
+  # [√] member cannot edit lifehack where they are not the creator
+  # [√] member cannot edit review where they are not the creator
 
   let(:lh) { FactoryGirl.create(:lifehack) }
   let(:lh2) { FactoryGirl.create(:lifehack) }
@@ -35,7 +35,7 @@ feature 'admin updates item', %{
     description = 'Testing out this cool new edition to the lifehack'
     fill_in('lifehack[title]', with: test_title)
     fill_in('lifehack[description]', with: description)
-    click_button('Add Lifehack')
+    click_button('Update Lifehack')
 
     expect(current_path).to eq(lifehack_path(lh))
     expect(page).to have_content(test_title)
@@ -52,7 +52,7 @@ feature 'admin updates item', %{
     click_link lh.title
 
     within('.review-admin-panel') do
-      click_link 'Edit Review'
+      click_link 'Edit'
     end
 
     fill_in('review[comment]', with: 'some new text')
@@ -80,6 +80,6 @@ feature 'admin updates item', %{
     visit lifehacks_path
     click_link lh.title
 
-    expect(page).to_not have_button('Edit Review')
+    expect(page).to_not have_button('Edit')
   end
 end

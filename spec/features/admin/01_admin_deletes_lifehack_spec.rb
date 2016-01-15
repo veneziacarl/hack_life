@@ -48,7 +48,7 @@ feature 'admin deletes item', %{
     click_link lifehack.title
 
     within('.review-admin-panel') do
-      click_button 'Delete Review'
+      click_link 'Delete'
     end
 
     expect(page).to have_content("Admin deleted review: #{review.id}")

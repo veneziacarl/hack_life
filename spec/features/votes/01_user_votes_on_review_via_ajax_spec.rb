@@ -8,10 +8,10 @@ feature "user adds vote to review via ajax", %{
 } do
 
   # Acceptance Criteria:
-  # [] When I click on the vote button page should not refresh
-  # [] When I vote on a review the score should be update immmidiately
-  # []  When I click the note button twice, the vote should only update once
-  # []  When I click the note button twice, an error message should display
+  # [√] When I click on the vote button page should not refresh
+  # [√] When I vote on a review the score should be update immmidiately
+  # [√]  When I click the note button twice, the vote should only update once
+  # [√]  When I click the note button twice, an error message should display
 
   let! (:user) { FactoryGirl.create(:user) }
   let! (:review) { FactoryGirl.create(:review) }

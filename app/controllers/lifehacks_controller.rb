@@ -8,10 +8,7 @@ class LifehacksController < ApplicationController
 
   def show
     @lifehack = Lifehack.find(params[:id])
-    # @review = Review.find(params[:id])
     @reviews = @lifehack.reviews.order(created_at: :desc).page(params[:page])
-    # @review = Review.new
-    # @reviews = @lifehack.reviews.order(created_at: :desc)
     @reviews = @reviews.sort_by { |review| review.sum_score }.reverse
   end
 
@@ -55,6 +52,8 @@ class LifehacksController < ApplicationController
   end
 
   def destroy
+    @lifehack = Lifehack.find(params[:id])
+    Review.delete(@lifehack.reviews)
     @lifehack = Lifehack.destroy(params[:id])
     redirect_to root_path,
       notice: "Admin successfully deleted lifehack: #{@lifehack.title}"

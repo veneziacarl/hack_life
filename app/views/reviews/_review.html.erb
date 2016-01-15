@@ -4,6 +4,9 @@
     <table>
       <thead>
         <tr>
+          <% if review.creator == current_user || current_user.admin? %>
+          <th>Edit/Delete</th>
+          <% end %>
           <th>Votes</th>
           <th>Score </th>
           <th>Rating</th>
@@ -13,31 +16,35 @@
       </thead>
       <tbody>
       <tr class="rev_row">
+        <% if review.creator == current_user || current_user.admin? %>
+        <td>
+          <div class="review-admin-panel">
+            <%= link_to 'Edit', edit_lifehack_review_path(review.lifehack, review), :class => 'button' %>
+          </div>
+          <div class="review-admin-panel">
+            <%= link_to "Delete", lifehack_review_path(review.lifehack, review), method: :delete, :class => 'button' %>
+          </div>
+        </td>
+        <% end %>
         <td>
           <div class="row">
             <% if user_signed_in? %>
               <% if current_user.has_vote?(review) %>
                 <div class="vote_buttons_update">
                   <%= button_to '+1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
-                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: "vote button round #{'upvoted' if current_user.vote_type(review) == 1}" %>
                   <%= button_to '-1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
-                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: "vote button round #{'downvoted' if current_user.vote_type(review) == -1}" %>
                 </div>
               <% else %>
                 <div class="vote_buttons_create">
                   <%= button_to '+1', review_votes_path(review),
-                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote button round' %>
                   <%= button_to '-1', review_votes_path(review),
-                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote button round' %>
                 </div>
+                <% end %>
               <% end %>
-              <% if review.creator == current_user || current_user.admin? %>
-                <div class="review-admin-panel">
-                  <%= link_to 'Edit Review', edit_lifehack_review_path(review.lifehack, review) %>
-                  <%= button_to "Delete Review", lifehack_review_path(review.lifehack, review), method: :delete %>
-                </div>
-              <% end %>
-            <% end %>
           </div>
         </td>
         <td class="rev_score"><%= review.sum_score %></td>
@@ -47,8 +54,7 @@
         <td><%= image_tag(review.creator.profile_photo, :class => "review-avatar") %></td>
         <tr class="review-comment"><%= review.comment %></tr>
         <% unless current_page?(lifehack_path(review.lifehack)) %>
-        <td><%= link_to review.lifehack.title, lifehack_path(review.lifehack) %>
-        </td>
+        <br><br><tr class="lifehack-link"><%= link_to review.lifehack.title, lifehack_path(review.lifehack) %></tr>
         <% end %>
       </tr>
     </tbody>

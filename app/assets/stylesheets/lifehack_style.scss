@@ -20,8 +20,8 @@
   }
 
   h2 {
-    border-style: double;
-    color: $primary-color;
+    // border-style: double;
+    color: $turquoise;
     font-size: 30px;
     padding: 40px 2.875rem;
     text-align: left;
@@ -38,6 +38,7 @@
 
     padding: 13px 0.875rem 13px 2.875rem;
     color: $cornsilk;
+    // bacgkround-color: $cornsilk;
   }
 
   .creator-name {
@@ -59,8 +60,12 @@
 }
 
 .description {
+  table {
+    border: none;
+  }
+
   th {
-    background-color: $smoke;
+    background-color: $cornsilk;
     font-size: 18px;
     margin-left: auto;
     margin-right: auto;
@@ -69,7 +74,7 @@
   }
 
   td {
-    background-color: $smoke;
+    background-color: $cornsilk;
     font-size: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -78,7 +83,7 @@
   }
 
   a {
-    color: $green;
+    color: $navy-blue;
   }
 }
 
@@ -90,11 +95,18 @@
   width: 300px;
 }
 
+.show-descrip table {
+  background: $cornsilk;
+  background-color: $cornsilk;
+}
+
 .show-url {
   padding: 9px 1.875rem 15px;
+  background-color: $cornsilk;
 
   a {
-    color: $green;
+    color: $navy-blue;
+    font-weight: bold;
   }
 }
 
@@ -111,15 +123,33 @@
 
 }
 .button {
-  border: 1px solid $green;
+  border: 1px solid $oil;
   border-radius: 28px;
   display: inline-block;
   font-size: 15px;
   padding: 12px 20px;
+
+  &:focus {
+    outline: 0;
+  }
+  // .vote {
+  //   @include button(
+  //     $full-width: true
+  //   );
+  // }
+  &.upvoted {
+    background-color: $baby-blue;
+    border: 2px solid $navy-blue;
+  }
+
+  &.downvoted {
+    background-color: $red;
+    border: 2px solid $dark-yellow;
+  }
 }
 
 .actions .button {
-  border: 1px solid $green;
+  border: 1px solid $oil;
   border-radius: 28px;
   display: inline-block;
   font-size: 15px;
@@ -127,7 +157,7 @@
 }
 
 .advanced-search .button {
-  border: 1px solid $green;
+  border: 1px solid $oil;
   border-radius: 28px;
   display: inline-block;
   font-size: 15px;
@@ -174,8 +204,9 @@
 .review {
 
   table {
-    border-bottom: 2px solid $green;
+    border-bottom: 2px solid $oil;
     margin-top: 20px;
+    background-color: $cornsilk;
   }
   th {
     text-align: center;
@@ -187,8 +218,22 @@
       padding: 0 0 0 0;
   }
 
+  .lifehack-link a {
+    padding: 0 0 40px 0;
+  }
+
   a {
-    color: $green;
+    color: $navy-blue;
+    font-weight: bold;
+  }
+
+  .review-admin-panel a {
+    border: 1px solid $oil;
+    color: $primary-color;
+    border-radius: 28px;
+    display: inline-block;
+    font-size: 15px;
+    padding: 12px 20px;
   }
 
   .review-avatar {
