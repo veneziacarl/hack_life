@@ -16,6 +16,8 @@ var makeAjaxRequestPost = function(buttonEle, reviewId, voteScore) {
     }
     var parentRevScore = $(buttonEle).closest('tr.rev_row').find('.rev_score');
     parentRevScore.text(data.data.review.sum_score);
+    $('.flash-ajax').remove();
+    $('.messages').append('<div class="spacer"></div>');
   });
 };
 
@@ -29,11 +31,15 @@ var makeAjaxRequestUpdate = function(buttonEle, reviewId, voteId, voteScore) {
   request.success(function(data) {
     var parentRevScore = $(buttonEle).closest('tr.rev_row').find('.rev_score');
     parentRevScore.text(data.review.sum_score);
-    $('.flash-ajax p').remove();
+    $('.flash-ajax').remove();
+    $('.messages').append('<div class="spacer"></div>');
   });
 
   request.error(function(data) {
-    $('.flash-ajax').html('<p>' + data.responseJSON.error + '</p>');
+    $('.spacer').remove();
+    $('.messages').html(
+      '<div data-alert class="alert-box info radius flash flash-ajax">' +
+      data.responseJSON.error + '<a href="#" class="close">&times;</a></div>');
   });
 };
 
