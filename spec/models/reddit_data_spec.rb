@@ -26,4 +26,13 @@ RSpec.describe RedditData, type: :model, vcr: true do
       expect(Lifehack.find_by(url: post["URL"])).to be_a(Lifehack)
     end
   end
+
+  it 'adds entries with the appropriate account' do
+    lpt_data.seed_db
+    lifehacks = Lifehack.all
+    lifehacks.each do |lifehack|
+      expect(lifehack.creator.first_name).to eq 'Lifehack'
+      expect(lifehack.creator.last_name).to eq 'Bot'
+    end
+  end
 end
