@@ -39,7 +39,7 @@ var makeAjaxRequestUpdate = function(buttonEle, reviewId, voteId, voteScore) {
     $('.spacer').remove();
     $('.messages').html(
       '<div data-alert class="alert-box info radius flash flash-ajax">' +
-        data.responseJSON.error + '<a href="#" class="close">&times;</a></div>');
+      data.responseJSON.error + '<a href="#" class="close">&times;</a></div>');
   });
 };
 
