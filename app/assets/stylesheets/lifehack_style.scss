@@ -108,13 +108,13 @@
   //   );
   // }
   &.upvoted {
-    border: 2px solid $navy-blue;
     background-color: $baby-blue;
+    border: 2px solid $navy-blue;
   }
 
   &.downvoted {
-    border: 2px solid $dark-yellow;
     background-color: $light-yellow;
+    border: 2px solid $dark-yellow;
   }
 }
 
