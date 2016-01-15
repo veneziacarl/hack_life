@@ -1,14 +1,13 @@
-  <div class="row">
-      <ul class="button add-lifehack">
-        <%= link_to 'Add Lifehack', new_lifehack_path%>
-      </ul>
-  </div>
-
-  <div class="lifehacklist small-12 columns">
-    <ul>
-    <%= render @lifehacks %>
+<div class="row">
+    <ul class="button add-lifehack">
+      <%= link_to 'Add Lifehack', new_lifehack_path%>
     </ul>
-  </div>
+</div>
+
+<div class="lifehacklist small-12 columns">
+  <ul>
+    <%= render @lifehacks %>
+  </ul>
 </div>
 
 <%= paginate @lifehacks %>
