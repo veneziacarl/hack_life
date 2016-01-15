@@ -1,25 +1,59 @@
 
-<h5><%= @lifehack.title %></h5>
-<p>
-  <%= @lifehack.url %>
-  <%= @lifehack.description %>
-  <%= "#{@lifehack.creator.first_name} #{@lifehack.creator.last_name}" %>
-  <%= "#{@lifehack.avg_review_rating}" %>
-  <%= "#{@lifehack.reviews.count}" %>
-</p>
+<div class="row">
+  <ul class="button medium">
+    <%= link_to 'Home', lifehacks_path %>
+  </ul>
+  <ul class="button medium">
+    <%= link_to 'Add Review', new_lifehack_review_path(@lifehack) %>
+  </ul>
 
-<%= link_to 'Home', lifehacks_path %>
+    <% if @lifehack.creator == current_user || current_user.admin? %>
+      <div class="lifehack-admin-panel">
+        <%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack) %>
+        <%= button_to 'Delete Lifehack', @lifehack, { method: :delete} %>
+      </div>
+    <% end %>
+  </ul>
+</div>
+  <div class="panel lifehack_title small-12 columns ">
+    <h2><%= @lifehack.title %></h2>
+  </div>
+  <div class="row description">
+    <table>
+      <thead>
+        <tr>
+          <th>Created By:</th>
+          <th># of Reviews:</th>
+          <th>Average Rating:</th>
+          <th>Updated:</th>
+        </tr>
+      </thead>
+      <tr>
+        <td><%= @lifehack.creator.full_name %></td>
+        <td><%= @lifehack.reviews.count %></td>
+        <td><%= @lifehack.avg_review_rating %></td>
+        <td><%= time_ago_in_words(@lifehack.updated_at)%> ago</td>
+      </tr>
+    </table>
+  </div>
+
+    <table class="show-descrip">
+      <tbody>
+        <tr><%= @lifehack.description %></tr>
+      </tbody>
+    </table>
+    <table class="show-url">
+      <tbody>
+        <tr><td><%= link_to @lifehack.url, @lifehack.url %></td></tr>
+    </tbody>
+    </table>
+
+  </div>
+</div>
+</div>
+
 <% if !@lifehack.reviews.empty? %>
   <%= render @reviews %>
 <% else %>
   No reviews yet!
-<% end %>
-
-<%= link_to 'Add Review', new_lifehack_review_path(@lifehack) %>
-
-<% if @lifehack.creator == current_user || current_user.admin? %>
-  <div class="lifehack-admin-panel">
-    <%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack) %>
-    <%= button_to 'Delete Lifehack', @lifehack, { method: :delete} %>
-  </div>
 <% end %>

@@ -9,11 +9,11 @@
 
   <%= f.hidden_field :creator, value: current_user %>
 
-    <div class="actions">
-      <% unless current_page?(new_lifehack_review_path(@lifehack)) %>
-        <%= f.submit 'Update Review', class: 'button tiny'%>
-      <% else %>
-        <%= f.submit 'Add Review', class: 'button tiny'%>
-      <% end %>
-    </div>
+  <div class="actions">
+    <% unless current_page?(new_lifehack_review_path(@lifehack)) %>
+      <%= f.submit 'Update Review', class: 'button'%>
+    <% else %>
+      <%= f.submit 'Add Review', class: 'button'%>
+    <% end %>
+  </div>
 <% end %>

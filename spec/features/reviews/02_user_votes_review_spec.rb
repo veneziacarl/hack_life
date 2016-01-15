@@ -24,13 +24,13 @@ feature 'user adds vote', %{
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
     within('.review') do
-      expect(page).to have_content("Score: 0")
+      expect(page).to have_content("0")
     end
     click_button '+1'
 
     expect(page).to have_content('Vote cast!')
     within('.review') do
-      expect(page).to have_content("Score: 1")
+      expect(page).to have_content("1")
     end
   end
 
@@ -47,7 +47,7 @@ feature 'user adds vote', %{
 
     expect(page).to have_content('Vote cast!')
     within('.review') do
-      expect(page).to have_content("Score: 2")
+      expect(page).to have_content("2")
     end
   end
 
@@ -58,7 +58,7 @@ feature 'user adds vote', %{
 
     expect(page).to have_content('Vote cast!')
     within('.review') do
-      expect(page).to have_content("Score: -1")
+      expect(page).to have_content("-1")
     end
   end
 
@@ -77,7 +77,7 @@ feature 'user adds vote', %{
 
     expect(page).to have_content('You have already upvoted this review!')
     within('.review') do
-      expect(page).to have_content("Score: 1")
+      expect(page).to have_content("1")
     end
   end
 
@@ -90,7 +90,7 @@ feature 'user adds vote', %{
 
     expect(page).to have_content('You have already downvoted this review!')
     within('.review') do
-      expect(page).to have_content("Score: -1")
+      expect(page).to have_content("-1")
     end
   end
 
@@ -104,7 +104,7 @@ feature 'user adds vote', %{
 
     expect(page).to have_content('Vote updated!')
     within('.review') do
-      expect(page).to have_content("Score: -1")
+      expect(page).to have_content("-1")
     end
   end
 
@@ -119,12 +119,12 @@ feature 'user adds vote', %{
 
       expect(page).to have_content('Vote cast!')
       within(".review-#{review.id}") do
-        expect(page).to have_content("Score: 1")
+        expect(page).to have_content("1")
       end
     end
 
     within(".review-#{review_list.first.id}") do
-      expect(page).to have_content("Score: 1")
+      expect(page).to have_content("1")
     end
   end
 
@@ -139,12 +139,12 @@ feature 'user adds vote', %{
 
       expect(page).to have_content('Vote cast!')
       within(".review-#{review.id}") do
-        expect(page).to have_content("Score: -1")
+        expect(page).to have_content("-1")
       end
     end
 
     within(".review-#{review_list.first.id}") do
-      expect(page).to have_content("Score: -1")
+      expect(page).to have_content("-1")
     end
   end
 
@@ -159,14 +159,14 @@ feature 'user adds vote', %{
 
       expect(page).to have_content('Vote cast!')
       within(".review-#{review.id}") do
-        expect(page).to have_content("Score: -1")
+        expect(page).to have_content("-1")
       end
     end
 
     within(".review-#{review_list.first.id}") do
       click_button '-1'
 
-      expect(page).to have_content("Score: -1")
+      expect(page).to have_content("-1")
     end
     expect(page).to have_content('You have already downvoted this review!')
   end
@@ -183,7 +183,7 @@ feature 'user adds vote', %{
 
       expect(page).to have_content('Vote cast!')
       within(".review-#{review.id}") do
-        expect(page).to have_content("Score: 1")
+        expect(page).to have_content("1")
       end
     end
   end

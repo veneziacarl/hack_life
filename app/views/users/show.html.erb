@@ -1,12 +1,20 @@
+<div class="user-acct">
 <% if current_user == @user %>
   <%= link_to 'Update Account Information', edit_user_registration_path %>
 <% end %>
+</div>
 
+<div class="user-info">
 User Details
+<%= image_tag @user.profile_photo %>
 <hr />
 Name: <%= @user.full_name %>
 Email: <%= @user.email %>
-Lifehacks: <%= render @lifehacks %>
+</div>
+<h3>Lifehacks</h3> <%= render @lifehacks %>
+<div class="row">
+<h3>Reviews</h3>
+</div>
 <div class="reviews">
-  Reviews: <%= render @reviews %>
+  <%= render @reviews %>
 </div>

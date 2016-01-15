@@ -1,22 +1,24 @@
+
 <div class="row">
-<!-- Figure out to nest this "fixed elemnt projfsperly" -->
-  <div class="large-8 columns  clearfix">
-    <div class="panel right large-12 columns">
-      <h5><%= link_to lifehack.title, lifehack_path(lifehack) %></h5>
-      <table>
-        <tbody>
-          <tr>
-            <td>Updated: <%= time_ago_in_words(lifehack.updated_at)%> ago</td>
-            <td>Submitted By: <%= link_to lifehack.creator.full_name,
+    <div class="panel small-12 columns clearfix">
+       <table>
+          <h5 class="lifehack-link"><%= link_to lifehack.title, lifehack_path(lifehack) %></h5>
+          <h3 class="lifehack-description"><%= lifehack.short_description %></h3>
+          <tbody>
+            <tr>
+              <td>Updated: <%= time_ago_in_words(lifehack.updated_at)%> ago</td>
+              <td>Submitted By:
+              <td class="creator-name"><%= link_to lifehack.creator.full_name,
                 user_path(lifehack.creator) %></td>
-            <td>Number of Ratings: <%= lifehack.reviews.count %></td>
-            <td>Average Rating: <%= lifehack.avg_review_rating %></td>
-            <td>Description: <%= lifehack.short_description %> ... </td>
-          </tr>
-        </tbody>
-
-      </table>
-
+              </td>
+              <td class="creator-image">
+                <%= image_tag(lifehack.creator.profile_photo, :class => "profile-img-index") %>  </td>
+              </td>
+              <td>Number of Ratings: <%= lifehack.reviews.count %></td>
+              <td>Average Rating: <%= lifehack.avg_review_rating %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>

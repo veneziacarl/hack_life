@@ -61,7 +61,7 @@ feature 'admin updates item', %{
     expect(page).to have_content("Admin edited review: #{review.id}")
     expect(page).to have_css('.lifehack-admin-panel')
     expect(page).to have_content(lh.title)
-    expect(page).to have_content("Rating: #{review.rating}")
+    expect(page).to have_content("#{review.rating}")
     expect(page).to_not have_content(review.comment)
   end
 

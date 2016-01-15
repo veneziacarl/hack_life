@@ -21,8 +21,10 @@ feature 'user gets email when someone reviews their lifehack', %{
     click_button 'Add Review'
 
     expect(page).to have_content('Review made!')
-    expect(page).to have_content('Rating: 5')
-    expect(page).to have_content('Comment: testcomment')
+    expect(page).to have_content('Rating')
+    expect(page).to have_content('5')
+    expect(page).to have_content('Comment')
+    expect(page).to have_content('testcomment')
     expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
@@ -36,7 +38,8 @@ feature 'user gets email when someone reviews their lifehack', %{
     click_button 'Add Review'
 
     expect(page).to have_content('Review made!')
-    expect(page).to have_content('Rating: 5')
+    expect(page).to have_content('Rating')
+    expect(page).to have_content('5')
     expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
@@ -51,7 +54,9 @@ feature 'user gets email when someone reviews their lifehack', %{
     expect(page).to have_content("Review rating can't be blank!")
 
     visit lifehack_path(lifehack)
-    expect(page).to_not have_content('Comment: testcomment')
+
+    expect(page).to_not have_content('Comment')
+    expect(page).to_not have_content('testcomment')
     expect(ActionMailer::Base.deliveries.count).to eq(0)
   end
 end
