@@ -27,8 +27,8 @@ feature 'admin deletes item', %{
     visit lifehacks_path
     click_link lifehack.title
 
-    within(".lifehack-admin-panel") do
-      click_button 'Delete Lifehack'
+    within(".lifehack-admin-delete") do
+      click_link 'Delete Lifehack'
     end
 
     expect(current_path).to eq(root_path)

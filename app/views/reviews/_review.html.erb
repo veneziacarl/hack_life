@@ -4,13 +4,11 @@
     <table>
       <thead>
         <tr>
-          <th width="100">Votes</th>
-          <th width="200">Score </th>
-          <th width="200">Rating</th>
-          <th>Comment</th>
-          <th width="200">User</th>
-          <th width="400">Updated</th>
-          <th width="250">Lifehack</th>
+          <th>Votes</th>
+          <th>Score </th>
+          <th>Rating</th>
+          <th>Updated</th>
+          <th>User</th>
         </tr>
       </thead>
       <tbody>
@@ -44,9 +42,10 @@
         </td>
         <td class="rev_score"><%= review.sum_score %></td>
         <td><%= review.rating %></td>
-        <td><%= review.comment %></td>
-        <td><%= link_to review.creator.full_name, user_path(review.creator) %></td>
         <td><%= time_ago_in_words(review.updated_at)%> ago</td>
+        <td><%= link_to review.creator.full_name, user_path(review.creator) %></td>
+        <td><%= image_tag(review.creator.profile_photo, :class => "review-avatar") %></td>
+        <tr class="review-comment"><%= review.comment %></tr>
         <% unless current_page?(lifehack_path(review.lifehack)) %>
         <td><%= link_to review.lifehack.title, lifehack_path(review.lifehack) %>
         </td>
