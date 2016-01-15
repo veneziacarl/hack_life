@@ -16,6 +16,11 @@ var makeAjaxRequestPost = function(buttonEle, reviewId, voteScore) {
     }
     var parentRevScore = $(buttonEle).closest('tr.rev_row').find('.rev_score');
     parentRevScore.text(data.data.review.sum_score);
+    if (voteScore == 1) {
+      $(buttonEle).find('input.vote').addClass('upvoted');
+    } else if (voteScore == -1) {
+      $(buttonEle).find('input.vote').addClass('downvoted');
+    }
     $('.flash-ajax').remove();
     $('.messages').append('<div class="spacer"></div>');
   });
@@ -31,6 +36,14 @@ var makeAjaxRequestUpdate = function(buttonEle, reviewId, voteId, voteScore) {
   request.success(function(data) {
     var parentRevScore = $(buttonEle).closest('tr.rev_row').find('.rev_score');
     parentRevScore.text(data.review.sum_score);
+    var parentVoteButtons = $(buttonEle).closest('.vote_buttons_update');
+    if (voteScore == 1) {
+      $(parentVoteButtons).find('input.downvoted').removeClass('downvoted');
+      $(buttonEle).find('input.vote').addClass('upvoted');
+    } else if (voteScore == -1) {
+      $(parentVoteButtons).find('input.upvoted').removeClass('upvoted');
+      $(buttonEle).find('input.vote').addClass('downvoted');
+    }
     $('.flash-ajax').remove();
     $('.messages').append('<div class="spacer"></div>');
   });

@@ -101,6 +101,21 @@
   display: inline-block;
   font-size: 15px;
   padding: 12px 20px;
+
+  // .vote {
+  //   @include button(
+  //     $full-width: true
+  //   );
+  // }
+  &.upvoted {
+    border: 2px solid $navy-blue;
+    background-color: $baby-blue;
+  }
+
+  &.downvoted {
+    border: 2px solid $dark-yellow;
+    background-color: $light-yellow;
+  }
 }
 
 .actions .button {

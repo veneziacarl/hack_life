@@ -21,16 +21,16 @@
               <% if current_user.has_vote?(review) %>
                 <div class="vote_buttons_update">
                   <%= button_to '+1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
-                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: "vote button round #{'upvoted' if current_user.vote_type(review) == 1}" %>
                   <%= button_to '-1', review_vote_path(review, current_user.find_vote_for_review(review)), method: :patch,
-                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: "vote button round #{'downvoted' if current_user.vote_type(review) == -1}" %>
                 </div>
               <% else %>
                 <div class="vote_buttons_create">
                   <%= button_to '+1', review_votes_path(review),
-                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote' %>
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => 1 }, class: 'vote button round' %>
                   <%= button_to '-1', review_votes_path(review),
-                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote' %>
+                    params: { :"vote[review_id]" => review.id, :"vote[score]" => -1 }, class: 'vote button round' %>
                 </div>
               <% end %>
               <% if review.creator == current_user || current_user.admin? %>
