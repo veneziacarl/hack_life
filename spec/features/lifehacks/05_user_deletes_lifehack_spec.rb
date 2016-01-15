@@ -12,7 +12,7 @@ feature 'user deletes lifehack', %{
   let (:user) { FactoryGirl.create(:user) }
   let!(:lifehack) { FactoryGirl.create(:lifehack, creator: user) }
   let!(:lifehack2) { FactoryGirl.create(:lifehack, creator: user) }
-  let!(:reviews) { FactoryGirl.create_list(:review, lifehack: lifehack) }
+  # let!(:reviews) { FactoryGirl.create(:review, lifehack: lifehack) }
 
   let (:user2) { FactoryGirl.create(:user) }
 
@@ -37,10 +37,7 @@ feature 'user deletes lifehack', %{
     expect(page).to have_content(lifehack2.title)
 
     click_link(lifehack2.title)
-    click_button('Delete Lifehack')
 
-    expect(page).to have_content('You are not the Authorized User')
-    expect(current_path).to eq(root_path)
-    expect(page).to have_content(lifehack2.title)
+    expect(page).to_not have_button('Delete Lifehack')
   end
 end

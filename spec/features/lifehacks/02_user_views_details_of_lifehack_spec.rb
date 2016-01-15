@@ -13,8 +13,9 @@ feature "user sees the details of a lifehack" do
   scenario "sees the details" do
     visit lifehacks_path
     click_on(lifehack.title)
-
+    
     expect(page).to have_content(lifehack.title)
+    expect(page).to have_content(lifehack.url)
     expect(page).to have_content(lifehack.description)
     expect(page).to have_content(lifehack.creator.first_name)
     expect(page).to have_content(lifehack.creator.last_name)

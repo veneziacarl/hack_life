@@ -16,9 +16,6 @@ feature 'user views reviews for a lifehack', %{
   let(:user) { FactoryGirl.create(:user) }
 
   scenario 'user sees lifehack details and latest 3 reviews for lifehack' do
-
-    old_review = reviews.shift
-
     user_sign_in(user)
     visit lifehack_path(lifehack)
 
@@ -33,7 +30,5 @@ feature 'user views reviews for a lifehack', %{
         expect(page).to have_content(review.creator.full_name)
       end
     end
-
-    expect(page).to_not have_content(old_review.comment)
   end
 end

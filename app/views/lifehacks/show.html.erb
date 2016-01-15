@@ -1,14 +1,16 @@
 
 <h5><%= @lifehack.title %></h5>
 <p>
+  <%= @lifehack.url %>
   <%= @lifehack.description %>
   <%= "#{@lifehack.creator.first_name} #{@lifehack.creator.last_name}" %>
+  <%= "#{@lifehack.avg_review_rating}" %>
+  <%= "#{@lifehack.reviews.count}" %>
 </p>
 
 <%= link_to 'Home', lifehacks_path %>
 <% if !@lifehack.reviews.empty? %>
   <%= render @reviews %>
-  <%= paginate @reviews %>
 <% else %>
   No reviews yet!
 <% end %>

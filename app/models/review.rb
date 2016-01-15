@@ -4,8 +4,6 @@ class Review < ActiveRecord::Base
   has_many :votes
   belongs_to :creator, class_name: 'User'
 
-  paginates_per 3
-
   validates :rating,
     presence: true,
     numericality: { only_integer: true }, inclusion: { in: RATING_LIST }

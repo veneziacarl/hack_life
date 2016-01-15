@@ -48,7 +48,6 @@ feature 'user updates review', %{
 
     fill_in('review[comment]', with: '')
     click_button('Update Review')
-    save_and_open_page
     expect(page).to have_content('Review edited successfully!')
   end
 

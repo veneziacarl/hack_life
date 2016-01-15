@@ -18,3 +18,9 @@
 #     creator_id: "#{User.first.id}"  }, {
 #     title: 'How to tie a tie1',
 #     creator_id: "#{User.first.id}" }])
+
+lpt_data = RedditData.new('LifeProTips')
+lpt_data.seed_db
+
+ReviewSeeder.seed_reviews
+VoteSeeder.seed_votes

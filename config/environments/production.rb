@@ -1,5 +1,7 @@
 Rails.application.configure do
+  WebMock.allow_net_connect!
   # Settings specified here will take precedence over those in config/application.rb.
+  WebMock.allow_net_connect!
 
   # Code is not reloaded between requests.
   config.cache_classes = true
