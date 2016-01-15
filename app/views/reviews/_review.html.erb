@@ -9,7 +9,7 @@
           <th width="200">Rating</th>
           <th>Comment</th>
           <th width="200">User</th>
-          <th width="400">Updated At</th>
+          <th width="400">Updated</th>
           <th width="250">Lifehack</th>
         </tr>
       </thead>
@@ -47,7 +47,7 @@
         <td><%= link_to review.creator.full_name, user_path(review.creator) %></td>
         <td><%= time_ago_in_words(review.updated_at)%> ago</td>
         <% unless current_page?(lifehack_path(review.lifehack)) %>
-        <td>Lifehack: <%= link_to review.lifehack.title, lifehack_path(review.lifehack) %>
+        <td><%= link_to review.lifehack.title, lifehack_path(review.lifehack) %>
         </td>
         <% end %>
       </tr>

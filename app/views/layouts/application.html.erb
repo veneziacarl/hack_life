@@ -42,23 +42,24 @@
          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
        <% end %>
      </ul>
-     <ul class="right" id="search-bar">
+     <ul>
        <li class="has-form">
-         <%= form_tag(search_lifehacks_path, method: "get") do %>
-         <%= text_field_tag(:"search[all]", nil, placeholder: "enter keyword", id: "search-all") %>
-         <div class="row collapse">
-           <!-- <div class="small-3 columns">
-           </div> -->
-            <div class="large-4 small-3 columns">
-              <%= submit_tag("Search", :class => "button")%>
-              <div class="button">
-                <%= link_to 'Advanced', search_lifehacks_path(search: {all: ""}) %>
-              </div>
+         <div class="right" id="search-bar">
+           <%= form_tag(search_lifehacks_path, method: "get") do %>
+          <span><%= text_field_tag(:"search[all]", nil, placeholder: "enter keyword", id: "search-all") %></span>
+          <%= submit_tag("Search", :class => "button")%>
+              <% end %>
             </div>
-           <% end %>
-         </li>
-    </ul>
+        </li>
+      </ul>
     </section>
+    <ul>
+      <li>
+        <div class="button" id="adv">
+          <span><%= link_to 'Advanced', search_lifehacks_path(search: {all: ""}) %></span>
+        </div>
+      </li>
+    </ul>
     </nav>
 
     <div class="messages">

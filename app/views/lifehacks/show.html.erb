@@ -16,7 +16,7 @@
     <% end %>
   </ul>
 </div>
-  <div class="panel lifehack_title large-12 columns ">
+  <div class="panel lifehack_title small-12 columns ">
     <h2><%= @lifehack.title %></h2>
   </div>
   <div class="row description">
@@ -45,11 +45,12 @@
     </table>
     <table class="show-url">
       <tbody>
-        <tr><td><%= link_to @lifehack.url, "#" %></td></tr>
+        <tr><td><%= link_to @lifehack.url, @lifehack.url %></td></tr>
     </tbody>
     </table>
 
   </div>
+</div>
 </div>
 
 

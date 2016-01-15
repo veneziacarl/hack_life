@@ -90,7 +90,6 @@
 }
 
 
-
 .profile-img-index {
   border-color: $gray;
   border-radius: 50%;
@@ -109,11 +108,23 @@
 }
 
 .actions .button {
+
   border: 1px solid $green;
   border-radius: 28px;
   display: inline-block;
   font-size: 15px;
   padding: 12px 20px;
+
+}
+
+.advanced-search .button {
+
+  border: 1px solid $green;
+  border-radius: 28px;
+  display: inline-block;
+  font-size: 15px;
+  padding: 12px 20px;
+
 }
 
 .top-bar .button {
@@ -122,8 +133,22 @@
   display: inline-block;
   font-size: 15px;
   font-weight: normal;
+  margin: 0px 0 0 195px;
   padding: 3px 30px;
+  position: absolute;
 
+}
+
+#adv {
+
+  border: 1px solid $white;
+  border-radius: 28px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: normal;
+  margin: 0px 0 0 120px;
+  padding: 3px 30px;
+  position: relative;
 }
 
 .add-lifehack {
