@@ -59,7 +59,6 @@ feature 'user updates review', %{
     expect(page).to have_content(lh.title)
     expect(page).to have_content(lh.description)
     expect(page).to have_content(review.comment)
-  
     within('.review') do
       expect(page).to_not have_link('Edit')
       expect(page).to_not have_link('Delete')
