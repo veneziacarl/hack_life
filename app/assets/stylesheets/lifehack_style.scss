@@ -14,15 +14,24 @@
 
   h5 {
     font-size: 30px;
-    text-align: center;
+    text-align: justify;
+    padding: 23px;
   }
 
   h2 {
     border-style: double;
     color: $primary-color;
-    font-size: 60px;
-    text-align: center;
+    font-size: 30px;
+    padding:  40px 2.875rem 40px 2.875rem;
+    text-align: left;
     }
+
+  h3 {
+    color: $black;
+    font-size: 30px;
+    padding:  9px 2.875rem 10px 2.875rem;
+    text-align: left;
+  }
 
   table tr td {
     background-color: $smoke;
@@ -43,15 +52,8 @@
 }
 
 .description {
-  p {
-    color: $primary-color;
-    font-size: 50px;
-    padding: 25px 15px 100px 20px;
-    text-align: justify;
-    width: 300px;
-  }
 
-  table th {
+  th {
     background-color: $smoke;
     font-size: 18px;
     margin-left: auto;
@@ -60,7 +62,7 @@
     text-align: center;
   }
 
-  table td {
+  td {
 
     background-color: $smoke;
     font-size: 15px;
@@ -71,6 +73,23 @@
 
   }
 }
+
+.show-descrip tr{
+    color: $primary-color;
+    font-size: 30px;
+    padding: 30px 1.875rem 30px 1.875rem;
+    text-align: justify;
+    width: 300px;
+}
+
+.show-url {
+  padding: 51px 0.875rem 15px 0.875rem;
+  a {
+    color: $green;
+  }
+}
+
+
 
 .profile-img-index {
   border-color: $gray;

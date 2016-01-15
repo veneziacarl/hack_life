@@ -36,8 +36,19 @@
         <td><%= time_ago_in_words(@lifehack.updated_at)%> ago</td>
       </tr>
     </table>
-    <p><%= @lifehack.description %></p>
-    <p><%= @lifehack.url %></p>
+  </div>
+
+    <table class="show-descrip">
+      <tbody>
+        <tr><%= @lifehack.description %></tr>
+      </tbody>
+    </table>
+    <table class="show-url">
+      <tbody>
+        <tr><td><%= link_to @lifehack.url, "#" %></td></tr>
+    </tbody>
+    </table>
+
   </div>
 </div>
 

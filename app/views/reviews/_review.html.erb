@@ -46,11 +46,10 @@
         <td><%= review.comment %></td>
         <td><%= link_to review.creator.full_name, user_path(review.creator) %></td>
         <td><%= time_ago_in_words(review.updated_at)%> ago</td>
-        <td><%= "#{review.created_at.strftime("%m/%d/%Y")} #{review.created_at.strftime("%I:%M%p")}" %></td>
-        <td><%= "#{review.updated_at.strftime("%m/%d/%Y")} #{review.updated_at.strftime("%I:%M%p")}" %></td>
         <% unless current_page?(lifehack_path(review.lifehack)) %>
-          <td>Lifehack: <%= link_to review.lifehack.title, lifehack_path(review.lifehack) %>
-        </td><% end %>
+        <td>Lifehack: <%= link_to review.lifehack.title, lifehack_path(review.lifehack) %>
+        </td>
+        <% end %>
       </tr>
     </tbody>
     </table>
