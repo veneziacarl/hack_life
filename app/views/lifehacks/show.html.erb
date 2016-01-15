@@ -5,9 +5,11 @@
   </ul>
 
     <% if @lifehack.creator == current_user || current_user.admin? %>
-      <div class="lifehack-admin-panel">
-        <%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack), :class => 'button' %>
-        <%= button_to 'Delete Lifehack', @lifehack, { method: :delete, :class => 'button round' } %>
+      <div class="button lifehack-admin-panel">
+        <%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack) %>
+      </div>
+      <div class="button lifehack-admin-delete">
+        <%= link_to 'Delete Lifehack', @lifehack, { method: :delete} %>
       </div>
     <% end %>
   </ul>
@@ -16,7 +18,7 @@
     <h2><%= @lifehack.title %></h2>
   </div>
   <div class="row description">
-    <table>
+    <table cellspacing="0" cellpadding="0">
       <thead>
         <tr>
           <th>Created By:</th>
@@ -26,7 +28,7 @@
         </tr>
       </thead>
       <tr>
-        <td><%= @lifehack.creator.full_name %></td>
+        <td><%= link_to @lifehack.creator.full_name, user_path(@lifehack.creator) %></td>
         <td><%= @lifehack.reviews.count %></td>
         <td><%= @lifehack.avg_review_rating %></td>
         <td><%= time_ago_in_words(@lifehack.updated_at)%> ago</td>
@@ -41,7 +43,7 @@
     </table>
     <table class="show-url">
       <tbody>
-        <tr><td><%= link_to @lifehack.url, @lifehack.url %></td></tr>
+        <tr><td class="source"><%= link_to "Source", @lifehack.url %></td></tr>
     </tbody>
     </table>
 
@@ -49,8 +51,12 @@
 </div>
 </div>
 
+<hr />
+<h3 class="all-reviews">All Reviews:</h3>
 <% if !@lifehack.reviews.empty? %>
   <%= render @reviews %>
 <% else %>
-  No reviews yet!
+  <div class="no-reviews">
+    <p>No reviews yet!</p>
+  </div>
 <% end %>

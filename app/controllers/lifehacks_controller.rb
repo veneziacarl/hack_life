@@ -52,6 +52,8 @@ class LifehacksController < ApplicationController
   end
 
   def destroy
+    @lifehack = Lifehack.find(params[:id])
+    Review.delete(@lifehack.reviews)
     @lifehack = Lifehack.destroy(params[:id])
     redirect_to root_path,
       notice: "Admin successfully deleted lifehack: #{@lifehack.title}"

@@ -24,7 +24,7 @@ feature 'user deletes lifehack', %{
     click_link(lifehack.title)
     expect(current_path).to eq(lifehack_path(lifehack))
 
-    click_button('Delete Lifehack')
+    click_link('Delete Lifehack')
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Admin successfully deleted lifehack:
     #{lifehack.title}")

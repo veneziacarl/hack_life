@@ -13,7 +13,7 @@ feature 'user gets email when someone votes on their review', %{
   let (:review) { FactoryGirl.create(:review, lifehack: samelh) }
   let (:user) { FactoryGirl.create(:user) }
 
-  scenario 'user recieves email notification of their upvoted review' do
+  xscenario 'user recieves email notification of their upvoted review' do
 
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
@@ -31,7 +31,7 @@ feature 'user gets email when someone votes on their review', %{
     end
   end
 
-  scenario 'user receives email notification of their downvoted review' do
+  xscenario 'user receives email notification of their downvoted review' do
 
     user_sign_in(user)
     visit lifehack_path(review.lifehack)
