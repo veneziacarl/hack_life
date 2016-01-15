@@ -51,7 +51,7 @@ feature 'admin updates a lifehack', %{
     visit lifehacks_path
     click_link lh.title
 
-    within('.review-admin-panel') do
+    within('.edit') do
       click_link 'Edit'
     end
 

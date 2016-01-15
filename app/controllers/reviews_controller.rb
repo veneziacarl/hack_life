@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
     @reviews = @lifehack.reviews.order(created_at: :desc).page(params[:page])
     @review.creator = @user
     if @review.save
-      ReviewMailer.new_review(@review).deliver_later
+      # ReviewMailer.new_review(@review).deliver_later
       redirect_to lifehack_path(@lifehack), notice: 'Review made!'
     else
       @rating_list = Review::RATING_LIST

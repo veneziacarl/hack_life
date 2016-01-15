@@ -47,7 +47,7 @@ feature 'admin deletes item', %{
     visit lifehacks_path
     click_link lifehack.title
 
-    within('.review-admin-panel') do
+    within('.delete') do
       click_link 'Delete'
     end
 

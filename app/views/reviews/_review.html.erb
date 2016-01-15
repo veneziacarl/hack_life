@@ -18,10 +18,10 @@
       <tr class="rev_row">
         <% if review.creator == current_user || current_user.admin? %>
         <td>
-          <div class="review-admin-panel">
+          <div class="review-admin-panel edit">
             <%= link_to 'Edit', edit_lifehack_review_path(review.lifehack, review), :class => 'button' %>
           </div>
-          <div class="review-admin-panel">
+          <div class="review-admin-panel delete">
             <%= link_to "Delete", lifehack_review_path(review.lifehack, review), method: :delete, :class => 'button' %>
           </div>
         </td>

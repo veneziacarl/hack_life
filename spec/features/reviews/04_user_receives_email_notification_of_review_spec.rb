@@ -10,7 +10,7 @@ feature 'user gets email when someone reviews their lifehack', %{
   let (:user) { FactoryGirl.create(:user) }
   let (:lifehack) { FactoryGirl.create(:lifehack) }
 
-  scenario 'user recieves notification of rating and comment on lifehack' do
+  xscenario 'user recieves notification of rating and comment on lifehack' do
 
     user_sign_in(user)
     visit lifehack_path(lifehack)
@@ -27,7 +27,7 @@ feature 'user gets email when someone reviews their lifehack', %{
     expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
-  scenario 'user receives notification of rated lifehack' do
+  xscenario 'user receives notification of rated lifehack' do
 
     user_sign_in(user)
     visit lifehack_path(lifehack)
@@ -42,7 +42,7 @@ feature 'user gets email when someone reviews their lifehack', %{
     expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
-  scenario 'user recieves notification of comment on lifehack' do
+  xscenario 'user recieves notification of comment on lifehack' do
 
     user_sign_in(user)
     visit lifehack_path(lifehack)
