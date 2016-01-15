@@ -7,7 +7,7 @@
     <% if @lifehack.creator == current_user || current_user.admin? %>
       <div class="lifehack-admin-panel">
         <%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack), :class => 'button' %>
-        <%= button_to 'Delete Lifehack', @lifehack, { method: :delete } %>
+        <%= button_to 'Delete Lifehack', @lifehack, { method: :delete, :class => 'button round' } %>
       </div>
     <% end %>
   </ul>
