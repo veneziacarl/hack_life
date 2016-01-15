@@ -40,6 +40,7 @@ gem 'fog'
 gem 'active_model_serializers'
 gem 'mini_magick'
 gem 'faker'
+gem 'webmock'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,7 +53,6 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
   gem 'orderly'
-  gem 'webmock'
   gem 'vcr'
 end
 
