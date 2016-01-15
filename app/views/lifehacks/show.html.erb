@@ -4,15 +4,14 @@
     <%= link_to 'Home', lifehacks_path %>
   </ul>
   <ul class="button medium">
-    <% if user_signed_in? %>
     <%= link_to 'Add Review', new_lifehack_review_path(@lifehack) %>
-    <% if current_user.admin? %>
-    <div class="lifehack-admin-panel">
-      <%= button_to "Delete Lifehack", lifehack_path, method: :delete %>
-    </div>
-    <% end %>
-    <% else %>
-    You must sign in to add a review
+  </ul>
+
+    <% if @lifehack.creator == current_user || current_user.admin? %>
+      <div class="lifehack-admin-panel">
+        <%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack) %>
+        <%= button_to 'Delete Lifehack', @lifehack, { method: :delete} %>
+      </div>
     <% end %>
   </ul>
 </div>
@@ -53,8 +52,7 @@
 </div>
 </div>
 
-
-<% if !@lifehack.reviews.nil? %>
+<% if !@lifehack.reviews.empty? %>
   <%= render @reviews %>
 <% else %>
   No reviews yet!

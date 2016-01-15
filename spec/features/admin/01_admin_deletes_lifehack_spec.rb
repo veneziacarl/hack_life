@@ -31,7 +31,7 @@ feature 'admin deletes item', %{
       click_button 'Delete Lifehack'
     end
 
-    expect(current_path).to eq(lifehacks_path)
+    expect(current_path).to eq(root_path)
     expect(page).to have_content(
       "Admin successfully deleted lifehack: #{lifehack.title}"
     )
@@ -63,8 +63,7 @@ feature 'admin deletes item', %{
     review
     visit lifehacks_path
     click_link lifehack.title
-
-    expect(page).to_not have_css('.lifehack-admin-panel')
+    expect(page).to_not have_button('Delete Lifehack')
   end
 
   scenario "member can not delete review if they did not create it" do
