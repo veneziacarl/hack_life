@@ -23,7 +23,7 @@ class RedditData
     @data['data']['children'].each do |post|
       unless post['data']['stickied']
         title = post['data']["title"]
-        url = post['data']['permalink']
+        url = "https://www.reddit.com" + post['data']['permalink']
         descrip = post['data']['selftext']
         output << { 'Title' => title, 'URL' => url, 'Description' => descrip }
       end
