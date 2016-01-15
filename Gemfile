@@ -41,6 +41,7 @@ gem 'active_model_serializers'
 gem 'mini_magick'
 gem 'faker'
 gem 'webmock'
+gem 'factory_girl_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,7 +50,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy', require: false
-  gem 'factory_girl_rails'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
   gem 'orderly'
