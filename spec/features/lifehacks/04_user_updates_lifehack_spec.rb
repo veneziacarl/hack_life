@@ -30,7 +30,7 @@ feature 'user updates lifehack', %{
     description = 'Testing out this cool new edition to the lifehack'
     fill_in('lifehack[title]', with: title)
     fill_in('lifehack[description]', with: description)
-    click_button('Add Lifehack')
+    click_button('Update Lifehack')
 
     expect(current_path).to eq(lifehack_path(lh))
     expect(page).to have_content(title)
@@ -50,7 +50,7 @@ feature 'user updates lifehack', %{
     description = 'How fast can I type this without making a mistake'
     fill_in('lifehack[title]', with: '')
     fill_in('lifehack[description]', with: description)
-    click_button('Add Lifehack')
+    click_button('Update Lifehack')
 
     expect(find_field('lifehack[title]').value).to eq('')
     expect(find_field('lifehack[description]').value).to eq(description)

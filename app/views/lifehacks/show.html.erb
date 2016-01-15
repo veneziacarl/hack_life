@@ -1,16 +1,13 @@
 
 <div class="row">
   <ul class="button medium">
-    <%= link_to 'Home', lifehacks_path %>
-  </ul>
-  <ul class="button medium">
     <%= link_to 'Add Review', new_lifehack_review_path(@lifehack) %>
   </ul>
 
     <% if @lifehack.creator == current_user || current_user.admin? %>
       <div class="lifehack-admin-panel">
-        <%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack) %>
-        <%= button_to 'Delete Lifehack', @lifehack, { method: :delete} %>
+        <%= link_to 'Edit Lifehack', edit_lifehack_path(@lifehack), :class => 'button' %>
+        <%= button_to 'Delete Lifehack', @lifehack, { method: :delete, :class => 'button round' } %>
       </div>
     <% end %>
   </ul>
