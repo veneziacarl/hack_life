@@ -62,6 +62,7 @@ feature 'user adds review', %{
     expect(page).to_not have_content('Add Review')
 
     click_link('Add Lifehack')
-    expect(page).to have_content('You need to sign in or sign up before continuing.')
+    expect(page).to have_content('You need to sign in or
+      sign up before continuing.')
   end
 end
