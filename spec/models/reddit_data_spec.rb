@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe RedditData, type: :model, vcr: true do
   let(:lpt_data) { RedditData.new('LifeProTips') }
-  let!(:lifehack_creator) { FactoryGirl.create(:user, :bot) }
   it 'receives json data from reddit' do
     expect(lpt_data.get_posts['kind']).to eq('Listing')
   end

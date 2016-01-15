@@ -35,11 +35,10 @@ class RedditData
     unless @data
       get_posts
     end
-    bot = User.find_or_create_by(email: "lifehackbot@gmail.com") do |user|
-      user.first_name = "Lifehack"
-      user.last_name = "Bot"
-      user.password = "lifehackbot"
+    unless User.find_by(email: "lifehackbot@gmail.com")
+      FactoryGirl.create(:user, :bot)
     end
+    bot = User.find_by(email: "lifehackbot@gmail.com")
     parse.each do |post|
       Lifehack.find_or_create_by(url: post["URL"]) do |lifehack|
         lifehack.title = post["Title"]
