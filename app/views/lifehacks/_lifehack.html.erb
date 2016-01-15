@@ -1,24 +1,22 @@
-
 <div class="row">
-    <div class="panel small-12 columns clearfix">
-       <table>
-          <h5 class="lifehack-link"><%= link_to lifehack.title, lifehack_path(lifehack) %></h5>
-          <h3 class="lifehack-description"><%= lifehack.short_description %></h3>
-          <tbody>
-            <tr>
-              <td>Updated: <%= time_ago_in_words(lifehack.updated_at)%> ago</td>
-              <td>Submitted By:
-              <td class="creator-name"><%= link_to lifehack.creator.full_name,
-                user_path(lifehack.creator) %></td>
-              </td>
-              <td class="creator-image">
-                <%= image_tag(lifehack.creator.profile_photo, :class => "profile-img-index") %>  </td>
-              </td>
-              <td>Number of Ratings: <%= lifehack.reviews.count %></td>
-              <td>Average Rating: <%= lifehack.avg_review_rating %></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="panel small-12 columns clearfix">
+     <table>
+        <h5 class="lifehack-link"><%= link_to lifehack.title, lifehack_path(lifehack) %></h5>
+        <h3 class="lifehack-description"><%= lifehack.short_description %></h3>
+        <tbody>
+          <tr>
+            <td>Updated: <%= time_ago_in_words(lifehack.updated_at)%> ago</td>
+            <td>Submitted By:
+            <td class="creator-name"><%= link_to lifehack.creator.full_name,
+              user_path(lifehack.creator) %></td>
+            </td>
+            <td class="creator-image">
+              <%= image_tag(lifehack.creator.profile_photo, :class => "profile-img-index") %>  </td>
+            </td>
+            <td>Number of Ratings: <%= lifehack.reviews.count %></td>
+            <td>Average Rating: <%= lifehack.avg_review_rating %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
